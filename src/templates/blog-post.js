@@ -5,13 +5,14 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { slugify } from "../utils/helpers"
+import Img from "gatsby-image"
 
 const BlogPostTemplate = ({ data, location }) => {
-  const post = data.markdownRemark
-  const { tags, title, description, date } = post.frontmatter
   const siteTitle = data.site.siteMetadata?.title || `Title`
+  const post = data.markdownRemark
+  const { title, description, date, tags, thumbnail } = post.frontmatter
   const { previous, next } = data
-
+  console.log(thumbnail)
   return (
     <Layout location={location} title={siteTitle}>
       <SEO
@@ -23,10 +24,15 @@ const BlogPostTemplate = ({ data, location }) => {
         itemScope
         itemType="http://schema.org/Article"
       >
-        <header>
+        <header className='post-header'>
+        <Img 
+            className="post-header__thumbnail" 
+            fluid={thumbnail?.childImageSharp.fluid} 
+            alt="post-thumbnail"
+          />
+          <div>
           <h1 itemProp="headline">{title}</h1>
           <p>{date}</p>
-          
           {tags && (
               <div className="tags">
                 {tags.map((tag) => (
@@ -39,6 +45,13 @@ const BlogPostTemplate = ({ data, location }) => {
                   </Link>
                 ))}
                 </div>)}
+
+          </div>
+   
+
+       
+
+
         </header>
         <section
           dangerouslySetInnerHTML={{ __html: post.html }}
@@ -100,6 +113,13 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+        thumbnail {
+          childImageSharp {
+            fluid(maxWidth: 100) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
         tags
       }
     }
