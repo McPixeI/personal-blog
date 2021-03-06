@@ -1,19 +1,53 @@
 import * as React from "react"
 import { Link, graphql } from "gatsby"
 
-import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-const BlogIndex = ({ data, location }) => {
+const Posts = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
-  const posts = data.allMarkdownRemark.nodes
+  const allPosts = data.allMarkdownRemark.nodes
 
+  const emptyQuery = ""
+  const [state, setState] = React.useState({
+    filteredData: [],
+    query: emptyQuery,
+  })
+  const handleInputChange = event => {
+    console.log(event.target.value)
+    const query = event.target.value
+    const filteredData = allPosts.filter(post => {
+      const { description, title, tags } = post.frontmatter
+      console.log(post.frontmatter)
+      return (
+        description?.toLowerCase().includes(query.toLowerCase()) ||
+        title.toLowerCase().includes(query.toLowerCase()) ||
+        (tags &&
+          tags
+            .join("")
+            .toLowerCase()
+            .includes(query.toLowerCase()))
+      )
+    })
+    setState({
+      query,
+      filteredData,
+    })
+  }
+  const { filteredData, query } = state
+  const hasSearchResults = filteredData && query !== emptyQuery
+  const posts = hasSearchResults ? filteredData : allPosts
+  console.log(filteredData)
   if (posts.length === 0) {
     return (
       <Layout location={location} title={siteTitle}>
         <SEO title="All posts" />
-        <Bio />
+        <input
+              type="text"
+              aria-label="Search"
+              placeholder="Type to filter posts..."
+              onChange={handleInputChange}
+          />
         <p>
           No blog posts found. Add markdown posts to "content/blog" (or the
           directory you specified for the "gatsby-source-filesystem" plugin in
@@ -26,8 +60,13 @@ const BlogIndex = ({ data, location }) => {
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="All posts" />
-      <Bio />
-      <ol style={{ listStyle: `none` }}>
+      <input
+              type="text"
+              aria-label="Search"
+              placeholder="Type to filter posts..."
+              onChange={handleInputChange}
+          />
+      <ol style={{ listStyle: `none` }}>        
         {posts.map(post => {
           const title = post.frontmatter.title || post.fields.slug
 
@@ -63,7 +102,7 @@ const BlogIndex = ({ data, location }) => {
   )
 }
 
-export default BlogIndex
+export default Posts
 
 export const pageQuery = graphql`
   query {
