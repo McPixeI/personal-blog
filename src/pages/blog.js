@@ -5,6 +5,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Search from "../components/search"
 import PostList from "../components/postList"
+import Section from "../components/section"
 
 const Blog = ({ data, location }) => {
 
@@ -19,8 +20,10 @@ const Blog = ({ data, location }) => {
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="All posts" />
-      <Search posts={allPosts} onResults={handleSearchResults}/>
-      <PostList posts={posts}/>
+      <Section title="Artículos">
+        <Search posts={allPosts} onResults={handleSearchResults}/>
+        <PostList posts={posts}/>
+      </Section>
     </Layout>
   )
 }

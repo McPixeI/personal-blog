@@ -27,7 +27,7 @@ export default function Search ({ posts, onResults }){
     <input
     type="text"
     aria-label="Search"
-    placeholder="Type to filter posts..."
+    placeholder="Busca algo concreto..."
     onChange={handleInputChange}
   />
   )

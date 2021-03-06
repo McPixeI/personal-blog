@@ -1,7 +1,8 @@
 import * as React from "react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 
 import Bio from "../components/bio"
+import Section from "../components/section"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import PostList from "../components/postList"
@@ -14,7 +15,12 @@ const BlogIndex = ({ data, location }) => {
     <Layout location={location} title={siteTitle}>
       <SEO title="All posts" />
       <Bio />
-      <PostList posts={posts}/>
+      <Section title='Últimos posts' button>
+        <PostList posts={posts}/>
+      </Section>
+      <Section title='Proyectos'>
+        <p>TO DO</p>
+      </Section>
     </Layout>
   )
 }
