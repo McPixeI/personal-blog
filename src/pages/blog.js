@@ -9,7 +9,8 @@ import PostList from "../components/postList"
 const Blog = ({ data, location }) => {
 
   const siteTitle = data.site.siteMetadata?.title || `Title`
-  const [posts, setPosts] = React.useState(data.allMarkdownRemark.nodes)
+  const allPosts = data.allMarkdownRemark.nodes
+  const [posts, setPosts] = React.useState(allPosts)
 
   const handleSearchResults = res => {
     setPosts(res)
@@ -18,7 +19,7 @@ const Blog = ({ data, location }) => {
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="All posts" />
-      <Search posts={posts} onResults={handleSearchResults}/>
+      <Search posts={allPosts} onResults={handleSearchResults}/>
       <PostList posts={posts}/>
     </Layout>
   )
