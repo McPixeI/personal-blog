@@ -37,19 +37,22 @@ const Bio = () => {
         layout="fixed"
         formats={["AUTO", "WEBP", "AVIF"]}
         src="../images/profile-img.jpg"
-        width={100}
-        height={100}
-        quality={95}
+        width={90}
+        height={90}
+        quality={100}
         alt="Profile picture"
       />
       {author?.name && (
-        <p>
-          Written by <strong>{author.name}</strong> {author?.summary || null}
+        <div>
+          <p>
+          Blog personal de <a href={`https://twitter.com/${social?.twitter || ``}`}>Samuel Torres</a>
           {` `}
-          <a href={`https://twitter.com/${social?.twitter || ``}`}>
-            You should follow them on Twitter
-          </a>
         </p>
+        <p>
+          {author?.summary || null}
+        </p>
+        </div>
+
       )}
     </div>
   )

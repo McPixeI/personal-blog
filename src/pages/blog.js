@@ -1,25 +1,30 @@
 import * as React from "react"
 import { graphql } from "gatsby"
 
-import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Search from "../components/search"
 import PostList from "../components/postList"
 
-const BlogIndex = ({ data, location }) => {
+const Blog = ({ data, location }) => {
+
   const siteTitle = data.site.siteMetadata?.title || `Title`
-  const posts = data.allMarkdownRemark.nodes
+  const [posts, setPosts] = React.useState(data.allMarkdownRemark.nodes)
+
+  const handleSearchResults = res => {
+    setPosts(res)
+  }
 
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="All posts" />
-      <Bio />
+      <Search posts={posts} onResults={handleSearchResults}/>
       <PostList posts={posts}/>
     </Layout>
   )
 }
 
-export default BlogIndex
+export default Blog
 
 export const pageQuery = graphql`
   query {

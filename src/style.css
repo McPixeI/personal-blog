@@ -54,7 +54,7 @@
   --fontSize-5: 2.074rem;
   --fontSize-6: 2.488rem;
   --fontSize-7: 2.986rem;
-  --color-primary: #005b99;
+  --color-primary: #007b99;
   --color-text: #2e353f;
   --color-text-light: #4f5969;
   --color-heading: #1a202c;
@@ -288,7 +288,10 @@ a:focus {
 
 .bio {
   display: flex;
+  align-items: center;
   margin-bottom: var(--spacing-16);
+  padding-bottom: var(--spacing-8);
+  border-bottom: 1px solid var(--color-accent)
 }
 
 .bio p {
@@ -298,7 +301,6 @@ a:focus {
 .bio-avatar {
   margin-right: var(--spacing-4);
   margin-bottom: var(--spacing-0);
-  min-width: 100px;
   border-radius: 100%;
 }
 
