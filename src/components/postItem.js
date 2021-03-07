@@ -28,7 +28,6 @@ const Post = ({post}) => {
               <small>{date}</small>
               </div>
 
-
             </header>
             <section>
               <p

@@ -6,6 +6,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { slugify } from "../utils/helpers"
 import Img from "gatsby-image"
+import ShareButtons from "../components/shareButtons"
 
 const BlogPostTemplate = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
@@ -33,6 +34,8 @@ const BlogPostTemplate = ({ data, location }) => {
           <div>
           <h1 itemProp="headline">{title}</h1>
           <p>{date}</p>
+          <ShareButtons title={title} url={location.href} tags={tags}/>
+
           {tags && (
               <div className="tags">
                 {tags.map((tag) => (
