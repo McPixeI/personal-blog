@@ -50,10 +50,6 @@ const BlogPostTemplate = ({ data, location }) => {
                 </div>)}
 
           </div>
-   
-
-       
-
 
         </header>
         <section
