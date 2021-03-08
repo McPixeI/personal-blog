@@ -1,7 +1,6 @@
-.hero{
+.side-content{
     width: 100%;
-    background: #3155dc;
-    background: linear-gradient(120deg, #414b56, #00a2e1);
+    background: #1b5c64;
     -webkit-background-position: center right,center left;
     background-position: center right,center left;
     background-repeat: no-repeat;
@@ -17,8 +16,19 @@
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    height: 55px;
-    &[data-is-root-path='true']{
-        height: 300px;
+    padding-top:0;
+    justify-content: space-between;
+    flex-direction: column;
+    
+    @include media(md) {
+        position: fixed;
+        height:100vh;
+        width: $side-width;
+            padding: 100px 30px;
+
+        z-index: 1;
+        top: 0;
+        left: 0;
+        overflow-x: hidden;
     }
 }

@@ -1,7 +1,14 @@
 .bio {
     display: flex;
+    flex-direction: column;
     align-items: center;
+    text-align: center;
+    justify-content: space-between;
+    h1 {
+        color: $color-white;
+    }
     p{
+        color: $color-white;
         margin-bottom: $spacing-0;
     }
     &__avatar{

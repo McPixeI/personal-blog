@@ -3,7 +3,7 @@ module.exports = {
     title: `Samu's Blog`,
     author: {
       name: `Samuel Torres`,
-      summary: `Lorem ipsum dolor sit amet consectetum adispicin elit`,
+      summary: `Lorem ipsum dolor sit amet consectetum adispicin elit. Lorem ipsum dolor sit amet.`,
     },
     description: `Mi blog personal`,
     siteUrl: `https://samutorres.com/`,

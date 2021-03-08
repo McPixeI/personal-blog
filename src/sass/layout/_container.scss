@@ -4,3 +4,12 @@
     padding: $spacing-10 $spacing-5;
   }
   
+  main {
+      @include media(md){
+        margin-left: $side-width;
+        & > .container {
+            max-width: 100%;
+            padding: $spacing-12 $spacing-20
+        }
+      }
+  }

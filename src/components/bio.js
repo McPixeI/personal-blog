@@ -44,12 +44,12 @@ const Bio = () => {
       />
       {author?.name && (
         <div>
-          <p>
-          Blog personal de <a href={`https://twitter.com/${social?.twitter || ``}`}>Samuel Torres</a>
+          <h1>
+          Hola, soy Samuel 
           {` `}
-        </p>
+          </h1>
         <p>
-          {author?.summary || null}
+          {author?.summary || null} Puedes seguirme en <a href={`https://twitter.com/${social?.twitter || ``}`}>Twitter</a>
         </p>
         </div>
 
