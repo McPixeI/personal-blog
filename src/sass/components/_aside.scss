@@ -1,6 +1,7 @@
 .side-content{
     width: 100%;
     background: #1b5c64;
+    background: linear-gradient(213deg, #1b5c64 0%, rgb(23 52 65) 100%) right center / contain no-repeat;
     -webkit-background-position: center right,center left;
     background-position: center right,center left;
     background-repeat: no-repeat;
@@ -19,16 +20,27 @@
     padding-top:0;
     justify-content: space-between;
     flex-direction: column;
-    
+    &[data-is-root='false']{
+        height: 70px;
+        .bio {
+            display: none;
+        }
+    }
+
     @include media(md) {
         position: fixed;
         height:100vh;
         width: $side-width;
-            padding: 100px 30px;
-
+        padding: 100px 30px;
         z-index: 1;
         top: 0;
         left: 0;
         overflow-x: hidden;
+        &[data-is-root='false']{
+            height: 100vh;
+            .bio {
+                display: flex;
+            }
+        }
     }
 }

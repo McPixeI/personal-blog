@@ -1,6 +1,4 @@
 import * as React from "react"
-import Bio from "./bio"
-import Header from "./aside"
 import Aside from "./aside"
 
 const Layout = ({ location, title, children }) => {
@@ -9,7 +7,7 @@ const Layout = ({ location, title, children }) => {
 
   return (
     <div>
-      <Aside title={title}></Aside>
+      <Aside isRootPath={isRootPath}></Aside>
       <main>
         <div className="container">
           {children}

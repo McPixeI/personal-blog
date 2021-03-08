@@ -42,7 +42,7 @@ const BlogPostTemplate = ({ data, location }) => {
                   <Link
                     key={tag}
                     to={`/tags/${slugify(tag)}`}
-                    className={`tag-${tag}`}
+                    className={`tag tag--${tag}`}
                   >
                     {tag}
                   </Link>

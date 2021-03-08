@@ -6,7 +6,7 @@
  */
 
 import * as React from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql, Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 
 const Bio = () => {
@@ -32,16 +32,19 @@ const Bio = () => {
 
   return (
     <div className="bio">
-      <StaticImage
-        className="bio__avatar"
-        layout="fixed"
-        formats={["AUTO", "WEBP", "AVIF"]}
-        src="../images/profile-img.jpg"
-        width={90}
-        height={90}
-        quality={100}
-        alt="Profile picture"
-      />
+      <Link to="/">
+        <StaticImage
+          className="bio__avatar"
+          layout="fixed"
+          formats={["AUTO", "WEBP", "AVIF"]}
+          src="../images/profile-img.jpg"
+          width={90}
+          height={90}
+          quality={100}
+          alt="Profile picture"
+        />
+      </Link>
+
       {author?.name && (
         <div>
           <h1>

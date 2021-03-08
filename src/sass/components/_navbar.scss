@@ -1,15 +1,21 @@
 .navbar {
-    top: 0;
-    width: 100%;
-    left: 0;
-    right: 0;
-    height: 55px;
-    max-height: 55px;
-    line-height: 53px;
-    display: flex;
-    justify-content: space-between;
-
+    text-align: center;
+    display:none;
     &__link{
+        display: block;
+        font-family: $fontFamily-sans;
+        text-transform: uppercase;
         color: $color-white;
+        padding: $spacing-3;
+        text-decoration: none;
+        &:hover{
+            //background: rgba(255,255,255,0.12);
+        }
+        &--active {
+            //background: rgba(255,255,255,0.12);
+        }
+    }
+    @include media(md){
+        display:block;
     }
   }
