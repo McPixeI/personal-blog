@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Un blog por Samuel Torres`,
+    title: `Samu's Blog`,
     author: {
       name: `Samuel Torres`,
       summary: `Lorem ipsum dolor sit amet consectetum adispicin elit`,

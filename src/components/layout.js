@@ -1,5 +1,7 @@
 import * as React from "react"
 import { Link } from "gatsby"
+import Bio from "./bio"
+import Header from "./header"
 
 const Layout = ({ location, title, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`
@@ -8,26 +10,32 @@ const Layout = ({ location, title, children }) => {
 
   if (isRootPath) {
     header = (
-      <h1 className="main-heading">
-        <Link to="/">{title}</Link>
-      </h1>
+      <Header title={title}></Header>
     )
   } else {
     header = (
-      <Link className="header-link-home" to="/">
-        {title}
-      </Link>
+      <Header title={title}></Header>
     )
   }
 
   return (
-    <div className="global-wrapper" data-is-root-path={isRootPath}>
+    <div>
       <header className="global-header">{header}</header>
-      <main>{children}</main>
+      <div className="hero" data-is-root-path={isRootPath}>
+        <div className="container">
+          {isRootPath && <Bio/>}
+        </div>
+      </div>
+      <main>
+        <div className="container">
+          {children}
+        </div>
+      </main>
       <footer>
         Built with <a href="https://www.gatsbyjs.com">Gatsby</a>
       </footer>
     </div>
+      
   )
 }
 

@@ -1,7 +1,6 @@
 import * as React from "react"
 import { graphql } from "gatsby"
 
-import Bio from "../components/bio"
 import Section from "../components/section"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -14,7 +13,6 @@ const BlogIndex = ({ data, location }) => {
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="All posts" />
-      <Bio />
       <Section title='Últimos posts' button>
         <PostList posts={posts}/>
       </Section>

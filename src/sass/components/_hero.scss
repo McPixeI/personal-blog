@@ -1,0 +1,24 @@
+.hero{
+    width: 100%;
+    background: #3155dc;
+    background: linear-gradient(120deg, #414b56, #00a2e1);
+    -webkit-background-position: center right,center left;
+    background-position: center right,center left;
+    background-repeat: no-repeat;
+    -webkit-background-size: contain;
+    background-size: contain;
+    position: relative;
+    z-index: 0;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    height: 55px;
+    &[data-is-root-path='true']{
+        height: 300px;
+    }
+}

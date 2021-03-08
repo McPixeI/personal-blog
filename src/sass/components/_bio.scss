@@ -1,0 +1,19 @@
+.bio {
+    display: flex;
+    align-items: center;
+    p{
+        margin-bottom: $spacing-0;
+    }
+    &__avatar{
+        margin-right: $spacing-4;
+        margin-bottom: $spacing-0;
+        border-radius: 100%;
+    }
+
+    //Bio inside Hero
+    .hero & {
+        p {
+            color: $color-white;
+        }
+    }
+  }
