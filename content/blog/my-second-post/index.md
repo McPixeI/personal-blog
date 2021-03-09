@@ -1,8 +1,11 @@
 ---
-title: My Second Post!
+title: Webpack starter pack. Todo lo que debes saber para configurarlo desde zero
 date: 2015-05-06T23:46:37.121Z
-description: Lorem ipsum dolor sit amet
+description: Lorem ipsum dolor sit amet consectetum
 thumbnail: webpack.png
+tags:
+  - webpack
+  - javascript
 ---
 
 Wow! I love blogging so much already.
