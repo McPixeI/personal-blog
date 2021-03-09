@@ -1,11 +1,13 @@
 import { Link } from "gatsby";
 import Img from "gatsby-image";
 import * as React from "react"
+import { getFormattedDate } from "../utils/helpers";
 
 const Post = ({post}) => {
-  console.log(post)
   const title = post.frontmatter.title || post.fields.slug;
   const {description, date, thumbnail} = post.frontmatter;
+  const formattedDate = getFormattedDate(date)
+  
   return (
         <li>
           <article
@@ -24,7 +26,7 @@ const Post = ({post}) => {
                   <span itemProp="headline">{title}</span>
                 </Link>
               </h2>
-              <small>{date}</small>
+              <small className="post__date">{formattedDate}</small>
               <section>
               <p
                 dangerouslySetInnerHTML={{

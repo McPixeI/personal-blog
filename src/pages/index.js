@@ -6,6 +6,9 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import PostList from "../components/postList"
 
+import projects from '../data/projects'
+import ProjectList from "../components/projectList"
+
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const posts = data.allMarkdownRemark.nodes
@@ -17,7 +20,7 @@ const BlogIndex = ({ data, location }) => {
         <PostList posts={posts} moreBtn/>
       </Section>
       <Section title='Proyectos'>
-        <p>TO DO</p>
+        <ProjectList data={projects}/>
       </Section>
     </Layout>
   )
@@ -39,7 +42,7 @@ export const pageQuery = graphql`
           slug
         }
         frontmatter {
-          date(formatString: "MMMM YYYY")
+          date(formatString: "D MMMM YYYY")
           title
           description
           thumbnail {

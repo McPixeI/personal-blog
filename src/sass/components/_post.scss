@@ -24,6 +24,10 @@
         margin-right: $spacing-4
     }
 
+    &__date{
+        color: $color-text-light;
+    }
+
     h2 {
         font-size: $fontSize-4;
         color: $color-text;

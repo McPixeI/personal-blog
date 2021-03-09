@@ -12,7 +12,7 @@ const PostList = ({posts, moreBtn}) => {
             {posts.map(post => {
                 return <Post key={post.fields.slug} post={post}/>
             })}
-            {moreBtn && <li><Link className="" to="/blog"> Ver todo →</Link></li>}
+            {moreBtn && <li><Link className="btn btn--primary btn--outline" to="/blog"> Ver todo →</Link></li>}
           </ol>
     } 
     </>
