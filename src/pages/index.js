@@ -13,7 +13,7 @@ const BlogIndex = ({ data, location }) => {
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="All posts" />
-      <Section title='Últimos posts' button>
+      <Section title='Últimos posts'>
         <PostList posts={posts}/>
       </Section>
       <Section title='Proyectos'>

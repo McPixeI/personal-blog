@@ -1,7 +1,9 @@
 .side-content{
     width: 100%;
-    background: #1b5c64;
-    background: linear-gradient(213deg, #1b5c64 0%, rgb(23 52 65) 100%) right center / contain no-repeat;
+    background: #2d688b;
+    background: linear-gradient(
+        213deg
+        , #2d688b 0%, #173441 100%) right center/contain no-repeat;
     -webkit-background-position: center right,center left;
     background-position: center right,center left;
     background-repeat: no-repeat;
@@ -38,9 +40,6 @@
         overflow-x: hidden;
         &[data-is-root='false']{
             height: 100vh;
-            .bio {
-                display: flex;
-            }
         }
     }
 }
