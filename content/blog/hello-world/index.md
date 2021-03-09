@@ -1,8 +1,11 @@
 ---
-title: Hello World
+title: Lorem ipsum dolor sit amet consectetum adispicin elit
 date: 2015-05-01T22:12:03.284Z
 description: Hello World
 thumbnail: css.png
+tags:
+  - css
+  - html
 ---
 This is my first post on my new fake blog! How exciting!
 
