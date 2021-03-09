@@ -14,3 +14,17 @@
         }
       }
   }
+
+  .section-title {
+    color: $color-text-light;
+    margin-bottom: $spacing-16;
+    &::after{
+      content: "";
+    display: block;
+    height: 3px;
+    background: $color-primary;
+    width: 50px;
+    bottom: -1px;
+    margin-top: 15px;
+    }
+  }

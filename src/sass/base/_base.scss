@@ -115,20 +115,16 @@ ol {
 ul li,
 ol li {
   padding-left: $spacing-0;
-  margin-bottom: calc($spacing-8 / 2);
+  margin-bottom: $spacing-4;
 }
 
 li > p {
-  margin-bottom: calc($spacing-8 / 2);
-}
-
-li *:last-child {
-  margin-bottom: $spacing-0;
+  margin-bottom: $spacing-4;
 }
 
 li > ul {
   margin-left: $spacing-8;
-  margin-top: calc($spacing-8 / 2);
+  margin-top: $spacing-4;
 }
 
 blockquote {

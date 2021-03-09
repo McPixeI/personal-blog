@@ -26,11 +26,6 @@ const BlogPostTemplate = ({ data, location }) => {
         itemType="http://schema.org/Article"
       >
         <header className='post-header'>
-        <Img 
-            className="post-header__thumbnail" 
-            fluid={thumbnail?.childImageSharp.fluid} 
-            alt="post-thumbnail"
-          />
           <div>
           <h1 itemProp="headline">{title}</h1>
           <p>{date}</p>

@@ -6,35 +6,7 @@
 
 /* Custom classes */
 
-.post-list {
 
-  .post-list-item {
-    margin-bottom: $spacing-8;
-    margin-top: $spacing-8;
-
-    &__thumbnail{
-      width: 50px;
-      height: 50px;
-      margin-right: $spacing-4
-    }
-
-    header {
-      margin-bottom: $spacing-3;
-    }
-
-    h2 {
-      font-size: $fontSize-3;
-      color: $color-primary;
-      margin-bottom: $spacing-2;
-      margin-top: $spacing-0;
-    }
-
-    p {
-      margin-bottom: $spacing-0;
-    }
-
-  }
-}
 
 .header-link-home {
   font-weight: $fontWeight-bold;
@@ -42,23 +14,6 @@
   text-decoration: none;
   font-size: $fontSize-2;
 }
-
-
-
-.post-header {
-  display:flex;
-  align-items: center;
-  margin-bottom: $spacing-8;
-
-  &__thumbnail {
-    border-radius: $spacing-2;
-    width: 100px;
-    height: 100px;
-    margin-right: $spacing-8
-  }
-
-}
-
 
 
 .blog-post header h1 {

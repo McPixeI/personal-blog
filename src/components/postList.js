@@ -2,7 +2,7 @@ import { Link } from "gatsby";
 import * as React from "react"
 import Post from "./postItem";
 
-const PostList = ({posts}) => {
+const PostList = ({posts, moreBtn}) => {
   return (
     <>
     {
@@ -12,9 +12,7 @@ const PostList = ({posts}) => {
             {posts.map(post => {
                 return <Post key={post.fields.slug} post={post}/>
             })}
-            <li>
-              <Link className="" to="/blog"> Ver todo →</Link>
-            </li>
+            {moreBtn && <li><Link className="" to="/blog"> Ver todo →</Link></li>}
           </ol>
     } 
     </>

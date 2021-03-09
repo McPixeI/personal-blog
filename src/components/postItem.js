@@ -7,15 +7,14 @@ const Post = ({post}) => {
   const title = post.frontmatter.title || post.fields.slug;
   const {description, date, thumbnail} = post.frontmatter;
   return (
-        <li className='post-list'>
+        <li>
           <article
-            className="post-list-item"
+            className="post"
             itemScope
             itemType="http://schema.org/Article"
           >
-            <header className='post-header'>
               <Img 
-                className="post-list-item__thumbnail" 
+                className="post__thumbnail" 
                 fluid={thumbnail?.childImageSharp.fluid} 
                 alt="post-thumbnail"
               />
@@ -26,10 +25,7 @@ const Post = ({post}) => {
                 </Link>
               </h2>
               <small>{date}</small>
-              </div>
-
-            </header>
-            <section>
+              <section>
               <p
                 dangerouslySetInnerHTML={{
                   __html: description || post.excerpt,
@@ -37,6 +33,9 @@ const Post = ({post}) => {
                 itemProp="description"
               />
             </section>
+              </div>
+
+
           </article>
         </li>      
   )
