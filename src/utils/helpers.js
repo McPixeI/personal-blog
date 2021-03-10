@@ -10,8 +10,7 @@ export function slugify(string) {
     )
   }
 
-  export function getFormattedDate(date) {
-    console.log(date)
+  export function getFormattedDate(date) {  
     const months = [
       'Enero',
       'Febrero',
@@ -27,5 +26,5 @@ export function slugify(string) {
       'Diciembre'
     ]
       let fullDate = new Date(date)
-      return `${fullDate.getDay()} ${months[fullDate.getMonth()]} de ${fullDate.getFullYear('YYYY')}`
+      return `${fullDate.getDate()} ${months[fullDate.getMonth()]} de ${fullDate.getFullYear('YYYY')}`
   }
