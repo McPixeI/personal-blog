@@ -5,7 +5,6 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { slugify } from "../utils/helpers"
-import Img from "gatsby-image"
 import ShareButtons from "../components/shareButtons"
 
 const BlogPostTemplate = ({ data, location }) => {

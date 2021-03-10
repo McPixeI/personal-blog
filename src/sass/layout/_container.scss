@@ -5,7 +5,7 @@
   }
   
   main, footer {
-      @include media(md){
+      @include media(lg){
         margin-left: $side-width;
         & > .container {
             max-width: 1200px;
@@ -19,7 +19,7 @@
     margin-bottom: $spacing-20
   }
   .section-title {
-    color: $color-text-light;
+    color: $color-text;
     margin-bottom: $spacing-16;
     &::after{
       content: "";

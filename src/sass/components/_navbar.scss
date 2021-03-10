@@ -4,18 +4,15 @@
     &__link{
         display: block;
         font-family: $fontFamily-sans;
-        text-transform: uppercase;
         color: $color-white;
         padding: $spacing-3;
         text-decoration: none;
-        &:hover{
-            //background: rgba(255,255,255,0.12);
-        }
+
         &--active {
-            //background: rgba(255,255,255,0.12);
+            border-bottom:1px solid white;
         }
     }
-    @include media(md){
+    @include media(lg){
         display:block;
     }
   }
