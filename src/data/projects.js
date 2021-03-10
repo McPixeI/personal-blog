@@ -7,8 +7,7 @@ const projects = [
     },
     {
         title: 'Otro proyecto',
-        path: 'https://www.google.com',
-        source: 'https://www.google.com',
+        source: 'https://github.com/McPixeI/personal-blog',
         description: 'Aquí no hay nada realmente',
     }
 ]

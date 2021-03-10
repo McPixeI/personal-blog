@@ -27,17 +27,13 @@ const Post = ({post}) => {
                 </Link>
               </h2>
               <small className="post__date">{formattedDate}</small>
-              <section>
               <p
                 dangerouslySetInnerHTML={{
                   __html: description || post.excerpt,
                 }}
                 itemProp="description"
               />
-            </section>
               </div>
-
-
           </article>
         </li>      
   )

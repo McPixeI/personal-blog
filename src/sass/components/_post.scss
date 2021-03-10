@@ -1,21 +1,8 @@
 
 .post {
-    margin-bottom: $spacing-12;
-    margin-top: $spacing-8;
+    margin-bottom: $spacing-6;
+    padding-bottom: $spacing-6;
     display:flex;
-    align-items: flex-start;
-    
-    &__header {
-        margin-bottom: $spacing-2;
-      
-        &__thumbnail {
-          border-radius: $spacing-2;
-          width: 100px;
-          height: 100px;
-          margin-right: $spacing-8
-        }
-      
-      }
 
     &__thumbnail{
         width: 50px;
@@ -24,18 +11,20 @@
         margin-right: $spacing-4
     }
 
-    &__date{
-        color: $color-text-light;
-    }
-
     h2 {
         font-size: $fontSize-4;
+        font-weight: $fontWeight-semibold;
         color: $color-text;
-        margin-bottom: $spacing-0;
+        margin-bottom: $spacing-1;
         margin-top: $spacing-0;
+        @include transition(color .2s ease-out);
         &:hover{
             color: $color-primary;
         }
+    }
+
+    &__date{
+        color: $color-text-light;
     }
 
     p {

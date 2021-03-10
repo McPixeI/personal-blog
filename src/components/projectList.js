@@ -1,4 +1,5 @@
 import * as React from "react"
+import Project from "./projectItem"
 
 const ProjectList = ({data}) => {
   return (
@@ -8,7 +9,7 @@ const ProjectList = ({data}) => {
         <p>No hay resultados coincidentes. ¡Prueba otra cosa!</p> :
           <ol style={{ listStyle: `none` }}>        
             {data.map(project => {
-                return <p>{project.title}</p>
+                return <Project key={project.title} props={project}/>
             })}
           </ol>
     } 

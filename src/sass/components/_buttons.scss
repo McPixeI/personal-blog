@@ -1,16 +1,20 @@
 .btn {
     font-family: $fontFamily-sans;
     text-decoration: none;
-    display: inline-block;
+    display: inline-flex;
     color: #fff;
-    height: 36px;
-    line-height: 36px;
+    height: 38px;
+    line-height: 38px;
     padding: 0 16px;
     border-radius: 2px;
     text-transform: uppercase;
     -webkit-transition: all .2s ease-out;
     transition: all .2s ease-out;
     font-weight: 500;
+    min-width: 140px;
+    text-align: center;
+    letter-spacing: .06em;
+    
     &--primary{
         border: 2px solid $color-primary;
         box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 12%), 0 1px 5px 0 rgb(0 0 0 / 20%);
@@ -29,6 +33,11 @@
         &:hover {
             color: $color-white;
             background-color: $color-primary;
+            box-shadow: none;
         }
+    }
+
+    &__icon {
+        margin-right: 6px;
     }
 }

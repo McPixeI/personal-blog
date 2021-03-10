@@ -1,0 +1,25 @@
+.d-flex {
+    display: flex !important;
+}
+.justify-between {
+    justify-content: space-between !important;
+}
+
+.justify-center {
+    justify-content: center !important;
+}
+
+.align-items-center {
+    align-items: center !important;
+}
+
+.align-content-center {
+    align-content: center !important;
+}
+
+.underlined {
+    border-bottom: 1px solid $color-accent;
+    &:last-of-type {
+        border:none;
+    }
+}

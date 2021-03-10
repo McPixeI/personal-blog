@@ -4,7 +4,7 @@
     padding: $spacing-10 $spacing-5;
   }
   
-  main {
+  main, footer {
       @include media(md){
         margin-left: $side-width;
         & > .container {
@@ -15,6 +15,9 @@
       }
   }
 
+  .content-section {
+    margin-bottom: $spacing-20
+  }
   .section-title {
     color: $color-text-light;
     margin-bottom: $spacing-16;

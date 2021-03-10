@@ -1,7 +1,11 @@
 .tag {
     text-decoration: none;
+    font-size: $fontSize-0;
     background: rgb(128, 128, 128, 0.23);
-    padding: 3px 6px;
+    padding: 4px 8px;
     border-radius: 3px;
     color: $color-primary;
+    & + .tag {
+        margin-left: 5px;
+    }
 }

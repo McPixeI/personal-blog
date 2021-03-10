@@ -1,0 +1,16 @@
+input[type=text] {
+    padding: $spacing-4 $spacing-3;
+    background: $color-white;
+    border: 2px solid $color-accent;
+    line-height: $lineHeight-none;
+    width: 100%;
+    max-width: 400px;
+    border-radius: .35rem;
+    font-size: 1rem;
+    -webkit-appearance: none;
+    margin-bottom: $spacing-2;
+}
+    input[type=text]:focus {
+    border-color: $color-primary;
+    outline: $color-primary auto 1px
+}
