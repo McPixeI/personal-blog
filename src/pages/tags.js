@@ -1,5 +1,4 @@
 import React from "react"
-import PropTypes from "prop-types"
 
 // Utilities
 import kebabCase from "lodash/kebabCase"
@@ -7,8 +6,10 @@ import kebabCase from "lodash/kebabCase"
 // Components
 import { Helmet } from "react-helmet"
 import { Link, graphql } from "gatsby"
+import Layout from "../components/layout"
 
 const TagsPage = ({
+  location,
   data: {
     allMarkdownRemark: { group },
     site: {
@@ -16,7 +17,7 @@ const TagsPage = ({
     },
   },
 }) => (
-  <div>
+  <Layout location={location} title={title}>
     <Helmet title={title} />
     <div>
       <h1>Tags</h1>
@@ -30,26 +31,10 @@ const TagsPage = ({
         ))}
       </ul>
     </div>
-  </div>
-)
+  </Layout>
 
-TagsPage.propTypes = {
-  data: PropTypes.shape({
-    allMarkdownRemark: PropTypes.shape({
-      group: PropTypes.arrayOf(
-        PropTypes.shape({
-          fieldValue: PropTypes.string.isRequired,
-          totalCount: PropTypes.number.isRequired,
-        }).isRequired
-      ),
-    }),
-    site: PropTypes.shape({
-      siteMetadata: PropTypes.shape({
-        title: PropTypes.string.isRequired,
-      }),
-    }),
-  }),
-}
+ 
+)
 
 export default TagsPage
 
