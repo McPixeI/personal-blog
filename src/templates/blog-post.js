@@ -6,11 +6,12 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { slugify } from "../utils/helpers"
 import ShareButtons from "../components/shareButtons"
+import ToC from "../components/toc"
 
 const BlogPostTemplate = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const post = data.markdownRemark
-  const tableOfContents = post.tableOfContents
+  const headings = post.headings
   const { title, description, date, tags, thumbnail } = post.frontmatter
   const { previous, next } = data
   return (
@@ -28,7 +29,8 @@ const BlogPostTemplate = ({ data, location }) => {
           <div>
           <h1 itemProp="headline">{title}</h1>
           <p>{date}</p>
-         
+          <ShareButtons title={title} url={location.href} tags={tags}/>
+
           </div>
         </header>
         <section
@@ -67,22 +69,22 @@ const BlogPostTemplate = ({ data, location }) => {
       </article>
       
       <aside className="sidebar">
-        <ShareButtons title={title} url={location.href} tags={tags}/>
-        <section
-          dangerouslySetInnerHTML={{ __html: tableOfContents }}          
-        />
-        {tags && (
-            <div className="tags">
-              {tags.map((tag) => (
-                <Link
-                  key={tag}
-                  to={`/tags/${slugify(tag)}`}
-                  className={`tag tag--${tag}`}
-                >
-                  {tag}
-                </Link>
-        ))}
-      </div>)}
+        <div className="sidebar__content sidebar__content--sticky">
+          <h5>Contenido del artículo</h5>
+          <ToC headings={headings}></ToC>
+          {tags && (
+              <div className="tags">
+                {tags.map((tag) => (
+                  <Link
+                    key={tag}
+                    to={`/tags/${slugify(tag)}`}
+                    className={`tag tag--${tag}`}
+                  >
+                    {tag}
+                  </Link>
+          ))}
+        </div>)}
+        </div>
       </aside>
 
     </Layout>
@@ -106,7 +108,10 @@ export const pageQuery = graphql`
       id
       excerpt(pruneLength: 160)
       html
-      tableOfContents
+      headings {
+        value
+        depth
+      }
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")

@@ -17,15 +17,16 @@
 
     @include media(lg) {
         position: fixed;
-        height:100vh;
+        height:100%;
         width: $side-width;
+        max-width: 500px;
         padding: 100px 50px;
         z-index: 1;
         top: 0;
         left: 0;
         overflow-x: hidden;
         &[data-is-root='false']{
-            height: 100vh;
+            height: 100%;
         }
     }
 }

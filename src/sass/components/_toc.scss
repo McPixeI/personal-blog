@@ -1,0 +1,23 @@
+.toc {
+    list-style: none;
+    a{
+        font-family: $fontFamily-sans;
+        font-size: 14px;
+        align-items: center;
+        display: flex;
+        align-items: flex-start;
+        text-align: left;
+        margin-left: -10px;
+        text-decoration: none;
+        &:before {
+            color: #09f;
+            content: "■ ";
+            display: inline-block;
+            font-size: 8px;
+            font-weight: 700;
+            left: 0;
+            margin: 5px 7px 0;
+            text-align: right;
+        }
+    }
+}

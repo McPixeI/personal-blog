@@ -18,6 +18,7 @@
   
   .main {
     display: flex;
+    width: 70%;
     max-width: 1200px;
     padding: $spacing-12 $spacing-20;
     flex-direction: column;
@@ -32,6 +33,10 @@
   .sidebar{
     flex:0 0 300px;
     padding: 30px;
+    &__content{
+      position: sticky;
+      top: $spacing-20;
+    }
   }
 
 
@@ -43,11 +48,11 @@
     margin-bottom: $spacing-16;
     &::after{
       content: "";
-    display: block;
-    height: 3px;
-    background: $color-highlight;
-    width: 50px;
-    bottom: -1px;
-    margin-top: 15px;
+      display: block;
+      height: 3px;
+      background: $color-highlight;
+      width: 50px;
+      bottom: -1px;
+      margin-top: 15px;
     }
   }
