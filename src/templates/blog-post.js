@@ -10,9 +10,10 @@ import ShareButtons from "../components/shareButtons"
 const BlogPostTemplate = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const post = data.markdownRemark
+  const tableOfContents = data.tableOfContents
   const { title, description, date, tags, thumbnail } = post.frontmatter
   const { previous, next } = data
-  console.log(thumbnail)
+  console.log(post.tableOfContents)
   return (
     <Layout location={location} title={siteTitle}>
       <SEO
@@ -52,7 +53,7 @@ const BlogPostTemplate = ({ data, location }) => {
         />
         <hr />
         <footer>
-          <Bio />
+          
         </footer>
       </article>
       <nav className="blog-post-nav">
@@ -102,6 +103,7 @@ export const pageQuery = graphql`
       id
       excerpt(pruneLength: 160)
       html
+      tableOfContents
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")

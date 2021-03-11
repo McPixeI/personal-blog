@@ -8,12 +8,17 @@ const PostList = ({posts, moreBtn}) => {
     {
       posts.length === 0 ? 
         <p>No hay resultados coincidentes. ¡Prueba otra cosa!</p> :
+        <>
           <ol style={{ listStyle: `none` }}>        
             {posts.map(post => {
                 return <Post key={post.fields.slug} post={post}/>
             })}
-            {moreBtn && <li><Link className="btn btn--primary btn--outline" to="/blog"> Ver todo →</Link></li>}
           </ol>
+          {moreBtn && <Link className="btn btn--primary btn--outline" to="/blog"> Ver todo →</Link>}
+        </>
+
+
+
     } 
     </>
   )

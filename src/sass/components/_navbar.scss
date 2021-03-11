@@ -1,15 +1,18 @@
 .navbar {
-    text-align: center;
+    text-align: left;
     display:none;
+    &__list{
+        list-style: none;
+    }
     &__link{
-        display: block;
         font-family: $fontFamily-sans;
         color: $color-white;
-        padding: $spacing-3;
+        padding: $spacing-3 0;
         text-decoration: none;
 
         &--active {
-            border-bottom:1px solid white;
+            color: $color-highlight;
+            border-bottom:1px solid $color-highlight;
         }
     }
     @include media(lg){

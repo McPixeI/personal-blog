@@ -10,9 +10,13 @@ const Aside = ({isRootPath}) => {
     <aside className="side-content" data-is-root={isRootPath}>
           <Bio />
           <nav className="navbar">
-              { navigation.map(link =>{
-                return <Link key={link.title} className="navbar__link" activeClassName="navbar__link--active" to={link.path}>{link.title}</Link>         
+            <ul className="navbar__list">
+              { navigation.map(nav =>{
+                return <li key={nav.title}>
+                          <Link className="navbar__link" activeClassName="navbar__link--active" to={nav.path}>{nav.title}</Link>
+                        </li>
               })}     
+            </ul>
           </nav>
     </aside>
   )
