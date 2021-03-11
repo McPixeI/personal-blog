@@ -70,7 +70,6 @@ const BlogPostTemplate = ({ data, location }) => {
       
       <aside className="sidebar">
         <div className="sidebar__content sidebar__content--sticky">
-          <h5>Contenido del artículo</h5>
           <ToC headings={headings}></ToC>
           {tags && (
               <div className="tags">
