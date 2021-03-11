@@ -15,6 +15,26 @@
       }
   }
 
+  
+  .main {
+    display: flex;
+    max-width: 1200px;
+    padding: $spacing-12 $spacing-20;
+    flex-direction: column;
+    @include media(lg) {
+      flex-direction: row;
+    }
+    &--wide {
+      flex-direction: column;
+    }
+  }
+
+  .sidebar{
+    flex:0 0 300px;
+    padding: 30px;
+  }
+
+
   .content-section {
     margin-bottom: $spacing-20
   }

@@ -10,12 +10,11 @@ import ShareButtons from "../components/shareButtons"
 const BlogPostTemplate = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const post = data.markdownRemark
-  const tableOfContents = data.tableOfContents
+  const tableOfContents = post.tableOfContents
   const { title, description, date, tags, thumbnail } = post.frontmatter
   const { previous, next } = data
-  console.log(post.tableOfContents)
   return (
-    <Layout location={location} title={siteTitle}>
+    <Layout location={location} title={siteTitle} hasSidebar>
       <SEO
         title={title}
         description={description || post.excerpt}
@@ -29,23 +28,8 @@ const BlogPostTemplate = ({ data, location }) => {
           <div>
           <h1 itemProp="headline">{title}</h1>
           <p>{date}</p>
-          <ShareButtons title={title} url={location.href} tags={tags}/>
-
-          {tags && (
-              <div className="tags">
-                {tags.map((tag) => (
-                  <Link
-                    key={tag}
-                    to={`/tags/${slugify(tag)}`}
-                    className={`tag tag--${tag}`}
-                  >
-                    {tag}
-                  </Link>
-                ))}
-                </div>)}
-
+         
           </div>
-
         </header>
         <section
           dangerouslySetInnerHTML={{ __html: post.html }}
@@ -53,35 +37,54 @@ const BlogPostTemplate = ({ data, location }) => {
         />
         <hr />
         <footer>
-          
+          <nav className="blog-post-nav">
+            <ul
+              style={{
+                display: `flex`,
+                flexWrap: `wrap`,
+                justifyContent: `space-between`,
+                listStyle: `none`,
+                padding: 0,
+              }}
+            >
+              <li>
+                {previous && (
+                  <Link to={previous.fields.slug} rel="prev">
+                    ← {previous.frontmatter.title}
+                  </Link>
+                )}
+              </li>
+              <li>
+                {next && (
+                  <Link to={next.fields.slug} rel="next">
+                    {next.frontmatter.title} →
+                  </Link>
+                )}
+              </li>
+            </ul>
+          </nav>
         </footer>
       </article>
-      <nav className="blog-post-nav">
-        <ul
-          style={{
-            display: `flex`,
-            flexWrap: `wrap`,
-            justifyContent: `space-between`,
-            listStyle: `none`,
-            padding: 0,
-          }}
-        >
-          <li>
-            {previous && (
-              <Link to={previous.fields.slug} rel="prev">
-                ← {previous.frontmatter.title}
-              </Link>
-            )}
-          </li>
-          <li>
-            {next && (
-              <Link to={next.fields.slug} rel="next">
-                {next.frontmatter.title} →
-              </Link>
-            )}
-          </li>
-        </ul>
-      </nav>
+      
+      <aside className="sidebar">
+        <ShareButtons title={title} url={location.href} tags={tags}/>
+        <section
+          dangerouslySetInnerHTML={{ __html: tableOfContents }}          
+        />
+        {tags && (
+            <div className="tags">
+              {tags.map((tag) => (
+                <Link
+                  key={tag}
+                  to={`/tags/${slugify(tag)}`}
+                  className={`tag tag--${tag}`}
+                >
+                  {tag}
+                </Link>
+        ))}
+      </div>)}
+      </aside>
+
     </Layout>
   )
 }

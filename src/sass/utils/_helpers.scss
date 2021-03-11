@@ -17,6 +17,10 @@
     align-content: center !important;
 }
 
+.flex-direction-column {
+    flex-direction: column !important;
+}
+
 .underlined {
     border-bottom: 1px solid $color-accent;
     &:last-of-type {

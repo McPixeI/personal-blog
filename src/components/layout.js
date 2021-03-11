@@ -1,17 +1,15 @@
 import * as React from "react"
 import Aside from "./aside"
 
-const Layout = ({ location, title, children }) => {
+const Layout = ({ location, title, hasSidebar, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`
   const isRootPath = location.pathname === rootPath
 
   return (
     <div>
       <Aside isRootPath={isRootPath}></Aside>
-      <main>
-        <div className="container">
+      <main className={hasSidebar ? 'main' : 'main main--wide'}>
           {children}
-        </div>
       </main>
       <footer>
         <div className="container">
