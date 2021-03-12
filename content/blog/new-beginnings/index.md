@@ -11,7 +11,6 @@ tags:
   - css
   - react
   - vue
-  - performance
   - webpack
 ---
 
