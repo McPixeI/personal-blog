@@ -1,5 +1,5 @@
 ---
-title: New Beginnings
+title: Testerino noticia de prueba buena
 date: 2021-03-10T08:51:01.570Z
 description: This is a custom description for SEO and Open Graph purposes,
   rather than the default generated excerpt. Simply add a description field to
@@ -8,6 +8,11 @@ thumbnail: lighthouse.png
 tags:
   - performance
   - javascript
+  - css
+  - react
+  - vue
+  - performance
+  - webpack
 ---
 
 Far far away, behind the word mountains, far from the countries Vokalia and
