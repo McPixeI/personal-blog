@@ -32,23 +32,10 @@ const Bio = () => {
 
   return (
     <div className="bio">
-      <Link to="/">
-        <StaticImage
-          className="bio__avatar"
-          layout="fixed"
-          formats={["AUTO", "WEBP", "AVIF"]}
-          src="../images/profile-img.jpg"
-          width={90}
-          height={90}
-          quality={100}
-          alt="Profile picture"
-        />
-      </Link>
-
       {author?.name && (
         <div>
           <h1>
-          Hola, soy Samuel 
+          <span>Hola,</span> bienvenido a mi blog
           {` `}
           </h1>
         <p>

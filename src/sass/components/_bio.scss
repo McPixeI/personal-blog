@@ -16,14 +16,17 @@
         border-radius: 100%;
     }
 
-    //Bio in aside
-    header & {
+    //Bio in hero
+    .hero & {
         flex-direction: column;
         text-align: left;
         margin-bottom: $spacing-8;
         padding-bottom: $spacing-8;
         h1 {
             color: $color-white;
+            span{
+                color: $color-highlight;
+            }
         }
         p{
             color: $color-white;

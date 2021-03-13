@@ -1,5 +1,6 @@
 import * as React from "react"
-import Aside from "./header"
+import Header from "./header"
+import Hero from "./hero"
 
 const Layout = ({ location, title, hasSidebar, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`
@@ -7,7 +8,8 @@ const Layout = ({ location, title, hasSidebar, children }) => {
 
   return (
     <div>
-      <Aside isRootPath={isRootPath}></Aside>
+      <Header isRootPath={isRootPath}/>
+      {isRootPath && <Hero/> }
       <main className='main container'>
           {children}
       </main>
