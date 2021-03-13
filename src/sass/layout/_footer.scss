@@ -1,8 +1,0 @@
-footer {
-    @include media(lg){
-      & > .container {
-          max-width: 1200px;
-          padding: $spacing-12 $spacing-20
-      }
-    }
-}

@@ -11,7 +11,7 @@ const Layout = ({ location, title, hasSidebar, children }) => {
       <main className='main container'>
           {children}
       </main>
-      <footer>
+      <footer className='footer'>
         <div className="container">
           Built with <a href="https://www.gatsbyjs.com">Gatsby</a>
         </div>
