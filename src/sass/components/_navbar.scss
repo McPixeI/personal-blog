@@ -1,10 +1,21 @@
 .navbar {
     display:flex;
     justify-content: space-between;
+    &__logo{
+        font-family: $fontFamily-sans;
+        color: $color-accent;
+        font-weight: bold;
+        text-decoration: none;
+        letter-spacing: 0.4px;
+        span {
+            color: $color-highlight;
+            padding: 0 1px;
+        }
+    }
     &__link{
         font-family: $fontFamily-sans;
         color: $color-white;
-        padding: $spacing-3 0;
+        padding: $spacing-3;
         text-decoration: none;
 
         &--active {

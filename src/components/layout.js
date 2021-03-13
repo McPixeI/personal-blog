@@ -8,7 +8,7 @@ const Layout = ({ location, title, hasSidebar, children }) => {
   return (
     <div>
       <Aside isRootPath={isRootPath}></Aside>
-      <main className='main'>
+      <main className='main container'>
           {children}
       </main>
       <footer>

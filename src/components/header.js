@@ -10,7 +10,7 @@ const Header = ({isRootPath}) => {
     <header className="header" data-is-root={isRootPath}>
       <div className="container">
           <nav className="navbar">
-              <Link to="/" className="header__logo">Samuel<br/>Torres</Link>
+              <Link to="/" className="navbar__logo"><span>{`<`}</span>SamuTorres<span>{`/>`}</span></Link>
               <div>
                 { navigation.map(nav =>{
                   return <Link key={nav.title} className="navbar__link" activeClassName="navbar__link--active" to={nav.path}>{nav.title}</Link>
