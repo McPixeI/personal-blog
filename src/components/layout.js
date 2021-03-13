@@ -1,5 +1,5 @@
 import * as React from "react"
-import Aside from "./aside"
+import Aside from "./header"
 
 const Layout = ({ location, title, hasSidebar, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`
@@ -8,7 +8,7 @@ const Layout = ({ location, title, hasSidebar, children }) => {
   return (
     <div>
       <Aside isRootPath={isRootPath}></Aside>
-      <main className={hasSidebar ? 'main' : 'main main--wide'}>
+      <main className='main'>
           {children}
       </main>
       <footer>

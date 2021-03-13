@@ -1,0 +1,13 @@
+.sidebar{
+    flex:0 0 300px;
+    padding-left: 50px;
+    &__content{
+      position: sticky;
+      top: $spacing-10;
+      //border-left: 2px solid $color-accent;
+      //padding-left: 20px;
+      h5{
+          margin-top: 0;
+      }
+    }
+  }

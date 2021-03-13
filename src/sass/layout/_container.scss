@@ -1,43 +1,11 @@
 .container {
     margin: $spacing-0 auto;
     max-width: $maxWidth-wrapper;
-    padding: $spacing-10 $spacing-5;
+    padding: 0 $spacing-12;
   }
   
-  main, footer {
-      @include media(lg){
-        margin-left: $side-width;
-        & > .container {
-            max-width: 1200px;
-            margin:0;
-            padding: $spacing-12 $spacing-20
-        }
-      }
-  }
 
-  
-  .main {
-    display: flex;
-    width: 70%;
-    max-width: 1200px;
-    padding: $spacing-12 $spacing-20;
-    flex-direction: column;
-    @include media(lg) {
-      flex-direction: row;
-    }
-    &--wide {
-      flex-direction: column;
-    }
-  }
 
-  .sidebar{
-    flex:0 0 300px;
-    padding: 30px;
-    &__content{
-      position: sticky;
-      top: $spacing-20;
-    }
-  }
 
 
   .content-section {

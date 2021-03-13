@@ -15,7 +15,7 @@ const BlogPostTemplate = ({ data, location }) => {
   const { title, description, date, tags, thumbnail } = post.frontmatter
   const { previous, next } = data
   return (
-    <Layout location={location} title={siteTitle} hasSidebar>
+    <Layout location={location} title={siteTitle}>
       <SEO
         title={title}
         description={description || post.excerpt}
@@ -25,21 +25,40 @@ const BlogPostTemplate = ({ data, location }) => {
         itemScope
         itemType="http://schema.org/Article"
       >
-        <header className='post-header'>
-          <div>
+        <header className='blog-post__header'>
           <h1 itemProp="headline">{title}</h1>
           <p>{date}</p>
           <ShareButtons title={title} url={location.href} tags={tags}/>
-
-          </div>
         </header>
-        <section
+        <section className="blog-post__content">
+        <div
+          className="blog-post__body"
           dangerouslySetInnerHTML={{ __html: post.html }}
           itemProp="articleBody"
         />
+              <aside className="sidebar">
+          <div className="sidebar__content sidebar__content--sticky">
+            <ToC headings={headings}></ToC>
+            {tags && (
+                <div className="tags">
+                  {tags.map((tag) => (
+                    <Link
+                      key={tag}
+                      to={`/tags/${slugify(tag)}`}
+                      className={`tag tag--${tag}`}
+                    >
+                      {tag}
+                    </Link>
+              ))}
+            </div>)}
+            </div>
+        </aside>
+        </section>
+
+  
         <hr />
         <footer>
-          <nav className="blog-post-nav">
+          <nav className="blog-post__nav">
             <ul
               style={{
                 display: `flex`,
@@ -67,24 +86,6 @@ const BlogPostTemplate = ({ data, location }) => {
           </nav>
         </footer>
       </article>
-      
-      <aside className="sidebar">
-        <div className="sidebar__content sidebar__content--sticky">
-          <ToC headings={headings}></ToC>
-          {tags && (
-              <div className="tags">
-                {tags.map((tag) => (
-                  <Link
-                    key={tag}
-                    to={`/tags/${slugify(tag)}`}
-                    className={`tag tag--${tag}`}
-                  >
-                    {tag}
-                  </Link>
-          ))}
-        </div>)}
-        </div>
-      </aside>
 
     </Layout>
   )

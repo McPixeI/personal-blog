@@ -1,9 +1,6 @@
 .navbar {
-    text-align: left;
-    display:none;
-    &__list{
-        list-style: none;
-    }
+    display:flex;
+    justify-content: space-between;
     &__link{
         font-family: $fontFamily-sans;
         color: $color-white;
@@ -14,8 +11,5 @@
             color: $color-highlight;
             border-bottom:1px solid $color-highlight;
         }
-    }
-    @include media(lg){
-        display:block;
     }
   }

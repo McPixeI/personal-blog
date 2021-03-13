@@ -1,4 +1,5 @@
 
+//Post item in list
 .post {
     margin-bottom: $spacing-6;
     padding-bottom: $spacing-6;
@@ -30,5 +31,34 @@
     p {
         margin-bottom: $spacing-0;
     }
+}
 
+//Post article content
+
+.blog-post {
+    &__header{
+        margin-bottom: $spacing-8;
+        h1{
+            margin: $spacing-0 $spacing-0 $spacing-4 $spacing-0;
+        }
+        p{
+            font-size: $fontSize-2;
+            font-family: $font-heading;
+            margin-bottom:0;
+        }
+    }
+    &__content{
+        display: flex;
+    }
+    &__body{
+        
+    }
+    &__sidebar{
+        
+    }
+    &__nav{
+        ul{
+            margin: $spacing-0;
+        }
+    }
 }
