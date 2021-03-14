@@ -56,6 +56,13 @@
         align-items: flex-end;
         padding-bottom: $spacing-4;
         border-bottom: 1px solid $color-accent;
+        small{
+            color: $color-text-light;
+        }
+        small, time{
+            font-size: 80%;
+            display: block;
+        }
     }
     &__content{
         display: flex;

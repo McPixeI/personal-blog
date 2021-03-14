@@ -31,7 +31,7 @@ const BlogPostTemplate = ({ data, location }) => {
           <h1 itemProp="headline">{title}</h1>
           <div className="blog-post__info">
             <div>
-              <p>Publicado el</p>
+              <small>Publicado el</small>
               <time>{formattedDate}</time>
             </div>
             <ShareButtons title={title} url={location.href} tags={tags}/>
