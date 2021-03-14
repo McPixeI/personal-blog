@@ -1,6 +1,8 @@
 .hero {
     width: 100%;
-    padding: 1rem 0px;
     display: flex;
+    align-items: center;
+    padding-top: $header-height;
     background-color: #122a36;
+    background: linear-gradient(213deg, #2d688b 0%, #173441 100%) right center/contain no-repeat;
 }

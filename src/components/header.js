@@ -4,10 +4,10 @@ import Bio from "./bio"
 
 import navigation from '../data/navigation'
 
-const Header = ({isRootPath}) => {
+const Header = () => {
 
   return (
-    <header className="header" data-is-root={isRootPath}>
+    <header className="header" >
       <div className="container">
           <nav className="navbar">
               <Link to="/" className="navbar__logo"><span>{`<`}</span>SamuTorres<span>{`/>`}</span></Link>

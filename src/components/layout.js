@@ -7,9 +7,9 @@ const Layout = ({ location, title, hasSidebar, children }) => {
   const isRootPath = location.pathname === rootPath
 
   return (
-    <div>
-      <Header isRootPath={isRootPath}/>
-      {isRootPath && <Hero/> }
+    <>
+      <Header/>
+      <Hero isRootPath={isRootPath}/>
       <main className='main container'>
           {children}
       </main>
@@ -18,8 +18,7 @@ const Layout = ({ location, title, hasSidebar, children }) => {
           Built with <a href="https://www.gatsbyjs.com">Gatsby</a>
         </div>
       </footer>
-
-    </div>
+    </>
       
   )
 }

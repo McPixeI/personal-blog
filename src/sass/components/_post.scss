@@ -49,6 +49,10 @@
     }
     &__content{
         display: flex;
+        flex-direction: column;
+        @include media(lg){
+            flex-direction: row;
+        }
     }
     &__body{
         

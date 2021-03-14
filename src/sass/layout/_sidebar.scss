@@ -1,6 +1,5 @@
 .sidebar{
     flex:0 0 300px;
-    padding-left: 50px;
     &__content{
       position: sticky;
       top: $spacing-10;
@@ -9,5 +8,8 @@
       h5{
           margin-top: 0;
       }
+    }
+    @include media(lg){
+      padding-left: 50px
     }
   }

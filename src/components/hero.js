@@ -9,7 +9,7 @@ const Hero = ({isRootPath}) => {
   return (
     <section className="hero">
       <div className="container">
-        <Bio></Bio>
+        {isRootPath && <Bio/>}
       </div>
     </section>
   )

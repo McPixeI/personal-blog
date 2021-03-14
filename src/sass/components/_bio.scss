@@ -8,6 +8,7 @@
         font-weight: $fontWeight-semibold;
     }
     p{
+        font-family: $fontFamily-sans;
         margin-bottom: $spacing-0;
     }
     &__avatar{
@@ -20,10 +21,10 @@
     .hero & {
         flex-direction: column;
         text-align: left;
-        margin-bottom: $spacing-8;
-        padding-bottom: $spacing-8;
+        margin-bottom: $spacing-16;
+        margin-top: $spacing-8;
         h1 {
-            color: $color-white;
+            color: $color-accent;
             span{
                 color: $color-highlight;
             }
