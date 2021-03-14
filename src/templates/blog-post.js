@@ -101,8 +101,7 @@ const BlogPostTemplate = ({ data, location }) => {
               </li>
             </ul>
           </nav>
-
-          <Disqus config={{...disqusConfig}}/>
+          {process.env.GATSBY_COMMENTS_ENABLED === 'true' && <Disqus config={{...disqusConfig}}/>}
 
         </footer>
       </article>
