@@ -16,6 +16,12 @@ module.exports = {
     `gatsby-plugin-sass`,
     `gatsby-plugin-image`,
     {
+      resolve: `gatsby-plugin-disqus`,
+      options: {
+          shortname: `samutorres`
+      }
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/content/blog`,

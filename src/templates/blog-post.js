@@ -7,14 +7,20 @@ import { slugify } from "../utils/helpers"
 import ShareButtons from "../components/shareButtons"
 import ToC from "../components/toc"
 import { getFormattedDate } from "../utils/helpers";
+import { Disqus } from 'gatsby-plugin-disqus';
 
 const BlogPostTemplate = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const post = data.markdownRemark
   const headings = post.headings
+  const slug = post.fields.slug
   const { title, description, date, tags } = post.frontmatter
   const { previous, next } = data
   const formattedDate = getFormattedDate(date)
+
+  const disqusConfig = {
+    config: { identifier: process.env.GATSBY_DISQUS_NAME, url: slug, title: title },
+  }
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -95,6 +101,9 @@ const BlogPostTemplate = ({ data, location }) => {
               </li>
             </ul>
           </nav>
+
+          <Disqus config={{...disqusConfig}}/>
+
         </footer>
       </article>
 
@@ -113,6 +122,7 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+        siteUrl
       }
     }
     markdownRemark(id: { eq: $id }) {
@@ -122,6 +132,9 @@ export const pageQuery = graphql`
       headings {
         value
         depth
+      }
+      fields {
+        slug
       }
       frontmatter {
         title
