@@ -11,12 +11,14 @@ const Tags = ({ pageContext, data }) => {
   const { edges, totalCount } = data.allMarkdownRemark
   const tagHeader = `${totalCount} post${
     totalCount === 1 ? "" : "s"
-  } tagged with "${tag}"`
+  } etiquetado${
+    totalCount === 1 ? "" : "s"
+  } con "${tag}"`
 const location = {pathname:'/'}
   return (
     <Layout location={location} title={siteTitle}>
-      <div>
-        <h1>{tagHeader}</h1>
+      <section className="content-section">
+        <h1 className="section-title">{tagHeader}</h1>
         <ul>
           {edges.map(({ node }) => {
             const { slug } = node.fields
@@ -28,12 +30,8 @@ const location = {pathname:'/'}
             )
           })}
         </ul>
-        {/*
-                This links to a page that does not yet exist.
-                You'll come back to it!
-              */}
         <Link className="btn btn--primary btn--outline" to="/tags">Ver todos →</Link>
-      </div>
+      </section>
     </Layout>
     
   )

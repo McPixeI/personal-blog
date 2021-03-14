@@ -19,8 +19,8 @@ const TagsPage = ({
 }) => (
   <Layout location={location} title={title}>
     <Helmet title={title} />
-    <div>
-      <h1>Tags</h1>
+    <section className="content-section">
+      <h1 className="section-title">Etiquetas</h1>
       <ul>
         {group.map(tag => (
           <li key={tag.fieldValue}>
@@ -30,7 +30,7 @@ const TagsPage = ({
           </li>
         ))}
       </ul>
-    </div>
+    </section>
   </Layout>
 
  

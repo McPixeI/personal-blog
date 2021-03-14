@@ -12,6 +12,7 @@
   .section-title {
     color: $color-text;
     margin-bottom: $spacing-16;
+    font-size: $fontSize-5;
     &::after{
       content: "";
       display: block;
