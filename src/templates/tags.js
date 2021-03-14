@@ -3,33 +3,25 @@ import React from "react"
 // Components
 import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
+import PostList from "../components/postList"
 
 const Tags = ({ pageContext, data }) => {
-
   const siteTitle = data.site.siteMetadata.title
   const { tag } = pageContext
-  const { edges, totalCount } = data.allMarkdownRemark
+  const { nodes, totalCount } = data.allMarkdownRemark
+  
   const tagHeader = `${totalCount} post${
     totalCount === 1 ? "" : "s"
   } etiquetado${
     totalCount === 1 ? "" : "s"
   } con "${tag}"`
-const location = {pathname:'/'}
+  const location = {pathname:`/tags/${pageContext}`}
+  
   return (
     <Layout location={location} title={siteTitle}>
       <section className="content-section">
         <h1 className="section-title">{tagHeader}</h1>
-        <ul>
-          {edges.map(({ node }) => {
-            const { slug } = node.fields
-            const { title } = node.frontmatter
-            return (
-              <li key={slug}>
-                <Link to={slug}>{title}</Link>
-              </li>
-            )
-          })}
-        </ul>
+        <PostList posts={nodes}></PostList>
         <Link className="btn btn--primary btn--outline" to="/tags">Ver todos →</Link>
       </section>
     </Layout>
@@ -52,14 +44,14 @@ export const pageQuery = graphql`
       filter: { frontmatter: { tags: { in: [$tag] } } }
     ) {
       totalCount
-      edges {
-        node {
-          fields {
-            slug
-          }
-          frontmatter {
-            title
-          }
+      nodes {
+        fields {
+          slug
+        }
+        frontmatter {
+          date(formatString: "D MMMM YYYY")
+          title
+          description
         }
       }
     }

@@ -16,9 +16,6 @@ const PostList = ({posts, moreBtn}) => {
           </ol>
           {moreBtn && <Link className="btn btn--primary btn--outline" to="/blog"> Ver todo →</Link>}
         </>
-
-
-
     } 
     </>
   )
