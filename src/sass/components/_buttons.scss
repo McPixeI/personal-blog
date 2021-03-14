@@ -41,3 +41,9 @@
         margin-right: 6px;
     }
 }
+
+.react-share__ShareButton {
+    & + .react-share__ShareButton {
+        margin-left: 5px;
+    }
+}

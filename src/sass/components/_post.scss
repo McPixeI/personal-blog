@@ -13,7 +13,7 @@
     }
 
     h2 {
-        font-size: $fontSize-4;
+        font-size: $fontSize-3;
         font-weight: $fontWeight-semibold;
         color: $color-text;
         margin-bottom: $spacing-1;
@@ -39,30 +39,36 @@
     &__header{
         margin-bottom: $spacing-8;
         h1{
-            margin: $spacing-0 $spacing-0 $spacing-4 $spacing-0;
+            margin: $spacing-0 $spacing-0 $spacing-8 $spacing-0;
         }
         p{
             font-size: $fontSize-2;
             font-family: $font-heading;
             margin-bottom:0;
         }
+        @include media(lg){
+            margin-right: 300px;
+        }
+    }
+    &__info {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        padding-bottom: $spacing-4;
+        border-bottom: 1px solid $color-accent;
     }
     &__content{
         display: flex;
         flex-direction: column;
+     
         @include media(lg){
             flex-direction: row;
         }
     }
     &__body{
-        
-    }
-    &__sidebar{
-        
-    }
-    &__nav{
+        flex: 1 1;
         ul{
-            margin: $spacing-0;
+            padding-left: 40px;
         }
     }
 }

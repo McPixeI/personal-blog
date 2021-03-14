@@ -1,19 +1,21 @@
 import * as React from "react"
 import { Link, graphql } from "gatsby"
 
-import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { slugify } from "../utils/helpers"
 import ShareButtons from "../components/shareButtons"
 import ToC from "../components/toc"
+import { getFormattedDate } from "../utils/helpers";
 
 const BlogPostTemplate = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const post = data.markdownRemark
   const headings = post.headings
-  const { title, description, date, tags, thumbnail } = post.frontmatter
+  const { title, description, date, tags } = post.frontmatter
   const { previous, next } = data
+  const formattedDate = getFormattedDate(date)
+
   return (
     <Layout location={location} title={siteTitle}>
       <SEO
@@ -27,8 +29,13 @@ const BlogPostTemplate = ({ data, location }) => {
       >
         <header className='blog-post__header'>
           <h1 itemProp="headline">{title}</h1>
-          <p>{date}</p>
-          <ShareButtons title={title} url={location.href} tags={tags}/>
+          <div className="blog-post__info">
+            <div>
+              <p>Publicado el</p>
+              <time>{formattedDate}</time>
+            </div>
+            <ShareButtons title={title} url={location.href} tags={tags}/>
+          </div>
         </header>
         <section className="blog-post__content">
         <div
@@ -36,12 +43,14 @@ const BlogPostTemplate = ({ data, location }) => {
           dangerouslySetInnerHTML={{ __html: post.html }}
           itemProp="articleBody"
         />
-              <aside className="sidebar">
+        <aside className="sidebar">
           <div className="sidebar__content sidebar__content--sticky">
             <ToC headings={headings}></ToC>
             {tags && (
+              <>
+                <h5>Etiquetas</h5>
                 <div className="tags">
-                  {tags.map((tag) => (
+                  {tags.map(tag => (
                     <Link
                       key={tag}
                       to={`/tags/${slugify(tag)}`}
@@ -49,9 +58,11 @@ const BlogPostTemplate = ({ data, location }) => {
                     >
                       {tag}
                     </Link>
-              ))}
-            </div>)}
-            </div>
+                  ))}
+                </div>
+              </>
+            )}
+          </div>
         </aside>
         </section>
 

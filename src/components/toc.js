@@ -14,14 +14,16 @@ export default function ToC ({headings}) {
         toc =  <>
                 <h5>Contenido del artículo</h5>
                 <ul className="toc">                
-                    {hasHeadings && headings.map(heading=>{
-                        if (heading.depth > 4) return
-                        return <li key={heading.value}>
-                                    <Link to={headingToAnchor(heading.value)}>
-                                        {heading.value}
-                                    </Link>
-                                </li>
-                    })}
+                    {hasHeadings && headings
+                        .filter( heading => heading.depth <= 4)
+                        .map(heading => {
+                            return <li key={heading.value}>
+                                        <Link to={headingToAnchor(heading.value)}>
+                                            {heading.value}
+                                        </Link>
+                                    </li>
+                        })
+                    }
                 </ul>
                 </>
     } else {

@@ -1,6 +1,5 @@
 import * as React from "react"
 import { Link } from "gatsby"
-import Bio from "./bio"
 
 import navigation from '../data/navigation'
 
