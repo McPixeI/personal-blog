@@ -25,6 +25,18 @@
     flex-direction: column !important;
 }
 
+.hidden-xs{
+    display: none;
+    @include media(lg){
+        display: block
+    }
+}
+.hidden-lg{
+    @include media(lg){
+        display: none !important
+    }
+}
+
 .underlined {
     border-bottom: 1px solid $color-accent;
     &:last-of-type {

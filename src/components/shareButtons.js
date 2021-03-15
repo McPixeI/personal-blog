@@ -3,10 +3,10 @@ import React from 'react'
 import {
   FacebookShareButton,
   FacebookIcon,
-  LinkedinShareButton,
-  LinkedinIcon,
   TwitterShareButton,
   TwitterIcon,
+  WhatsappShareButton,
+  WhatsappIcon
 } from 'react-share'
 
 const ShareButtons = ({title, url, twitterHandle, tags}) => {
@@ -19,9 +19,9 @@ const ShareButtons = ({title, url, twitterHandle, tags}) => {
           <TwitterShareButton url={url} title={title} via={twitterHandle} hashtags={tags}>
                 <TwitterIcon  size={40} round={true} />
           </TwitterShareButton>
-          <LinkedinShareButton url={url} >
-            <LinkedinIcon  size={40} round={true}/>
-          </LinkedinShareButton>
+          <WhatsappShareButton url={url} className="hidden-lg">
+            <WhatsappIcon  size={40} round={true}/>
+          </WhatsappShareButton>
         </div>
       )
 

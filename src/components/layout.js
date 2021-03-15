@@ -1,6 +1,7 @@
 import * as React from "react"
 import Header from "./header"
 import Hero from "./hero"
+import Footer from "./footer"
 
 const Layout = ({ location, title, hasSidebar, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`
@@ -13,11 +14,7 @@ const Layout = ({ location, title, hasSidebar, children }) => {
       <main className='main container'>
           {children}
       </main>
-      <footer className='footer'>
-        <div className="container">
-          Built with <a href="https://www.gatsbyjs.com">Gatsby</a>
-        </div>
-      </footer>
+      <Footer/>
     </>
       
   )
