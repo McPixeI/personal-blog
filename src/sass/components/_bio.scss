@@ -21,8 +21,8 @@
     .hero & {
         flex-direction: column;
         text-align: left;
-        margin-bottom: $spacing-16;
-        margin-top: $spacing-8;
+        margin-bottom: $spacing-10;
+        margin-top: $spacing-0;
         h1 {
             color: $color-accent;
             span{
@@ -38,6 +38,11 @@
         }
         &__avatar{
             margin-right: 0;
+        }
+
+        @include media(md){
+            margin-bottom: $spacing-16;
+            margin-top: $spacing-8;
         }
     }
   }
