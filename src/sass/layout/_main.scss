@@ -1,4 +1,7 @@
 .main {
-  margin-top: $spacing-16;
+  margin-top: $spacing-10;
   min-height: 82vh;
+  @include media(md){
+    margin-top: $spacing-16;
+  }
 }

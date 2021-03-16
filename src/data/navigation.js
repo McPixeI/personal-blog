@@ -1,10 +1,6 @@
 const navigation = [
     {
-      title: 'Inicio',
-      path: '/',
-    },
-    {
-      title: 'Blog',
+      title: 'Artículos',
       path: '/blog',
     },
     {

@@ -21,6 +21,7 @@ const Blog = ({ data, location }) => {
     <Layout location={location} title={siteTitle}>
       <SEO title="All posts" />
       <Section title="Artículos">
+        <h3 className="section-subtitle">Todos los artículos, tutoriales y opiniones hasta la fecha.</h3>
         <Search posts={allPosts} onResults={handleSearchResults}/>
         <PostList posts={posts}/>
       </Section>

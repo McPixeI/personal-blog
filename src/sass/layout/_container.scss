@@ -1,25 +1,6 @@
 .container {
     margin: $spacing-0 auto;
     max-width: $maxWidth-wrapper;
-    padding: 0 $spacing-4;
+    padding: 0 $spacing-5;
     width: 100%;
-  }
-  
-
-  .content-section {
-    margin-bottom: $spacing-20
-  }
-  .section-title {
-    color: $color-text;
-    margin-bottom: $spacing-16;
-    font-size: $fontSize-5;
-    &::after{
-      content: "";
-      display: block;
-      height: 3px;
-      background: $color-highlight;
-      width: 50px;
-      bottom: -1px;
-      margin-top: 15px;
-    }
   }

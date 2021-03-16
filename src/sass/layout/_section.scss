@@ -1,0 +1,29 @@
+.content-section {
+    margin-bottom: $spacing-20;
+}
+
+.section-title {
+    color: $color-text;
+    margin-bottom: $spacing-10;
+    font-size: $fontSize-5;
+    &::after{
+      content: "";
+      display: block;
+      height: 3px;
+      background: $color-highlight;
+      width: 50px;
+      bottom: -1px;
+      margin-top: 15px;
+    }
+    @include media(md){
+        margin-bottom: $spacing-12;
+        font-size: $fontSize-6;
+    }
+}
+
+.section-subtitle {
+    color: $color-text-light;
+    line-height: $lineHeight-normal;
+    font-weight: 500;
+    margin-top:0;
+}

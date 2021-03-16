@@ -25,11 +25,19 @@
     }
 
     &__date{
+        display: block;
         color: $color-text-light;
+        margin-bottom: $spacing-2;
     }
 
     p {
         margin-bottom: $spacing-0;
+    }
+
+    @include media(md) {
+        h2 {
+            font-size: $fontSize-4;
+        }
     }
 }
 

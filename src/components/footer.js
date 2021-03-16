@@ -15,7 +15,7 @@ const Footer = () => {
                     return <Link className="navbar__link" key={nav.title} to={nav.path}>{nav.title}</Link>
                 })}
             </nav>
-            <nav class="d-flex justify-center">
+            <nav className="d-flex justify-center">
                 <a 
                     href="https://www.gatsbyjs.com" 
                     title="Built with Gatsby" 

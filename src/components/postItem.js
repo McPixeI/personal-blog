@@ -7,7 +7,6 @@ const Post = ({post}) => {
   const title = post.frontmatter.title || post.fields.slug;
   const {description, date, thumbnail} = post.frontmatter;
   const formattedDate = getFormattedDate(date)
-  
   return (
         <li>
           <article
@@ -15,11 +14,11 @@ const Post = ({post}) => {
             itemScope
             itemType="http://schema.org/Article"
           >
-              <Img 
+              {thumbnail && <Img 
                 className="post__thumbnail" 
-                fluid={thumbnail?.childImageSharp.fluid} 
+                fluid={thumbnail.childImageSharp.fluid} 
                 alt="post-thumbnail"
-              />
+              />}
               <div>
               <h2>
                 <Link to={post.fields.slug} itemProp="url">
