@@ -1,15 +1,15 @@
 .sidebar{
     flex:0 0 300px;
     &__content{
-      position: sticky;
-      top: $spacing-10;
-      //border-left: 2px solid $color-accent;
-      //padding-left: 20px;
       h5{
           margin-top: 0;
       }
     }
     @include media(lg){
-      padding-left: 50px
+      padding-left: 50px;
+      .sidebar__content--sticky{
+        position: sticky;
+        top: $spacing-10;
+      }
     }
   }

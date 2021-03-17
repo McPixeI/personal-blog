@@ -3,21 +3,14 @@
 }
 
 .section-title {
-    color: $color-text;
+    color: #0098bd;
     margin-bottom: $spacing-10;
-    font-size: $fontSize-5;
-    &::after{
-      content: "";
-      display: block;
-      height: 3px;
-      background: $color-highlight;
-      width: 50px;
-      bottom: -1px;
-      margin-top: 15px;
-    }
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;    
     @include media(md){
-        margin-bottom: $spacing-12;
-        font-size: $fontSize-6;
+        margin-bottom: $spacing-12;        
     }
 }
 

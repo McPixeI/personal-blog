@@ -8,6 +8,8 @@ import ShareButtons from "../components/shareButtons"
 import ToC from "../components/toc"
 import { getFormattedDate } from "../utils/helpers";
 import { Disqus } from 'gatsby-plugin-disqus';
+import TagList from "../components/tagList"
+import Sidebar from "../components/sidebar"
 
 const BlogPostTemplate = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
@@ -19,6 +21,7 @@ const BlogPostTemplate = ({ data, location }) => {
   const formattedDate = getFormattedDate(date)
 
   const disqusConfig = {
+    shortname: process.env.GATSBY_DISQUS_NAME,
     config: { identifier: process.env.GATSBY_DISQUS_NAME, url: slug, title: title },
   }
 
@@ -49,27 +52,10 @@ const BlogPostTemplate = ({ data, location }) => {
           dangerouslySetInnerHTML={{ __html: post.html }}
           itemProp="articleBody"
         />
-        <aside className="sidebar">
-          <div className="sidebar__content sidebar__content--sticky">
-            <ToC headings={headings}></ToC>
-            {tags && (
-              <>
-                <h5>Etiquetas</h5>
-                <div className="tags">
-                  {tags.map(tag => (
-                    <Link
-                      key={tag}
-                      to={`/tags/${slugify(tag)}`}
-                      className={`tag tag--${tag}`}
-                    >
-                      {tag}
-                    </Link>
-                  ))}
-                </div>
-              </>
-            )}
-          </div>
-        </aside>
+        <Sidebar sticky>
+          {headings && <ToC headings={headings}></ToC>}
+          {tags && <TagList tags={tags} title='Etiquetas'/>}
+        </Sidebar>
         </section>
 
   

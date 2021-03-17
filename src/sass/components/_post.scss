@@ -16,7 +16,7 @@
         font-size: $fontSize-3;
         font-weight: $fontWeight-semibold;
         color: $color-text;
-        margin-bottom: $spacing-1;
+        margin-bottom: $spacing-3;
         margin-top: $spacing-0;
         @include transition(color .2s ease-out);
         &:hover{
@@ -24,10 +24,9 @@
         }
     }
 
-    &__date{
+    &__link{
         display: block;
-        color: $color-text-light;
-        margin-bottom: $spacing-2;
+        margin-top:$spacing-3
     }
 
     p {
