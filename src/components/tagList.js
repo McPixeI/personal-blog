@@ -12,7 +12,7 @@ export default function TagList ({tags, title}) {
             <Link
               key={tag}
               to={`/tags/${slugify(tag)}`}
-              className={`tag tag--${tag}`}
+              className='tag'
             >
               {tag}
             </Link>

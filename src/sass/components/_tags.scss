@@ -3,33 +3,9 @@
     display: inline-block;
     font-size: $fontSize-0;
     font-family: $fontFamily-sans;
-    background: rgb(128, 128, 128, 0.23);
+    background: #cbebff;
     padding: 4px 8px;
     border-radius: 3px;
-    color: $color-text;
+    color: #21324c;
     margin:0 8px 8px 0;
-
-    &--javascript{
-        background: #ecdb54;
-    }
-    &--react{
-        background: #20232a;
-        color: #61dafb;
-    }
-    &--webpack{
-        background:#2b3a42;
-        color: white
-    }
-    &--css{
-        background: #bf4080;
-        color: #fff;
-    }
-    &--performance{
-        background:#4285f4;
-        color:white;
-    }
-    &--vue{
-        background:#4fc08d;
-        color:white;
-    }
 }

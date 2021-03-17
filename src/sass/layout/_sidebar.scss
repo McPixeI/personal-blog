@@ -5,7 +5,7 @@
           margin-top: 0;
       }
     }
-    @include media(lg){
+    @include media(md){
       padding-left: 50px;
       .sidebar__content--sticky{
         position: sticky;
