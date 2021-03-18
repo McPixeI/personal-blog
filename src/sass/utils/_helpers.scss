@@ -27,12 +27,12 @@
 
 .hidden-xs{
     display: none;
-    @include media(lg){
+    @include media(md){
         display: block
     }
 }
 .hidden-lg{
-    @include media(lg){
+    @include media(md){
         display: none !important
     }
 }

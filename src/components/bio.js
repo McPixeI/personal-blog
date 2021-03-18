@@ -7,6 +7,7 @@
 
 import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby"
+import { StaticImage } from "gatsby-plugin-image"
 
 const Bio = () => {
   const data = useStaticQuery(graphql`
@@ -31,12 +32,21 @@ const Bio = () => {
 
   return (
     <div className="bio">
+      <StaticImage
+        className="bio__avatar"
+        layout="fixed"
+        formats={["AUTO", "WEBP", "AVIF"]}
+        src="../images/profile-img.jpg"
+        width={100}
+        height={100}
+        quality={95}
+        alt="Profile picture"
+      />
       {author?.name && (
         <div>
-          <h1>
-          <span>Hola,</span> bienvenido a mi blog
-          {` `}
-          </h1>
+          <h3>
+          Samuel Torres
+          </h3>
         <p>
           {author?.summary || null} Puedes seguirme en <a href={`https://twitter.com/${social?.twitter || ``}`}>Twitter</a>
         </p>

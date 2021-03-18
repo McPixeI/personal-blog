@@ -6,7 +6,7 @@ export default function TagList ({tags, title}) {
 
     return (
         <>
-        <h5>{title}</h5>
+        {title && <h5>{title}</h5>}
         <div className="tags">
           {tags.map(tag => (
             <Link

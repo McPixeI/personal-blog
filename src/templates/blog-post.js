@@ -3,13 +3,14 @@ import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { slugify } from "../utils/helpers"
 import ShareButtons from "../components/shareButtons"
 import ToC from "../components/toc"
 import { getFormattedDate } from "../utils/helpers";
 import { Disqus } from 'gatsby-plugin-disqus';
 import TagList from "../components/tagList"
 import Sidebar from "../components/sidebar"
+import { useActiveHash } from "../hooks/use-active-hash"
+import {headingToAnchor} from "../utils/helpers"
 
 const BlogPostTemplate = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
@@ -19,6 +20,19 @@ const BlogPostTemplate = ({ data, location }) => {
   const { title, description, date, tags } = post.frontmatter
   const { previous, next } = data
   const formattedDate = getFormattedDate(date)
+  
+  const getHeadingIds = headings =>{
+    let idList = []
+    const hashToId = str => str.slice(1)
+
+    headings
+      .filter( heading => heading.depth <= 4) //ver gatsby-remark-autolink-headers en gatsby.config
+      .map(heading => {
+        idList.push(hashToId(headingToAnchor(heading.value))) 
+      })
+    return idList
+  }
+  const activeHash = useActiveHash(getHeadingIds(headings))
 
   const disqusConfig = {
     shortname: process.env.GATSBY_DISQUS_NAME,
@@ -38,12 +52,12 @@ const BlogPostTemplate = ({ data, location }) => {
       >
         <header className='blog-post__header'>
           <h1 itemProp="headline">{title}</h1>
+          {tags && <TagList tags={tags}/>}
           <div className="blog-post__info">
             <div>
-              <small>Publicado el</small>
+              <small>Publicado el </small>
               <time>{formattedDate}</time>
             </div>
-            <ShareButtons title={title} url={location.href} tags={tags}/>
           </div>
         </header>
         <section className="blog-post__content">
@@ -52,13 +66,8 @@ const BlogPostTemplate = ({ data, location }) => {
           dangerouslySetInnerHTML={{ __html: post.html }}
           itemProp="articleBody"
         />
-        <Sidebar sticky>
-          {headings && <ToC headings={headings}></ToC>}
-          {tags && <TagList tags={tags} title='Etiquetas'/>}
-        </Sidebar>
         </section>
 
-  
         <hr />
         <footer>
           <nav className="blog-post__nav">
@@ -91,6 +100,11 @@ const BlogPostTemplate = ({ data, location }) => {
 
         </footer>
       </article>
+      <Sidebar sticky>
+        {headings && <ToC headings={headings} activeHash={activeHash}></ToC>}
+        <ShareButtons title={title} url={location.href} tags={tags}/>
+
+      </Sidebar>
 
     </Layout>
   )

@@ -5,9 +5,6 @@ import Section from "../components/section"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import PostList from "../components/postList"
-
-import projects from '../data/projects'
-import ProjectList from "../components/projectList"
 import Sidebar from "../components/sidebar"
 import TagList from "../components/tagList"
 
@@ -18,16 +15,12 @@ const BlogIndex = ({ data, location }) => {
     return tag.fieldValue
   })
 
-  console.log(tags)
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="All posts" />
       <div className="main-content">
         <Section title='Últimos posts'>
           <PostList posts={posts} moreBtn/>
-        </Section>
-        <Section title='Proyectos'>
-          <ProjectList data={projects}/>
         </Section>
       </div>
       <Sidebar>
@@ -59,13 +52,6 @@ export const pageQuery = graphql`
           date(formatString: "D MMMM YYYY")
           title
           description
-          thumbnail {
-            childImageSharp {
-              fluid(maxWidth: 200) {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }
           tags
         }
       }

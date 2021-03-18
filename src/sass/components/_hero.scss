@@ -5,4 +5,26 @@
     padding-top: 60px;
     background-color: #122a36;
     background: linear-gradient(0deg, #5fa0c6 0%, #3782a3 100%) right center/contain no-repeat;
+    
+    &__content {
+        h1 {
+            margin: $spacing-8 0 $spacing-4;
+            font-size: $fontSize-6;
+            font-weight: $fontWeight-semibold;
+        }
+        p{
+            font-family: $fontFamily-sans;
+            margin-bottom: $spacing-0;
+        }
+        &__avatar{
+            margin-right: $spacing-4;
+            margin-bottom: $spacing-0;
+            border-radius: 100%;
+        }
+        @include media(md){
+            margin-bottom: $spacing-16;
+            margin-top: $spacing-8;
+        }
+        
+    }
 }

@@ -46,29 +46,21 @@
     &__header{
         margin-bottom: $spacing-8;
         h1{
-            margin: $spacing-0 $spacing-0 $spacing-8 $spacing-0;
+            margin: $spacing-0 $spacing-0 $spacing-4 $spacing-0;
         }
         p{
             font-size: $fontSize-2;
             font-family: $font-heading;
             margin-bottom:0;
         }
-        @include media(lg){
-            margin-right: 300px;
-        }
     }
     &__info {
         display: flex;
         justify-content: space-between;
         align-items: flex-end;
-        padding-bottom: $spacing-4;
-        border-bottom: 1px solid $color-accent;
-        small{
-            color: $color-text-light;
-        }
+        padding: $spacing-2 0 $spacing-4;
         small, time{
             font-size: 80%;
-            display: block;
         }
     }
     &__content{
