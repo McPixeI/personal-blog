@@ -4,9 +4,7 @@ import {
   FacebookShareButton,
   FacebookIcon,
   TwitterShareButton,
-  TwitterIcon,
-  WhatsappShareButton,
-  WhatsappIcon
+  TwitterIcon
 } from 'react-share'
 
 const ShareButtons = ({title, url, twitterHandle, tags}) => {

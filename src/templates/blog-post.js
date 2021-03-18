@@ -9,8 +9,6 @@ import { getFormattedDate } from "../utils/helpers";
 import { Disqus } from 'gatsby-plugin-disqus';
 import TagList from "../components/tagList"
 import Sidebar from "../components/sidebar"
-import { useActiveHash } from "../hooks/use-active-hash"
-import {headingToAnchor} from "../utils/helpers"
 
 const BlogPostTemplate = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
@@ -21,19 +19,6 @@ const BlogPostTemplate = ({ data, location }) => {
   const { previous, next } = data
   const formattedDate = getFormattedDate(date)
   
-  const getHeadingIds = headings =>{
-    let idList = []
-    const hashToId = str => str.slice(1)
-
-    headings
-      .filter( heading => heading.depth <= 4) //ver gatsby-remark-autolink-headers en gatsby.config
-      .map(heading => {
-        idList.push(hashToId(headingToAnchor(heading.value))) 
-      })
-    return idList
-  }
-  const activeHash = useActiveHash(getHeadingIds(headings))
-
   const disqusConfig = {
     shortname: process.env.GATSBY_DISQUS_NAME,
     config: { identifier: process.env.GATSBY_DISQUS_NAME, url: slug, title: title },
@@ -101,7 +86,7 @@ const BlogPostTemplate = ({ data, location }) => {
         </footer>
       </article>
       <Sidebar sticky>
-        {headings && <ToC headings={headings} activeHash={activeHash}></ToC>}
+        {headings && <ToC headings={headings}></ToC>}
         <ShareButtons title={title} url={location.href} tags={tags}/>
 
       </Sidebar>

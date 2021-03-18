@@ -4,7 +4,7 @@ import * as React from "react"
 
 const Post = ({post}) => {
   const title = post.frontmatter.title || post.fields.slug;
-  const {description, date} = post.frontmatter;
+  const {description} = post.frontmatter;
   return (
         <li>
           <article
