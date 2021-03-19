@@ -7,6 +7,7 @@ import SEO from "../components/seo"
 import PostList from "../components/post/postList"
 import Sidebar from "../components/sidebar"
 import TagList from "../components/tagList"
+import Newsletter from "../components/newsletter"
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
@@ -24,7 +25,12 @@ const BlogIndex = ({ data, location }) => {
         </Section>
       </div>
       <Sidebar>
-        <TagList tags={tags} title='Categorías destacadas'></TagList>
+        <div className="sidebar__section">
+          <TagList tags={tags} title='Categorías destacadas'></TagList>
+        </div>
+        <div className="sidebar__section">
+          <Newsletter></Newsletter>
+        </div>
       </Sidebar> 
     </Layout>
   )

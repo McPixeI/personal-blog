@@ -22,6 +22,13 @@ module.exports = {
       }
     },
     {
+      resolve: 'gatsby-plugin-mailchimp',
+      options: {
+          endpoint: 'https://samutorres.us1.list-manage.com/subscribe/post?u=1b2cf2880fd82a5e6cb6efbc5&amp;id=d9a00bcab2',
+          timeout: 3500,
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/content/blog`,

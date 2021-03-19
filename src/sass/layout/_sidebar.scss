@@ -1,13 +1,17 @@
 .sidebar{
     flex:0 0 300px;
     &__content{
-      h5{
+      .sidebar-title{
           margin-top: 0;
           font-size: 16px;
           font-weight: 600;
           text-transform: uppercase;
       }
     }
+    &__section{
+      margin-bottom: $spacing-8
+    }
+    
     @include media(md){
       padding-left: 50px;
       .sidebar__content--sticky{

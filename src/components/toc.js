@@ -21,7 +21,7 @@ export default function ToC ({headings}) {
 
     if (hasHeadings) {
        return  <>
-                <h5>Contenido del artículo</h5>
+                <h3 className="sidebar-title">Contenido del artículo</h3>
                 <ul className="toc">                
                     {hasHeadings && headings
                         .filter( heading => heading.depth <= 4) //ver gatsby-remark-autolink-headers en gatsby.config

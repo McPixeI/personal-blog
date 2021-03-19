@@ -1,0 +1,19 @@
+.newsletter{
+    padding: 16px;
+    text-align: center;
+    background: linear-gradient(
+        0deg
+        , #f8fcff 0%, #cbebff 100%) right center/contain no-repeat;   
+    h3{
+        margin-top: 0;
+    }
+    &__input[type=text]{
+        border-width: 1px;
+        padding: 0.75rem;
+        margin-bottom: $spacing-4;
+    }
+    &__btn{
+        width: 100%;
+        justify-content: center;
+    }
+}
