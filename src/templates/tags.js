@@ -3,7 +3,7 @@ import React from "react"
 // Components
 import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
-import PostList from "../components/postList"
+import PostList from "../components/post/postList"
 
 const Tags = ({ pageContext, data }) => {
   const siteTitle = data.site.siteMetadata.title

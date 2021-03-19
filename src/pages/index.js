@@ -4,7 +4,7 @@ import { graphql } from "gatsby"
 import Section from "../components/section"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import PostList from "../components/postList"
+import PostList from "../components/post/postList"
 import Sidebar from "../components/sidebar"
 import TagList from "../components/tagList"
 

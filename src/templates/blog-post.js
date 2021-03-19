@@ -9,9 +9,11 @@ import { getFormattedDate } from "../utils/helpers";
 import { Disqus } from 'gatsby-plugin-disqus';
 import TagList from "../components/tagList"
 import Sidebar from "../components/sidebar"
+import PostInfo from "../components/post/postInfo"
 
 const BlogPostTemplate = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
+  const author = data.site.siteMetadata.author.name
   const post = data.markdownRemark
   const headings = post.headings
   const slug = post.fields.slug
@@ -37,12 +39,9 @@ const BlogPostTemplate = ({ data, location }) => {
       >
         <header className='blog-post__header'>
           <h1 itemProp="headline">{title}</h1>
-          {tags && <TagList tags={tags}/>}
           <div className="blog-post__info">
-            <div>
-              <small>Publicado el </small>
-              <time>{formattedDate}</time>
-            </div>
+            <PostInfo author={author} date={formattedDate}></PostInfo>
+            <ShareButtons title={title} url={location.href} tags={tags}/>
           </div>
         </header>
         <section className="blog-post__content">
@@ -87,7 +86,7 @@ const BlogPostTemplate = ({ data, location }) => {
       </article>
       <Sidebar sticky>
         {headings && <ToC headings={headings}></ToC>}
-        <ShareButtons title={title} url={location.href} tags={tags}/>
+        {tags && <TagList tags={tags} title='Etiquetas'/>}
 
       </Sidebar>
 
@@ -106,6 +105,9 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+        author {
+          name
+        }
       }
     }
     markdownRemark(id: { eq: $id }) {

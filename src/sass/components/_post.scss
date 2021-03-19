@@ -44,8 +44,12 @@
 
 .blog-post {
     &__header{
-        margin-bottom: $spacing-8;
+        margin-bottom: $spacing-10;
         h1{
+            font-family:$fontFamily-serif;
+            line-height: 60px;
+            font-size: 48px;
+            font-weight: 400;
             margin: $spacing-0 $spacing-0 $spacing-4 $spacing-0;
         }
         p{
@@ -58,10 +62,7 @@
         display: flex;
         justify-content: space-between;
         align-items: flex-end;
-        padding: $spacing-2 0 $spacing-4;
-        small, time{
-            font-size: 80%;
-        }
+        padding: $spacing-2 $spacing-3 0 0;
     }
     &__content{
         display: flex;
@@ -76,5 +77,25 @@
         ul{
             padding-left: 40px;
         }
+    }
+}
+
+
+.author-card{
+    display: flex;
+    align-items: center;
+    font-family: $fontFamily-sans;
+    &__img{
+        border-radius: 50%;
+        margin-right: $spacing-3;
+    }
+    &__name{
+        font-size: $fontSize-1;
+        text-decoration: none;
+        color:$color-text
+    }
+    &__date{
+        font-size: $fontSize-0;
+        color:$color-text-light
     }
 }
