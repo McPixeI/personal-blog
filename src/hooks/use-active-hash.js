@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 
-export const useActiveHash = (itemIds, rootMargin = undefined) => {
+export const useActiveHash = itemIds => {
   const [activeHash, setActiveHash] = useState(``)
 
   useEffect(() => {
@@ -21,10 +21,10 @@ export const useActiveHash = (itemIds, rootMargin = undefined) => {
 
     return () => {
       itemIds.forEach(id => {
-        observer.unobserve(document.getElementById(id))
+        observer.disconnect()
       })
     }
-  }, [itemIds])
+  }, [])
 
   return activeHash
 }
