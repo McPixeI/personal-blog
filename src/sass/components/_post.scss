@@ -52,10 +52,8 @@
             font-weight: 400;
             margin: $spacing-0 $spacing-0 $spacing-4 $spacing-0;
         }
-        p{
-            font-size: $fontSize-2;
-            font-family: $font-heading;
-            margin-bottom:0;
+        @include media(md){
+            margin-right: 300px;
         }
     }
     &__info {
@@ -67,9 +65,11 @@
     &__content{
         display: flex;
         flex-direction: column;
-     
-        @include media(lg){
+        @include media(md){
             flex-direction: row;
+            p{
+                font-size: $fontSize-2;
+            }
         }
     }
     &__body{

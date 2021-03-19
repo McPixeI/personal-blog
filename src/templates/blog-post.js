@@ -1,5 +1,5 @@
 import * as React from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -10,6 +10,7 @@ import { Disqus } from 'gatsby-plugin-disqus';
 import TagList from "../components/tagList"
 import Sidebar from "../components/sidebar"
 import PostInfo from "../components/post/postInfo"
+import PostNav from "../components/post/postNav"
 
 const BlogPostTemplate = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
@@ -45,51 +46,22 @@ const BlogPostTemplate = ({ data, location }) => {
           </div>
         </header>
         <section className="blog-post__content">
-        <div
-          className="blog-post__body"
-          dangerouslySetInnerHTML={{ __html: post.html }}
-          itemProp="articleBody"
-        />
+          <div
+            className="blog-post__body"
+            dangerouslySetInnerHTML={{ __html: post.html }}
+            itemProp="articleBody"
+          />
+          <Sidebar sticky>
+            {headings && <ToC headings={headings}></ToC>}
+            {tags && <TagList tags={tags} title='Etiquetas'/>}
+          </Sidebar>
         </section>
-
         <hr />
         <footer>
-          <nav className="blog-post__nav">
-            <ul
-              style={{
-                display: `flex`,
-                flexWrap: `wrap`,
-                justifyContent: `space-between`,
-                listStyle: `none`,
-                padding: 0,
-              }}
-            >
-              <li>
-                {previous && (
-                  <Link to={previous.fields.slug} rel="prev">
-                    ← {previous.frontmatter.title}
-                  </Link>
-                )}
-              </li>
-              <li>
-                {next && (
-                  <Link to={next.fields.slug} rel="next">
-                    {next.frontmatter.title} →
-                  </Link>
-                )}
-              </li>
-            </ul>
-          </nav>
+          <PostNav previous={previous} next={next}></PostNav>
           {process.env.GATSBY_COMMENTS_ENABLED === 'true' && <Disqus config={{...disqusConfig}}/>}
-
         </footer>
       </article>
-      <Sidebar sticky>
-        {headings && <ToC headings={headings}></ToC>}
-        {tags && <TagList tags={tags} title='Etiquetas'/>}
-
-      </Sidebar>
-
     </Layout>
   )
 }
