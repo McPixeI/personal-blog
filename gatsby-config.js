@@ -132,6 +132,7 @@ module.exports = {
               }
             `,
             output: "/rss.xml",
+            title: "SamuTorres RSS Feed",
           },
         ],
       },

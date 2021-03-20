@@ -9,9 +9,8 @@ const PostInfo = ({author, date}) => {
     <div className='author-card'>
       <StaticImage
         className="author-card__img"
-        layout="fixed"
         formats={["AUTO", "WEBP", "AVIF"]}
-        src="../images/profile-img.jpg"
+        src="../../images/profile-img.jpg"
         width={50}
         height={50}
         quality={95}
