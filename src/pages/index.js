@@ -5,9 +5,12 @@ import Section from "../components/section"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import PostList from "../components/post/postList"
+import ProjectList from "../components/projectList"
+
 import Sidebar from "../components/sidebar"
 import TagList from "../components/tagList"
 import Newsletter from "../components/newsletter"
+import projects from "../data/projects"
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
@@ -22,6 +25,8 @@ const BlogIndex = ({ data, location }) => {
       <div className="main-content">
         <Section title='Últimos posts'>
           <PostList posts={posts} moreBtn/>
+        </Section>
+        <Section title='Últimos proyectos'>
         </Section>
       </div>
       <Sidebar>

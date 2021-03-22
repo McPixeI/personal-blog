@@ -14,14 +14,14 @@ const bio = {
   `
   
   return (
-    <section className="hero">
+    <section className="hero" data-is-root={isRootPath}>
       <div className="container">
         {isRootPath && (
         <div className="hero__content">
             <h1>
               <span>Hola,</span> bienvenido a mi blog
             </h1>
-            <h2>Escribo tutoriales, consejos y trucos de Front-end</h2>
+            <h2>Escribo tutoriales, consejos y opiniones sobre Front-end</h2>
             <Code language="javascript" content={codeConent}/>
         </div>
         )}

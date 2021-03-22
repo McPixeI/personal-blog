@@ -20,7 +20,7 @@
         margin-top: $spacing-0;
         @include transition(color .2s ease-out);
         &:hover{
-            color: $color-primary;
+            color: $color-secondary;
         }
     }
 

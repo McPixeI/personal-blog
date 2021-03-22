@@ -2,7 +2,6 @@
     width: 100%;
     display: flex;
     align-items: center;
-    padding-top: 60px;
     background-color: #112c3b;
     position: relative;
     
@@ -32,8 +31,7 @@
             border-radius: 100%;
         }
         @include media(md){
-            margin-bottom: $spacing-16;
-            margin-top: $spacing-8;
+            margin: $spacing-12 0;
         }
         
     }
@@ -43,7 +41,7 @@
     }
 
     @include media(md){
-        &:after{
+        &[data-is-root='true']:after{
             position: absolute;
             content: "";
             bottom: 0;

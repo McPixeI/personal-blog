@@ -1,9 +1,17 @@
 .newsletter{
-    padding: 16px;
+    padding: 20px 16px 16px;
     text-align: center;
-    background: #dfebf6;   
+    background: #d9e7e7;
+    border: 2px solid $color-primary;
+    box-shadow: 6px 6px 0px $color-primary; 
     h3{
         margin-top: 0;
+        text-transform: uppercase;
+        font-size: $fontSize-2;
+        font-weight: 600;
+    }
+    p{
+        font-family: $fontFamily-sans;
     }
     &__input[type=text]{
         border-width: 1px;
