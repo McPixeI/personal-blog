@@ -176,6 +176,10 @@ a:focus {
 pre[class*="language-"] {
 	background: #112c3b;
 }
+code[class*="language-"], pre[class*="language-"] {
+  white-space: pre-wrap !important;
+  word-break: break-word !important;
+}
 
 /* Media queries */
 

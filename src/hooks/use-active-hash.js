@@ -24,7 +24,7 @@ export const useActiveHash = itemIds => {
         observer.disconnect()
       })
     }
-  }, [itemIds])
+  }, [])
 
   return activeHash
 }

@@ -1,11 +1,18 @@
 import * as React from "react"
-import Prism from "prismjs";
+import Code from "./code"
 
 const Hero = ({isRootPath}) => {
 
-  React.useEffect(()=>{
-    Prism.highlightAll()
-  },[])
+  let codeConent = `
+const bio = {
+  name: 'Samuel Torres',
+  age: 32,
+  occupation: 'Front-end developer',
+  interests: ['javascript','css', 'videogames', 'piano'],
+  pizza: true
+}
+  `
+  
   return (
     <section className="hero">
       <div className="container">
@@ -14,19 +21,8 @@ const Hero = ({isRootPath}) => {
             <h1>
               <span>Hola,</span> bienvenido a mi blog
             </h1>
-            <pre>
-              <code className="language-javascript">
-              {`const bio = { 
-                  name: 'Samuel Torres',
-                age: 32,
-                occupation: 'Front-end developer',
-                interests: ['javascript','css', 'videogames', 'piano'],
-                pizza: true
-              }
-                  
-              `}
-              </code>
-            </pre>
+            <h2>Escribo tutoriales, consejos y trucos de Front-end</h2>
+            <Code language="javascript" content={codeConent}/>
         </div>
         )}
       </div>

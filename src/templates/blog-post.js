@@ -13,10 +13,10 @@ import PostInfo from "../components/post/postInfo"
 import PostNav from "../components/post/postNav"
 
 const BlogPostTemplate = ({ data, location }) => {
+  const HEADINGS_MAX_DEPTH = 4
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const author = data.site.siteMetadata.author.name
   const post = data.markdownRemark
-  const headings = post.headings
   const slug = post.fields.slug
   const { title, description, date, tags } = post.frontmatter
   const { previous, next } = data
@@ -26,6 +26,8 @@ const BlogPostTemplate = ({ data, location }) => {
     shortname: process.env.GATSBY_DISQUS_NAME,
     config: { identifier: process.env.GATSBY_DISQUS_NAME, url: slug, title: title },
   }
+
+  const headings = post.headings.filter( heading => heading.depth <= HEADINGS_MAX_DEPTH)
 
   return (
     <Layout location={location} title={siteTitle}>

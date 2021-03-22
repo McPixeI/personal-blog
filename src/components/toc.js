@@ -9,7 +9,6 @@ export default function ToC ({headings}) {
         let idList = []
         const hashToId = str => str.slice(1)    
         headings
-          .filter( heading => heading.depth <= 4) //ver gatsby-remark-autolink-headers en gatsby.config
           .forEach(heading => {
             idList.push(hashToId(headingToAnchor(heading.value))) 
           })
@@ -24,7 +23,6 @@ export default function ToC ({headings}) {
                 <h3 className="sidebar-title">Contenido del artículo</h3>
                 <ul className="toc">                
                     {hasHeadings && headings
-                        .filter( heading => heading.depth <= 4) //ver gatsby-remark-autolink-headers en gatsby.config
                         .map(heading => {
                             let isActive = isDesktop && (headingToAnchor(heading.value) === `#${activeHash}`)
                             return <li key={heading.value}>
