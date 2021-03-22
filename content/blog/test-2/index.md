@@ -6,4 +6,14 @@ thumbnail: javascript.png
 tags:
   - javascript
 ---
-test2 body
+
+
+## Bloque de código de prueba
+
+```javascript
+let bio = {
+  name:'Samuel Torres',
+  age: 32,
+  pizza: true
+}
+```
