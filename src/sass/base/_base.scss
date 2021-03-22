@@ -171,6 +171,12 @@ a:focus {
   text-decoration: none;
 }
 
+/*PRISM overrides*/
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #112c3b;
+}
+
 /* Media queries */
 
 @media (max-width: 42rem) {

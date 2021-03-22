@@ -3,11 +3,22 @@
     display: flex;
     align-items: center;
     padding-top: 60px;
-    background-color: #122a36;
-    background: linear-gradient(0deg, #5fa0c6 0%, #3782a3 100%) right center/contain no-repeat;
+    background-color: #112c3b;
+    position: relative;
+    &:after{
+        position: absolute;
+        content: "";
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 7rem;
+        background-color: white;
+        clip-path: polygon(100% 0,100% 100%,0 100%);
+    }
     
     &__content {
         h1 {
+            color: #66d9ef;
             margin: $spacing-8 0 $spacing-4;
             font-size: $fontSize-6;
             font-weight: $fontWeight-semibold;

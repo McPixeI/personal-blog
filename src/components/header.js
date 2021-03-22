@@ -9,7 +9,7 @@ const Header = () => {
     <header className="header" >
       <div className="container">
           <nav className="navbar">
-              <Link to="/" className="navbar__logo"><span>{`<`}</span>SamuTorres<span>{`/>`}</span></Link>
+              <Link to="/" className="navbar__logo"><span>{`</>`}</span> SamuTorres</Link>
               <div>
                 { navigation.map(nav =>{
                   return <Link key={nav.title} className="navbar__link" activeClassName="navbar__link--active" to={nav.path}>{nav.title}</Link>

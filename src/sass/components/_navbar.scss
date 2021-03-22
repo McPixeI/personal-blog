@@ -3,6 +3,7 @@
     justify-content: space-between;
     &__logo{
         font-family: $fontFamily-sans;
+        font-size: 18px;
         color: $color-accent;
         font-weight: bold;
         display: flex;
@@ -11,7 +12,9 @@
         letter-spacing: 0.4px;
         span {
             color: $color-highlight;
-            padding: 0 1px;
+            font-size: 20px;
+            font-weight: 900;
+            margin-right: 5px;
         }
     }
     &__link{
