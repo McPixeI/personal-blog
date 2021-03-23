@@ -14,7 +14,7 @@ const PostList = ({posts, moreBtn}) => {
                 return <Post key={post.fields.slug} post={post}/>
             })}
           </ol>
-          {moreBtn && <Link className="btn btn--secondary btn--outline" to="/blog"> Ver todo →</Link>}
+          {moreBtn && <Link className="btn btn--secondary btn--outline" to="/blog"> Ver todos →</Link>}
         </>
     } 
     </>
