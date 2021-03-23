@@ -23,7 +23,7 @@ const Blog = ({ data, location }) => {
       <Section title="Artículos">
         <h3 className="section-subtitle">Todos los artículos, tutoriales y opiniones hasta la fecha.</h3>
         <Search posts={allPosts} onResults={handleSearchResults}/>
-        <PostList posts={posts}/>
+        <PostList posts={posts} grid/>
       </Section>
     </Layout>
   )

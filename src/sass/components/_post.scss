@@ -1,4 +1,15 @@
 
+.post-list{
+    list-style: none;
+    @include media(md) {
+        &--grid{
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            grid-gap: 0 2rem;
+        }
+    }
+}
+
 //Post item in list
 .post {
     margin-bottom: $spacing-6;

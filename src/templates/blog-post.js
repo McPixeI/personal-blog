@@ -11,6 +11,7 @@ import TagList from "../components/tagList"
 import Sidebar from "../components/sidebar"
 import PostInfo from "../components/post/postInfo"
 import PostNav from "../components/post/postNav"
+import ScrollTopButton from "../components/scrollTopButton"
 
 const BlogPostTemplate = ({ data, location }) => {
   const HEADINGS_MAX_DEPTH = 4
@@ -57,6 +58,7 @@ const BlogPostTemplate = ({ data, location }) => {
             {headings && <ToC headings={headings}></ToC>}
             {tags && <TagList tags={tags} title='Etiquetas'/>}
           </Sidebar>
+          <ScrollTopButton offset='400'/>
         </section>
         <hr />
         <footer>

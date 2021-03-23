@@ -2,14 +2,16 @@ import { Link } from "gatsby";
 import * as React from "react"
 import Post from "./postItem";
 
-const PostList = ({posts, moreBtn}) => {
+const PostList = ({posts, grid, moreBtn}) => {
+
+  const cssClass = grid ? 'post-list--grid' : ''
   return (
     <>
     {
       posts.length === 0 ? 
         <p>No hay resultados coincidentes. ¡Prueba otra cosa!</p> :
         <>
-          <ol style={{ listStyle: `none` }}>        
+          <ol className={`post-list ${cssClass}`}>        
             {posts.map(post => {
                 return <Post key={post.fields.slug} post={post}/>
             })}
