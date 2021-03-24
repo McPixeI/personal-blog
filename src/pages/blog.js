@@ -20,8 +20,9 @@ const Blog = ({ data, location }) => {
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="All posts" />
-      <Section title="Artículos">
-        <h3 className="section-subtitle">Todos los artículos, tutoriales y opiniones hasta la fecha.</h3>
+      <Section>
+        <h1 className="section-title">Artículos</h1>
+        <h2 className="section-subtitle">Todos los artículos, tutoriales y opiniones hasta la fecha.</h2>
         <Search posts={allPosts} onResults={handleSearchResults}/>
         <PostList posts={posts} grid/>
       </Section>
