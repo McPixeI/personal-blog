@@ -13,7 +13,12 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-netlify-cms`,
-    `gatsby-plugin-sass`,
+    {
+      resolve: 'gatsby-plugin-sass',
+      sassOptions: {
+          indentedSyntax: true
+      },
+    },
     `gatsby-plugin-image`,
     {
       resolve: `gatsby-plugin-disqus`,
