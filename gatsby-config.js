@@ -1,7 +1,3 @@
-require("dotenv").config({
-  path: `.env.${process.env.NODE_ENV}`,
-})
-
 module.exports = {
   
   siteMetadata: {
@@ -34,8 +30,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-mailchimp',
       options: {
-          endpoint: process.env.GATSBY_MAILCHIMP_ENDPOINT,
-          timeout: process.env.GATSBY_MAILCHIMP_TIMEOUT,
+          endpoint: 'https://samutorres.us1.list-manage.com/subscribe/post?u=1b2cf2880fd82a5e6cb6efbc5&amp;id=d9a00bcab2',
       },
     },
     {
