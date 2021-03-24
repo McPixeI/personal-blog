@@ -169,6 +169,11 @@ a {
 a:hover,
 a:focus {
   text-decoration: none;
+  outline:none
+}
+
+button:focus {
+  outline:none
 }
 
 /*PRISM overrides*/
