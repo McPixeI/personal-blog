@@ -7,4 +7,12 @@
             color:$color-highlight;
         }
     }
+    .navbar__link + .navbar__link {
+        margin:0
+    }
+    @include media(md){
+        .navbar__link + .navbar__link {
+            margin-left: 0.5rem;
+        }
+    }
 }

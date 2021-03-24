@@ -22,7 +22,7 @@ const Tags = ({ pageContext, data }) => {
       <section className="content-section">
         <h1 className="section-title">{tagHeader}</h1>
         <PostList posts={nodes}></PostList>
-        <Link className="btn btn--primary btn--outline" to="/tags">Ver todos →</Link>
+        <Link className="btn btn--secondary btn--outline" to="/tags">Ver todos →</Link>
       </section>
     </Layout>
     
