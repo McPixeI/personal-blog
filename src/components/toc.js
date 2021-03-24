@@ -16,7 +16,10 @@ export default function ToC ({headings}) {
     }
     const activeHash = useActiveHash(getHeadingIds(headings))
     const hasHeadings = headings.length > 0
-    const isDesktop = window.matchMedia(`(min-width: 767px)`).matches
+    let isDesktop = false
+    if (typeof window !== 'undefined') {
+        isDesktop = window.matchMedia(`(min-width: 767px)`).matches
+    }
 
     if (hasHeadings) {
        return  <>

@@ -131,7 +131,7 @@ li > ul {
 
 blockquote {
   color: $color-text-light;
-  margin-left: calc(-1 * $spacing-6);
+  margin-left: calc(-1 * #{$spacing-6});
   margin-right: $spacing-8;
   padding: $spacing-0 $spacing-0 $spacing-0 $spacing-6;
   border-left: $spacing-1 solid $color-primary;
