@@ -1,4 +1,9 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
+  
   siteMetadata: {
     title: `Samu's Blog`,
     author: {
@@ -29,8 +34,8 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-mailchimp',
       options: {
-          endpoint: 'https://samutorres.us1.list-manage.com/subscribe/post?u=1b2cf2880fd82a5e6cb6efbc5&amp;id=d9a00bcab2',
-          timeout: 3500,
+          endpoint: process.env.GATSBY_MAILCHIMP_ENDPOINT,
+          timeout: process.env.GATSBY_MAILCHIMP_TIMEOUT,
       },
     },
     {
