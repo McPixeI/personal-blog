@@ -4,9 +4,6 @@
     align-items: center;
     background-color: #112c3b;
     position: relative;
-    &[data-is-root='true']{
-        padding-bottom: 20px;
-    }
     &__content {
         h1 {
             color: rgba(255,255,255,0.95);
@@ -39,16 +36,16 @@
     }
 
     code[class*=language-], pre[class*=language-] {
-        display: none;
+        padding: 1em 0;
+        font-size: $fontSize-0;
     }
-
+    
     @include media(sm){
-        padding-bottom: 0;
         code[class*=language-], pre[class*=language-] {
-            display: block;
-            padding: 1em 0
+            font-size: $fontSize-1;
         }
     }
+
     @include media(md){
         &[data-is-root='true']:after{
             position: absolute;
