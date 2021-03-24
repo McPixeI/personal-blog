@@ -1,6 +1,10 @@
 .footer{
     background-color: $color-heading;
-    &__img{
-        margin-left:$spacing-4
+    &__icon{ 
+        color: $color-accent;
+        margin-left:$spacing-6;
+        &:hover {
+            color:$color-highlight;
+        }
     }
 }

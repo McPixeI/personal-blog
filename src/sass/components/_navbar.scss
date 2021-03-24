@@ -4,7 +4,7 @@
     &__logo{
         font-family: $fontFamily-sans;
         font-size: 18px;
-        color: $color-accent;
+        color: $color-white;
         font-weight: bold;
         display: flex;
         align-items: center;
@@ -28,7 +28,7 @@
         padding: $spacing-1 $spacing-3;
         text-decoration: none;
         display: inline-block;
-        &--active {
+        &--active, &:hover {
             color: $color-highlight;
         }
         & + .navbar__link{

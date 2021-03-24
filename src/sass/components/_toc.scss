@@ -8,8 +8,9 @@
         align-items: flex-start;
         text-align: left;
         text-decoration: none;
+        transition: color 0.2s ease-in-out;
         &[data-current='true']{
-            font-weight: bold;
+            color: $color-primary;
         }
     }
 }

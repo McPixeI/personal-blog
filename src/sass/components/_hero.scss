@@ -4,10 +4,12 @@
     align-items: center;
     background-color: #112c3b;
     position: relative;
-    
+    &[data-is-root='true']{
+        padding-bottom: 20px;
+    }
     &__content {
         h1 {
-            color: #fff;
+            color: rgba(255,255,255,0.95);
             margin: $spacing-8 0 $spacing-4;
             font-size: $fontSize-6;
             font-weight: $fontWeight-semibold;
@@ -37,9 +39,16 @@
     }
 
     code[class*=language-], pre[class*=language-] {
-        padding: 1em 0
+        display: none;
     }
 
+    @include media(sm){
+        padding-bottom: 0;
+        code[class*=language-], pre[class*=language-] {
+            display: block;
+            padding: 1em 0
+        }
+    }
     @include media(md){
         &[data-is-root='true']:after{
             position: absolute;

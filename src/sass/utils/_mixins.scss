@@ -6,12 +6,6 @@ $breakpoints: (
   xl: 1200px
 ) !default;
 
-/* 
-* Default mobile-first mixin 
-* @param {String} $breakpoint - Breakpoint key in Sass map
-* @param {Map} $map - Sass list map of breakpoints
-*/
-
 @mixin media($breakpoint, $map: $breakpoints) {
   @if type-of($map) == map {
     @if map-has-key($map, $breakpoint) {
