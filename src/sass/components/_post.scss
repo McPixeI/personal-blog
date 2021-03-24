@@ -58,13 +58,17 @@
         margin-bottom: $spacing-10;
         h1{
             font-family:$fontFamily-serif;
-            line-height: 60px;
-            font-size: 48px;
+            line-height: 42px;
+            font-size: 34px;
             font-weight: 400;
             margin: $spacing-0 $spacing-0 $spacing-4 $spacing-0;
         }
         @include media(md){
             margin-right: 300px;
+            h1{
+                line-height: 60px;
+                font-size: 48px;
+            }
         }
     }
     &__info {

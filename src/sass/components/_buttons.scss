@@ -19,8 +19,8 @@
         background-color: $color-primary;
         min-width: 140px;
         &:hover{
-            background-color: #3b85b2;
-            box-shadow: 0 3px 3px 0 rgb(0 0 0 / 14%), 0 1px 7px 0 rgb(0 0 0 / 12%), 0 3px 1px -1px rgb(0 0 0 / 20%);
+            border: 2px solid $color-secondary;
+            background-color: $color-secondary;
         }
     }
 
@@ -31,7 +31,6 @@
         min-width: 140px;
         &:hover{
             background-color: $color-secondary;
-            box-shadow: 0 3px 3px 0 rgb(0 0 0 / 14%), 0 1px 7px 0 rgb(0 0 0 / 12%), 0 3px 1px -1px rgb(0 0 0 / 20%);
         }
     }
 
@@ -51,12 +50,25 @@
     }
 
     &.gotop{
-        display: none;
         position: fixed;
         bottom: 0;
         right: 0;
+        z-index: 1;
+        visibility: hidden;
+        will-change: transform, visibility;
+        transform: translateY(100%);
+        @include transition(all .2s ease-out);
+
         &[data-visible='true']{
+            visibility: visible;
+            transform: translateY(0);
+
+        }
+        .arrow-up{
+            font-size: 25px;
             display: block;
+            line-height: 32px;
+            margin-right: 4px;
         }
     }
 

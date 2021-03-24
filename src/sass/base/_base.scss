@@ -168,11 +168,13 @@ a {
 
 a:hover,
 a:focus {
+  cursor: pointer;
   text-decoration: none;
   outline:none
 }
-
+button:hover,
 button:focus {
+  cursor: pointer;
   outline:none
 }
 

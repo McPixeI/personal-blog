@@ -22,7 +22,7 @@ const ScrollTopButton = ({offset}) => {
 
   return (
     <button className="btn btn--primary gotop" onClick={handleClick} data-visible={visible}>
-      ↑ Volver arriba
+      <span className='arrow-up'>↑</span> Volver arriba
     </button>
   )
 }
