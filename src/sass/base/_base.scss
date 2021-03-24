@@ -187,6 +187,14 @@ code[class*="language-"], pre[class*="language-"] {
   word-break: break-word !important;
 }
 
+.error {
+  color: red
+}
+
+.success {
+  color: green
+}
+
 /* Media queries */
 
 @media (max-width: 42rem) {
