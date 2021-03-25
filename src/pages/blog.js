@@ -18,8 +18,8 @@ const Blog = ({ data, location }) => {
   }
 
   return (
-    <Layout location={location} title={siteTitle}>
-      <SEO title="All posts" />
+    <Layout location={location}>
+      <SEO title="Artículos" />
       <Section>
         <h1 className="section-title">Artículos</h1>
         <h2 className="section-subtitle">Todos los artículos, tutoriales y opiniones hasta la fecha.</h2>

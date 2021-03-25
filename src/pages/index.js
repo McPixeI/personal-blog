@@ -10,15 +10,14 @@ import TagList from "../components/tagList"
 import Newsletter from "../components/newsletter"
 
 const BlogIndex = ({ data, location }) => {
-  const siteTitle = data.site.siteMetadata?.title || `Title`
   const posts = data.allMarkdownRemark.nodes
   const tags = (data.allMarkdownRemark.group).map(tag =>{
     return tag.fieldValue
   })
 
   return (
-    <Layout location={location} title={siteTitle}>
-      <SEO title="All posts" />
+    <Layout location={location}>
+      <SEO title='Inicio'/>
       <div className="main-content">
         <Section title='Últimos posts'>
           <PostList posts={posts} moreBtn/>

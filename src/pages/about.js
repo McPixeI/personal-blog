@@ -4,6 +4,7 @@ import React from "react"
 import { Helmet } from "react-helmet"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
+import SEO from "../components/seo"
 
 const About = ({
   location,
@@ -13,8 +14,8 @@ const About = ({
     },
   },
 }) => (
-  <Layout location={location} title={title}>
-    <Helmet title={title} />
+  <Layout location={location}>
+    <SEO title={'Sobre mí'} />
     <section className="content-section">
       <h1 className="section-title">Sobre mí</h1>
       

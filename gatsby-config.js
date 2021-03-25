@@ -1,10 +1,10 @@
 module.exports = {
   
   siteMetadata: {
-    title: `Samu's Blog`,
+    title: `Samu Torres`,
     author: {
       name: `Samuel Torres`,
-      summary: `Lorem ipsum dolor sit amet consectetum adispicin elit. Lorem ipsum dolor sit amet.`,
+      summary: `Front-end developer`,
     },
     description: `Mi blog personal`,
     siteUrl: `https://samutorres.com/`,

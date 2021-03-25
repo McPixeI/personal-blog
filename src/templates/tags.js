@@ -4,6 +4,7 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import PostList from "../components/post/postList"
+import SEO from "../components/seo"
 
 const Tags = ({ pageContext, data }) => {
   const siteTitle = data.site.siteMetadata.title
@@ -19,6 +20,7 @@ const Tags = ({ pageContext, data }) => {
   
   return (
     <Layout location={location} title={siteTitle}>
+      <SEO title={tagHeader}/>
       <section className="content-section">
         <h1 className="section-title">{tagHeader}</h1>
         <PostList posts={nodes}></PostList>
