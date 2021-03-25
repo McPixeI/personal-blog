@@ -1,5 +1,4 @@
 module.exports = {
-  
   siteMetadata: {
     title: `Samu Torres`,
     author: {
@@ -13,6 +12,8 @@ module.exports = {
     },
   },
   plugins: [
+    `gatsby-plugin-sitemap`,
+    `gatsby-plugin-robots-txt`,
     `gatsby-plugin-netlify-cms`,
     {
       resolve: 'gatsby-plugin-sass',
