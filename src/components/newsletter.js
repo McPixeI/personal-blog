@@ -1,59 +1,41 @@
 import React, { useState } from "react"
 import addToMailchimp from 'gatsby-plugin-mailchimp'
-import messages from '../data/messages'
+import { useForm } from "react-hook-form";
+
 
 const Newsletter = () => {
 
-    const [formState, setFormState] = useState({
-            state: '',
-            email: '',
-            title: messages.newsletter.initial.title,
-            msg: messages.newsletter.initial.text
-        })
-
-    const handleInputChange = evt => {
-        setFormState({
-            ...formState,
-            email: evt.target.value
-        })
-    }
-
-    const handleSubmit =  evt => {
-        evt.preventDefault();
-        addToMailchimp(formState.email)
+    const { register, handleSubmit, errors, setError } = useForm();
+    const [submitted, setSubmitted] = useState(false);
+  
+    const onSubmit =  data => {
+        addToMailchimp(data.email)
             .then(data => {
                 if (data.result === "error") {
-                    setFormState({
-                        ...formState,
-                        state: 'error',
-                        title: messages.newsletter.error.title,
-                        msg: messages.newsletter.error.text,
-                        email:''
-                    })
+                    setError("email", {
+                        type: "manual",
+                        message: "Vaya, ha ocurrido un error..."
+                      });
                 } else {
-                    setFormState({
-                        ...formState,
-                        state: 'success',
-                        title: messages.newsletter.succes.title,
-                        msg: messages.newsletter.succes.text,
-                        email:''
-                    })
+                    setSubmitted(true);
                 }
             })
-      }
+    }
 
     return (
         <div className="newsletter">
-            <h3>{formState.title}</h3>
-            <p className={formState.state}>{formState.msg}</p>      
-            <form onSubmit={handleSubmit}>
+            <h3>¡Suscríbete!</h3>
+            <p>Entérate al momento cuando publique un artículo que pueda interesarte. Tranquil@, no escribo tan a menudo...</p>      
+            <form onSubmit={handleSubmit(onSubmit)}>
                 <input className="newsletter__input"
-                    type="text"
+                    name="email" 
+                    ref={register({ required: 'El campo no puede estar vacío' })}
+                    type="email"
                     aria-label="Subscribe"
                     placeholder="Tu correo..."
-                    value={formState.email}
-                    onChange={handleInputChange}
                 />
+                <span className="error">{errors.email && errors.email.message}</span>
+                <span className="success">{submitted && 'gracias'}</span>
                 <button className="btn btn--primary newsletter__btn" type="submit">¡Me suscribo!</button>
             </form>
         </div>

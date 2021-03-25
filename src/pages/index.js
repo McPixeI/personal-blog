@@ -29,7 +29,9 @@ const BlogIndex = ({ data, location }) => {
           <TagList tags={tags} title='Categorías destacadas'></TagList>
         </div>
         <div className="sidebar__section">
-          <Newsletter></Newsletter>
+          <div className="card">
+            <Newsletter></Newsletter>
+          </div>
         </div>
       </Sidebar> 
     </Layout>
