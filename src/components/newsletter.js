@@ -5,8 +5,11 @@ import { useForm } from "react-hook-form";
 
 const Newsletter = () => {
 
-    const { register, handleSubmit, errors, setError } = useForm();
+    const { register, handleSubmit, reset, errors, setError } = useForm();
     const [submitted, setSubmitted] = useState(false);
+    const defaultValues = {
+        input: ''
+    }
   
     const onSubmit =  data => {
         addToMailchimp(data.email)
@@ -18,6 +21,7 @@ const Newsletter = () => {
                       });
                 } else {
                     setSubmitted(true);
+                    reset({ defaultValues })
                 }
             })
     }
@@ -25,7 +29,7 @@ const Newsletter = () => {
     return (
         <div className="newsletter">
             <h3>¡Suscríbete!</h3>
-            <p>Entérate al momento cuando publique un artículo que pueda interesarte. Tranquil@, no escribo tan a menudo...</p>      
+            <p>Te avisaré por correo cada vez que publique un nuevo artículo. Tranquil@, no escribo tan a menudo...</p>      
             <form onSubmit={handleSubmit(onSubmit)}>
                 <input className="newsletter__input"
                     name="email" 
@@ -35,7 +39,7 @@ const Newsletter = () => {
                     placeholder="Tu correo..."
                 />
                 <span className="error">{errors.email && errors.email.message}</span>
-                <span className="success">{submitted && 'gracias'}</span>
+                <span className="success">{submitted && '¡Hecho! Gracias por tu apoyo'}</span>
                 <button className="btn btn--primary newsletter__btn" type="submit">¡Me suscribo!</button>
             </form>
         </div>

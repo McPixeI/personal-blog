@@ -1,11 +1,18 @@
 .newsletter{
-    &__input[type=text]{
+    &__input[type=email]{
         border-width: 1px;
         padding: 0.75rem;
-        margin-bottom: $spacing-4;
+        margin-bottom: $spacing-3;
     }
     &__btn{
         width: 100%;
         justify-content: center;
+    }
+    .error, .success{
+        font-size: 14px;
+        margin-top: -18px;
+        position: relative;
+        display: inline;
+        top: -8px;
     }
 }
