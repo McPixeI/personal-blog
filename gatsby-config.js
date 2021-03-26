@@ -5,7 +5,7 @@ module.exports = {
       name: `Samuel Torres`,
       summary: `Front-end developer`,
     },
-    description: `Mi blog personal`,
+    description: `Artículos, consejos y opiniones sobre Front-end`,
     siteUrl: `https://samutorres.com/`,
     social: {
       twitter: `McPixeI`,

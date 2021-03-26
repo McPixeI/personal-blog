@@ -9,7 +9,6 @@ import Section from "../components/section"
 
 const Blog = ({ data, location }) => {
 
-  const siteTitle = data.site.siteMetadata?.title || `Title`
   const allPosts = data.allMarkdownRemark.nodes
   const [posts, setPosts] = React.useState(allPosts)
 

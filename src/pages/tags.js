@@ -4,7 +4,6 @@ import React from "react"
 import kebabCase from "lodash/kebabCase"
 
 // Components
-import { Helmet } from "react-helmet"
 import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -18,7 +17,7 @@ const TagsPage = ({
     },
   },
 }) => (
-  <Layout location={location} title={title}>
+  <Layout location={location}>
     <SEO title={'Etiquetas' || title} />
     <section className="content-section">
       <h1 className="section-title">Etiquetas</h1>
