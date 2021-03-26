@@ -7,6 +7,7 @@ tags:
   - webpack
   - javascript
 ---
+![dummy foto](https://images.unsplash.com/photo-1611095971113-9f7542655338?ixid=MXwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1502&q=80 "dummy foto")
 
 Wow! I love blogging so much already.
 
