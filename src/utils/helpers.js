@@ -10,8 +10,12 @@ export function slugify(string) {
   )
 }
 
+export function normalizeString(string) {
+  return string.normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+}
+
 export function headingToAnchor(value) {
-  return `#${value.replace(/\s+/g, "-")}`
+  return `#${normalizeString(value.replace(/\s+/g, "-"))}`
 }
 
 export function getFormattedDate(date) {  

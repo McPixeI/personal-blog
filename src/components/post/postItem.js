@@ -1,6 +1,6 @@
-import { Link } from "gatsby";
+import { Link } from "gatsby"
 import * as React from "react"
-
+import _ from "lodash"
 
 const Post = ({post}) => {
   const title = post.frontmatter.title || post.fields.slug;
@@ -14,7 +14,7 @@ const Post = ({post}) => {
           >
             <div>
               <h2>
-                <Link to={post.fields.slug} itemProp="url">
+                <Link to={_.kebabCase(post.fields.slug)} itemProp="url">
                   <span itemProp="headline">{title}</span>
                 </Link>
               </h2>
@@ -24,7 +24,7 @@ const Post = ({post}) => {
                 }}
                 itemProp="description"
               />
-              <Link className="post__link" to={post.fields.slug}>Ver artículo →</Link>
+              <Link className="post__link" to={_.kebabCase(post.fields.slug)}>Ver artículo →</Link>
             </div>
           </article>
         </li>      
