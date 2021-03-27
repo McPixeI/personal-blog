@@ -7,7 +7,6 @@ export default function Search ({ posts, onResults }){
 
     const filteredData = posts.filter(post => {
       const { description, title, tags } = post.frontmatter
-      console.log(tags)
       return (
         description?.toLowerCase().includes(query.toLowerCase()) ||
         title?.toLowerCase().includes(query.toLowerCase()) ||

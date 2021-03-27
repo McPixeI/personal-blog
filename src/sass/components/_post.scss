@@ -89,8 +89,8 @@
     }
     &__body{
         flex: 1 1;
-        ul{
-            padding-left: 40px;
+        ul, ol{
+            padding-left: $spacing-8;
         }
     }
 }

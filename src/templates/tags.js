@@ -11,20 +11,20 @@ const Tags = ({ pageContext, data }) => {
   const { tag } = pageContext
   const { nodes, totalCount } = data.allMarkdownRemark
   
-  const tagHeader = `${totalCount} post${
+  const tagTitle = `Artículos etiquetados con: "${tag}"`
+  const tagSubtitle = `${totalCount} resultado${
     totalCount === 1 ? "" : "s"
-  } etiquetado${
-    totalCount === 1 ? "" : "s"
-  } con "${tag}"`
+  }`
   const location = {pathname:`/tags/${pageContext}`}
   
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO title={tagHeader}/>
+      <SEO title={tagTitle}/>
       <section className="content-section">
-        <h1 className="section-title">{tagHeader}</h1>
+        <h1 className="section-title">{tagTitle}</h1>
+        <h2 className="section-subtitle">{tagSubtitle}</h2>
         <PostList posts={nodes}></PostList>
-        <Link className="btn btn--secondary btn--outline" to="/tags">Ver todos →</Link>
+        <Link className="btn btn--secondary btn--outline" to="/tags">Ver etiquetas →</Link>
       </section>
     </Layout>
     
