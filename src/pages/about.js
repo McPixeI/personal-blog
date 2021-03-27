@@ -1,7 +1,6 @@
 import React from "react"
 
 // Components
-import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { StaticImage } from "gatsby-plugin-image"
@@ -9,12 +8,7 @@ import Newsletter from "../components/newsletter"
 import Sidebar from "../components/sidebar"
 
 const About = ({
-  location,
-  data: {
-    site: {
-      siteMetadata: { title },
-    },
-  },
+  location
 }) => (
   <Layout location={location}>
     <SEO title={'Sobre mí'} />
@@ -75,13 +69,3 @@ const About = ({
 )
 
 export default About
-
-export const pageQuery = graphql`
-  query {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-  }
-`
