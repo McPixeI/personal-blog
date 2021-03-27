@@ -32,8 +32,6 @@ const TagsPage = ({
       </ul>
     </section>
   </Layout>
-
- 
 )
 
 export default TagsPage
