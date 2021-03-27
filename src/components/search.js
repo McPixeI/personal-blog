@@ -27,7 +27,7 @@ export default function Search ({ posts, onResults }){
     <input
     type="text"
     aria-label="Search"
-    placeholder="Busca algo concreto..."
+    placeholder="p.ej: 'React'..."
     onChange={handleInputChange}
   />
   )

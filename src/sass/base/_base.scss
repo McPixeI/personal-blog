@@ -35,6 +35,10 @@ img {
   height: auto;
 }
 
+.static-img {
+  margin-bottom: $spacing-8
+}
+
 /* Heading */
 
 h1,
@@ -66,7 +70,10 @@ h1 {
 }
 
 h2 {
-  font-size: $fontSize-5;
+  font-size: $fontSize-3;
+  @include media(md) {
+    font-size: $fontSize-5;
+  }
 }
 
 h3 {
@@ -123,6 +130,9 @@ ul li,
 ol li {
   padding-left: $spacing-0;
   margin-bottom: $spacing-4;
+  &::marker {
+    color: $color-primary
+  }
 }
 
 li > p {
@@ -130,7 +140,7 @@ li > p {
 }
 
 li > ul {
-  margin-left: $spacing-8;
+  margin-left: $spacing-4;
   margin-top: $spacing-4;
 }
 

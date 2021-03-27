@@ -3,6 +3,8 @@
         border-width: 1px;
         padding: 0.75rem;
         margin-bottom: $spacing-3;
+        width: 100%;
+        max-width: none;
     }
     &__btn{
         width: 100%;
