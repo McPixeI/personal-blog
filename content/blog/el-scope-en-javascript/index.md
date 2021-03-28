@@ -13,9 +13,9 @@ tags:
 
 Antes de hablar de scope, hagamos un pequeño repaso de las variables.
 
-Declarar una variable en programación, significa hacer uso de un nombre (o identificador) para representar valores. De esta manera, podemos referenciar dichos valores y usarlos cuando nos convenga. Estos valores tienen la particularidad de que pueden variar, de ahí a que se llamen "**variables**" (sí, he llegado yo solo🕵️‍♂️). Por eso, si quieres asignar un valor permanente a un identificador, hablamos de utilizar "**constantes**".
+Declarar una variable en programación, significa hacer uso de un nombre (o identificador) para representar valores. De esta manera, podemos referenciar dichos valores y usarlos cuando nos convenga. Estos valores tienen la particularidad de que pueden variar, de ahí a que se llamen "**variables**" (sorprendente, lo sé🕵️‍♂️). Por eso, si quieres asignar un valor permanente a un identificador, hablamos de utilizar "**constantes**".
 
-Actualmente existen tres formas de declarar variables en JavaScript: Utilizando las palabras clave **var**, **let** y **const.**
+Actualmente existen tres formas de declarar variables en JavaScript: Utilizando las palabras clave \`var\`, \`let\` y \`const\`.
 
 ```javascript
 /*Forma "antigua" de declarar variables previa a ES2015*/
@@ -30,7 +30,7 @@ const MY_CONSTANT = 'whatever';
 
 A simple vista, entre la declaración de variables mediante las keyword **var** o **let** no parece tener gran diferencia, pero tiene sus implicaciones. Esto lo veremos en los siguientes apartados en los que explicaremos los tipos de scope en JavaScript.
 
-Sobre las constantes, podéis notar que el nombre de ejemplo que he utilizado (MY_CONSTANT) tiene una nomenclatura muy específica. Esto no es casual. Por convención, las constantes en JavaScript se suelen definir utilizando dicha nomenclatura, aunque por supuesto, no estás obligado a seguirla.
+Sobre las constantes, podéis notar que el nombre de ejemplo que he utilizado \`MY_CONSTANT\` tiene una nomenclatura muy específica. Esto no es casual. Por convención, las constantes en JavaScript se suelen definir utilizando dicha nomenclatura, aunque por supuesto, no estás obligado a seguirla.
 
 ## El scope global
 
@@ -47,7 +47,9 @@ function sayHello() {
 sayHello(); //Hola Pepa
 ```
 
-Cuando se habla del scope global en la parte cliente (navegador) en JavaScript, se hace referencia al documento HTML donde se ha definido. El uso del scope global **implica que esta variable podría ser sobreescrita desde cualquier parte de nuestra aplicación**, incluso por algún script de terceros que tengamos intregrado en la misma (os soprendería la cantidad de scripts de terceros que puede llegar a tener una web productiva).  Actualmente, se desaconseja el uso de variables globales en JavaScript, salvo casos específicos.
+Cuando se habla del scope global en la parte cliente (navegador) en JavaScript, se hace referencia al documento HTML donde se ha definido. El uso del scope global **implica que esta variable podría ser sobreescrita desde cualquier parte de nuestra aplicación**, incluso por algún script de terceros que tengamos intregrado en la misma (os soprendería la cantidad de scripts de terceros que puede llegar a tener una web productiva).  
+
+Actualmente, se desaconseja el uso de variables globales en JavaScript, salvo casos específicos.
 
 ## El scope local
 
@@ -84,4 +86,4 @@ console.log(superPower) //Uncaught ReferenceError: superPower is not defined
 
 * A diferencia de las variables declaradas con **let**, con **var** puedes definir la misma variable múltiples veces.
 * Las variables declaradas con **var** no tienen scope de bloque, sino que pertenecen al cuerpo de la función que las contiene, independientemente de la profundidad en la que se haya definido dicha variable dentro de la función.
-* Las declaraciones con var hacen uso de **hoisting**. Este término indica que cuando una variable se declara mediante **var**, dicha declaración automáticamente se coloca en la parte superior de la función a la que pertenece, evitando así errores de utilizar una variable todavía no definida. Esto a simple vista parece una ventaja, pero era causante de muchos bugs, en algunos casos difíciles de identificar, cuando todavía no existía la keyword **let**.
+* Las declaraciones con var hacen uso de **[hoisting](https://developer.mozilla.org/es/docs/Glossary/Hoisting)**. Este término indica que cuando una variable se declara mediante **var**, dicha declaración automáticamente se coloca en la parte superior de la función a la que pertenece, antes de ejecutar dicha función, evitando así errores de utilizar una variable todavía no definida. Esto a simple vista parece una ventaja, pero era causante de muchos bugs, en algunos casos difíciles de identificar, cuando todavía no existía la keyword **let**.
