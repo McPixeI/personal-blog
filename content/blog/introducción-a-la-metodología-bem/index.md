@@ -1,19 +1,21 @@
 ---
 title: Introducción a la metodología BEM
 date: 2021-03-27T20:56:52.677Z
-description: Una breve pero concisa introducción a la metodología más utilizada
-  en la creación de componentes reusables en CSS
+description: Una breve introducción a la metodología más utilizada en la
+  creación de componentes reusables en CSS
 tags:
   - css
   - html
 ---
-## Qué es BEM
-
-Uno de los mayores quebraderos de cabeza de ser programador es, sin duda, poner nombre a las cosas. Por trivial que parezca, la nomenclatura es muy importante, sobre todo cuando se trabaja en equipo y en proyectos con una escala considerable. Existen varias metodologías para trabajar con CSS, pero si echamos un vistazo a la magnífica web de [stateofcss](https://2020.stateofcss.com/en-US/technologies/methodologies/), podemos ver como esta sigue siendo la más utilizada.
+Uno de los mayores quebraderos de cabeza a la hora de escribir CSS puede ser, sin duda, poner nombre a tus clases. Por trivial que parezca, la nomenclatura es muy importante, sobre todo cuando se trabaja en equipo y en proyectos con una escala considerable. Existen varias metodologías para trabajar con CSS, pero si echamos un vistazo a la (muy recomendada) web de [stateofcss](https://2020.stateofcss.com/en-US/technologies/methodologies/), podemos ver como esta sigue siendo la más utilizada.
 
 ![BEM graph](bem.jpg "BEM graph")
 
-La metodología BEM aboga por el uso de una de nomenclatura de clases CSS simple y fácil de leer. Un lenguaje común que funciona (o al menos eso promete) tanto para proyectos pequeños como a gran escala. Si llevas tiempo trabajando con CSS, seguro que como mínimo has oído hablar de esta metodología, y si no es así, te recomiendo que sigas leyendo este artículo, puesto que te servirá de punto de partida.
+## Qué es BEM
+
+> ¿Qué nombre le pongo a esto?
+
+La metodología BEM aboga por el uso de una de nomenclatura de clases CSS simple y fácil de leer. Un lenguaje común que funciona (o al menos eso promete) tanto para proyectos pequeños como a gran escala. Si llevas tiempo trabajando con CSS, seguro que como mínimo has oído hablar de esta metodología, y si no es así, te recomiendo que sigas leyendo este artículo, puesto que te servirá como punto de partida.
 
 BEM proviene de las siglas:
 
@@ -21,12 +23,122 @@ BEM proviene de las siglas:
 * **E**lemento
 * **M**odificador
 
-###Bloque
+Y la nomenclatura que utiliza sigue el siguiente patrón:
 
-###Elemento
+`.block {}
+.block__element {}
+.block--modifier {}`
 
-###Modificador
+\###Bloque
 
-###No es oro todo lo que brilla
+Un **bloque** hace referencia a una entidad o componente independiente que tiene sentido por sí solo, por ejemplo:  
 
-###Conclusión
+`navbar`, `footer`, `post`, `button`, `alert`...
+
+Los bloques no siempre son fáciles de identificar, por eso es importante tener siempre un mockup de tu aplicación donde se pueda analizar e identificar las piezas que la forman. Una gran ayuda para coger práctica en este proceso de abstracción puede ser el fantástico libro de Brad Frost, ["Atomic Design"](https://atomicdesign.bradfrost.com/), al cual tengo pensado dedicarle otro artículo próximamente.
+
+\###Elemento
+
+Los **elementos** son partes de un bloque que no tendrían un significado propio por sí mismas. Estos están ligados semánticamente a su bloque padre y se representan tal y como podemos ver en los siguientes ejemplos:
+
+`navbar__link`, `footer__nav`, `post__title`, `button__icon`...
+
+\###Modificador
+
+Los modificadores son variantes de componentes o elementos que modifican su aspecto sin llegar a cambiar su significado. Se pueden utilizar, por ejemplo, para cambiar el background de un botón, el estado de un input o el color de una alerta. Algunos ejemplos serían:
+
+`navbar__link--active`, `button--primary`, `alert--sucess`...
+
+\###Para muestra, un botón (nunca mejor dicho)
+
+Vamos a ver uno de los casos más sencillos y fáciles de interpretar... un botón. Vamos con el HTML:
+
+```html
+<button class="btn"> /*Bloque*/
+  Texto
+</button>
+
+<button class="btn btn--success"> /*Bloque con modificador*/
+  Texto
+</button>
+
+<button class="btn btn--success"> /*Bloque con modificador*/
+  <span class="btn__icon">♥</span> /*Elemento*/
+  Texto
+</button>
+```
+
+Y el CSS podría ser algo así:
+
+```css
+.btn { 
+    color: #fff;
+    background-color: #666;
+    padding: 8px 12px;
+    display: inline-block;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.btn--success {
+    background-color: green;
+}
+
+.btn__icon {
+    display: inline-block;
+    margin-right: 4px;
+}
+```
+
+Esto con SCSS quedaría todavía más comprenisble a nivel de jerarquía:
+
+```scss
+.btn {
+    color: #fff;
+    background-color: #666;
+    padding: 8px 12px;
+    display: inline-block;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 1rem;
+
+    //Modifiers
+    &--success {
+      background-color: green;
+    }
+
+    //Elements
+    &__icon{
+      display: inline-block;
+      margin-right: 4px;
+    }
+}
+```
+
+Como podéis ver, los estilos "base" están definidos en el propio bloque (.btn). Los modificadores solo contienen los estilos que alteran la presentación de dicho bloque, (don't repeat yourself). Es por eso que, si queremos añadir un modificador en nuestro nodo HTML, este siempre debe ir precedido de la clase de su bloque, quednado así:
+
+\*\*bloque  bloque--modificador\*\* \
+\`btn btn--success\` 
+
+En cuanto a los elementos, también pueden tener sus propios modificadores.
+
+\###BEM o no BEM
+
+La nomenclatura BEM nos ayuda a definir componentes modulares y reusables en nuestros desarrollos de forma sencilla. De todos modos, antes de utilizar esta nomenclatura hay que tener en cuenta un par de aspectos importantes:
+
+1. La nomenclatura BEM **no es incompatible con otras metodologías**. Puedes hacer uso de la misma en tus componentes siempre que sea necesario, pero puede que te encuentres casos muy simples en los que no haga falta utilizar dicha nomenclatura. Por ejemplo, en clases de ayuda:
+
+   ```css
+   .d-flex{
+     display:flex;
+   }
+
+   .text-center{
+     text-align: center;
+   }
+   ```
+
+
+
+**2. Cuidado con las anidaciones**. Al principio es dificil discernir cuándo tienes que parar de anidar clases, y tu CSS puede acabar siendo un churro incomprensible, sobretodo si estás usando SCSS con sus anidaciones "&". Por eso es importante tener clara la separación entre tus bloques, y como recomendación, nunca haría una anidación con profundidad mayor de 3 para un mismo bloque.
