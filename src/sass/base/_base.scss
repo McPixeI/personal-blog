@@ -146,7 +146,7 @@ li > ul {
 
 blockquote {
   color: $color-text-light;
-  margin-left: calc(-1 * #{$spacing-6});
+  margin-left: 0;  
   margin-right: $spacing-8;
   padding: $spacing-0 $spacing-0 $spacing-0 $spacing-6;
   border-left: $spacing-1 solid $color-primary;
@@ -221,6 +221,13 @@ pre[class*="language-"] {
 code[class*="language-"], pre[class*="language-"] {
   white-space: pre-wrap !important;
   word-break: break-word !important;
+  margin-bottom: 2rem;
+}
+
+:not(pre) > code[class*=language-text], pre[class*=language-text]{
+  background: $color-accent;
+  color: $color-text;
+  padding: 3px 6px;
 }
 
 .error {

@@ -11,6 +11,7 @@ import Newsletter from "../components/newsletter"
 
 const BlogIndex = ({ data, location }) => {
   const posts = data.allMarkdownRemark.nodes
+  console.log(posts)
   const tags = (data.allMarkdownRemark.group).map(tag =>{
     return tag.fieldValue
   })
