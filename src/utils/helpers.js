@@ -15,7 +15,7 @@ export function normalizeString(string) {
 }
 
 export function headingToAnchor(value) {
-  return `#${normalizeString(value.replace(/\s+/g, "-"))}`
+  return `#${normalizeString(value.replace(/\s+/g, "-").replace(/,/g, ''))}`
 }
 
 export function getFormattedDate(date) {  
