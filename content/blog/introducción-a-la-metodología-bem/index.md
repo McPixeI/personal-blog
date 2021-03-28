@@ -7,7 +7,7 @@ tags:
   - css
   - html
 ---
-Uno de los mayores quebraderos de cabeza a la hora de escribir CSS puede ser, sin duda, poner nombre a tus clases. Por trivial que parezca, la nomenclatura es muy importante, sobre todo cuando se trabaja en equipo y en proyectos con una escala considerable. Existen varias metodologías para trabajar con CSS, pero si echamos un vistazo a la (muy recomendada) web de [stateofcss](https://2020.stateofcss.com/en-US/technologies/methodologies/), podemos ver como esta sigue siendo la más utilizada.
+Uno de los mayores quebraderos de cabeza a la hora de escribir CSS puede ser, sin duda, poner nombre a tus clases. Por trivial que parezca, la nomenclatura es muy importante, sobre todo cuando se trabaja en equipo y en proyectos con una escala considerable. Existen varias metodologías para trabajar con CSS, pero si echamos un vistazo a la (muy recomendada) web de [stateofcss](https://2020.stateofcss.com/en-US/technologies/methodologies/), podemos ver como esta sigue siendo la más extendida.
 
 ![BEM graph](bem.jpg "BEM graph")
 
@@ -45,7 +45,7 @@ Los **elementos** son partes de un bloque que no tendrían un significado propio
 
 \###Modificador
 
-Los modificadores son variantes de componentes o elementos que modifican su aspecto sin llegar a cambiar su significado. Se pueden utilizar, por ejemplo, para cambiar el background de un botón, el estado de un input o el color de una alerta. Algunos ejemplos serían:
+Los **modificadores** son variantes de componentes o elementos que modifican su aspecto sin llegar a cambiar su significado. Se pueden utilizar, por ejemplo, para cambiar el background de un botón, el estado de un input o el color de una alerta. Algunos ejemplos serían:
 
 `navbar__link--active`, `button--primary`, `alert--sucess`...
 
@@ -68,7 +68,7 @@ Vamos a ver uno de los casos más sencillos y fáciles de interpretar... un bot�
 </button>
 ```
 
-Y el CSS podría ser algo así:
+Vamos a ver cómo podría ser el CSS tipo BEM para este sencillo caso:
 
 ```css
 .btn { 
@@ -91,7 +91,7 @@ Y el CSS podría ser algo así:
 }
 ```
 
-Esto con SCSS quedaría todavía más comprenisble a nivel de jerarquía:
+Si trabajamos con SCSS, a priori la jerarquía se hace todavía más notable:
 
 ```scss
 .btn {
@@ -103,12 +103,12 @@ Esto con SCSS quedaría todavía más comprenisble a nivel de jerarquía:
     border-radius: 4px;
     font-size: 1rem;
 
-    //Modifiers
+    //Modificadores
     &--success {
       background-color: green;
     }
 
-    //Elements
+    //Elementos
     &__icon{
       display: inline-block;
       margin-right: 4px;
@@ -116,10 +116,16 @@ Esto con SCSS quedaría todavía más comprenisble a nivel de jerarquía:
 }
 ```
 
-Como podéis ver, los estilos "base" están definidos en el propio bloque (.btn). Los modificadores solo contienen los estilos que alteran la presentación de dicho bloque, (don't repeat yourself). Es por eso que, si queremos añadir un modificador en nuestro nodo HTML, este siempre debe ir precedido de la clase de su bloque, quednado así:
+Como podéis ver, los estilos "base" están definidos en el propio bloque (.btn). Los modificadores solo contienen los estilos que alteran la presentación de dicho bloque, (don't repeat yourself). Es por eso que, si queremos añadir un modificador en nuestro nodo HTML, este siempre debe ir precedido de la clase de su bloque, para que herede también los estilos base:
 
-\*\*bloque  bloque--modificador\*\* \
-\`btn btn--success\` 
+```html
+<!--MAL-->
+<div class="btn--success">Botón</div>
+
+<!--BIEN-->
+<div class="btn btn--success">Botón</div>
+
+```
 
 En cuanto a los elementos, también pueden tener sus propios modificadores.
 
@@ -138,7 +144,8 @@ La nomenclatura BEM nos ayuda a definir componentes modulares y reusables en nue
      text-align: center;
    }
    ```
+2. **Cuidado con las anidaciones**. Al principio es dificil discernir cuándo tienes que parar de anidar clases, y tu CSS puede acabar siendo un churro incomprensible, sobretodo si estás usando SCSS con sus anidaciones "&". Por eso es importante tener clara la separación entre tus bloques, y como recomendación, nunca haría una anidación con profundidad mayor de 3 para un mismo bloque.
 
+\###Para terminar
 
-
-**2. Cuidado con las anidaciones**. Al principio es dificil discernir cuándo tienes que parar de anidar clases, y tu CSS puede acabar siendo un churro incomprensible, sobretodo si estás usando SCSS con sus anidaciones "&". Por eso es importante tener clara la separación entre tus bloques, y como recomendación, nunca haría una anidación con profundidad mayor de 3 para un mismo bloque.
+BEM no deja de ser una herramienta más para facilitarnos la vida. Eres totalmente libre de elegir esta metodología u cualquier otra, siempre que se adapte a tu proyecto y a tu equipo. Además hoy en día, con el auge de librerías JS como React o VUE, acompañadas del css modular o CSS-IN-JS, están ofreciendo otras alternativas (con una filosofía similar) perfectamente viables.
