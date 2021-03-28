@@ -19,13 +19,69 @@ Actualmente existen tres formas de declarar variables en JavaScript: Utilizando 
 
 ```javascript
 /*Forma "antigua" de declarar variables previa a ES2015*/
-var name = 'Samu';
+var name = 'Pepa';
 
 /*Declaración de variable*/
-let name = 'Samu'
+let name = 'Pepa';
 
 /*Declaración de constante*/
-const MY_CONSTANT = 'whatever'
+const MY_CONSTANT = 'whatever';
 ```
 
-PRÓXIMAMENTE...
+A simple vista, entre la declaración de variables mediante las keyword **var** o **let** no parece tener gran diferencia, pero tiene sus implicaciones. Esto lo veremos en los siguientes apartados en los que explicaremos los tipos de scope en JavaScript.
+
+Sobre las constantes, podéis notar que el nombre de ejemplo que he utilizado (MY_CONSTANT) tiene una nomenclatura muy específica. Esto no es casual. Por convención, las constantes en JavaScript se suelen definir utilizando dicha nomenclatura, aunque por supuesto, no estás obligado a seguirla.
+
+## El scope global
+
+Una variable **tiene scope global cuando está declarada fuera del cuerpo de una función**, y por lo tanto puede ser accesible desde cualquier parte de nuestro código. 
+
+```javascript
+//Scope Global
+const name = 'Pepa';
+
+function sayHello() {
+  console.log(`Hello ${name}`);
+}
+
+sayHello(); //Hola Pepa
+```
+
+Cuando se habla del scope global en la parte cliente (navegador) en JavaScript, se hace referencia al documento HTML donde se ha definido. El uso del scope global **implica que esta variable podría ser sobreescrita desde cualquier parte de nuestra aplicación**, incluso por algún script de terceros que tengamos intregrado en la misma (os soprendería la cantidad de scripts de terceros que puede llegar a tener una web productiva).  Actualmente, se desaconseja el uso de variables globales en JavaScript, salvo casos específicos.
+
+## El scope local
+
+En contraposcición a las variables globales, las locales son **variables visibles solo dentro de la función desde la cual se han definido**. Toda función creada en JavaScript genera su propio scope local, y cualquier intento de acceder a variables locales desde fuera de dicho scope te devolverá el valor "undefined".
+
+```javascript
+//Scope global
+
+function printName() {
+  let name='Pepa';
+  console.log(name);
+}
+printName(); //Pepa
+console.log(name); //undefined
+```
+
+## El scope de bloque
+
+El estándar [ES2015](https://262.ecma-international.org/6.0/) trajo consigo el el scope de bloque para las palabras clave **let** y **const.** Este tipo de scope significa que las variables y constantes solo están definidas dentro del bloque de código al que pertenecen.
+
+La principal diferencia entre el scope local y el de bloque, es que los bloques no generan un nuevo scope. Los scopes de bloque son por ejemplo: condiciones, bucles... (if/else, for, for/in, for/of...)
+
+```javascript
+//El bloque 'if' no define un nuevo scope
+if (true) {
+    var name = 'Pepa' // Se mantiene en el scope global
+    let superPower = 'sleep' //No sera accesible fuera del bloque 'if'
+}
+console.log(name) // Pepa
+console.log(superPower) //Uncaught ReferenceError: superPower is not defined
+```
+
+## Por qué se desaconseja actualmente el uso de *var*
+
+* A diferencia de las variables declaradas con **let**, con **var** puedes definir la misma variable múltiples veces.
+* Las variables declaradas con **var** no tienen scope de bloque, sino que pertenecen al cuerpo de la función que las contiene, independientemente de la profundidad en la que se haya definido dicha variable dentro de la función.
+* Las declaraciones con var hacen uso de **hoisting**. Este término indica que cuando una variable se declara mediante **var**, dicha declaración automáticamente se coloca en la parte superior de la función a la que pertenece, evitando así errores de utilizar una variable todavía no definida. Esto a simple vista parece una ventaja, pero era causante de muchos bugs, en algunos casos difíciles de identificar, cuando todavía no existía la keyword **let**.
