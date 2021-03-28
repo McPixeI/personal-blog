@@ -49,7 +49,7 @@ Los **modificadores** son variantes de componentes o elementos que modifican su 
 
 `navbar__link--active`, `button--primary`, `alert--sucess`...
 
-### Para muestra, un botón (nunca mejor dicho)
+### Para muestra, un botón
 
 Vamos a ver uno de los casos más sencillos y fáciles de interpretar... un botón. Vamos con el HTML:
 
