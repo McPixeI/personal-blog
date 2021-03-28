@@ -29,7 +29,7 @@ Y la nomenclatura que utiliza sigue el siguiente patrón:
 .block__element {}
 .block--modifier {}`
 
-\###Bloque
+### Bloque
 
 Un **bloque** hace referencia a una entidad o componente independiente que tiene sentido por sí solo, por ejemplo:  
 
@@ -37,13 +37,13 @@ Un **bloque** hace referencia a una entidad o componente independiente que tiene
 
 Los bloques no siempre son fáciles de identificar, por eso es importante tener siempre un mockup de tu aplicación donde se pueda analizar e identificar las piezas que la forman. Una gran ayuda para coger práctica en este proceso de abstracción puede ser el fantástico libro de Brad Frost, ["Atomic Design"](https://atomicdesign.bradfrost.com/), al cual tengo pensado dedicarle otro artículo próximamente.
 
-\###Elemento
+### Elemento
 
 Los **elementos** son partes de un bloque que no tendrían un significado propio por sí mismas. Estos están ligados semánticamente a su bloque padre y se representan tal y como podemos ver en los siguientes ejemplos:
 
 `navbar__link`, `footer__nav`, `post__title`, `button__icon`...
 
-\###Modificador
+### Modificador
 
 Los **modificadores** son variantes de componentes o elementos que modifican su aspecto sin llegar a cambiar su significado. Se pueden utilizar, por ejemplo, para cambiar el background de un botón, el estado de un input o el color de una alerta. Algunos ejemplos serían:
 
@@ -124,16 +124,15 @@ Como podéis ver, los estilos "base" están definidos en el propio bloque (.btn)
 
 <!--BIEN-->
 <div class="btn btn--success">Botón</div>
-
 ```
 
 En cuanto a los elementos, también pueden tener sus propios modificadores.
 
-\###BEM o no BEM
+### BEM o no BEM
 
 La nomenclatura BEM nos ayuda a definir componentes modulares y reusables en nuestros desarrollos de forma sencilla. De todos modos, antes de utilizar esta nomenclatura hay que tener en cuenta un par de aspectos importantes:
 
-1. La nomenclatura BEM **no es incompatible con otras metodologías**. Puedes hacer uso de la misma en tus componentes siempre que sea necesario, pero puede que te encuentres casos muy simples en los que no haga falta utilizar dicha nomenclatura. Por ejemplo, en clases de ayuda:
+1.  La nomenclatura BEM **no es incompatible con otras metodologías**. Puedes hacer uso de la misma en tus componentes siempre que sea necesario, pero puede que te encuentres casos muy simples en los que no haga falta utilizar dicha nomenclatura. Por ejemplo, en clases de ayuda:
 
    ```css
    .d-flex{
@@ -146,6 +145,6 @@ La nomenclatura BEM nos ayuda a definir componentes modulares y reusables en nue
    ```
 2. **Cuidado con las anidaciones**. Al principio es dificil discernir cuándo tienes que parar de anidar clases, y tu CSS puede acabar siendo un churro incomprensible, sobretodo si estás usando SCSS con sus anidaciones "&". Por eso es importante tener clara la separación entre tus bloques, y como recomendación, nunca haría una anidación con profundidad mayor de 3 para un mismo bloque.
 
-\###Para terminar
+### Para terminar
 
 BEM no deja de ser una herramienta más para facilitarnos la vida. Eres totalmente libre de elegir esta metodología u cualquier otra, siempre que se adapte a tu proyecto y a tu equipo. Además hoy en día, con el auge de librerías JS como React o VUE, acompañadas del css modular o CSS-IN-JS, están ofreciendo otras alternativas (con una filosofía similar) perfectamente viables.
