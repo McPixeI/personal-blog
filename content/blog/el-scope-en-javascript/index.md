@@ -15,7 +15,7 @@ Antes de hablar de scope, hagamos un pequeño repaso de las variables.
 
 Declarar una variable en programación, significa hacer uso de un nombre (o identificador) para representar valores. De esta manera, podemos referenciar dichos valores y usarlos cuando nos convenga. Estos valores tienen la particularidad de que pueden variar, de ahí a que se llamen "**variables**" (sorprendente, lo sé🕵️‍♂️). Por eso, si quieres asignar un valor permanente a un identificador, hablamos de utilizar "**constantes**".
 
-Actualmente existen tres formas de declarar variables en JavaScript: Utilizando las palabras clave \`var\`, \`let\` y \`const\`.
+Actualmente existen tres formas de declarar variables en JavaScript: Utilizando las palabras clave `var`, `let `y `const`.
 
 ```javascript
 /*Forma "antigua" de declarar variables previa a ES2015*/
@@ -30,7 +30,7 @@ const MY_CONSTANT = 'whatever';
 
 A simple vista, entre la declaración de variables mediante las keyword **var** o **let** no parece tener gran diferencia, pero tiene sus implicaciones. Esto lo veremos en los siguientes apartados en los que explicaremos los tipos de scope en JavaScript.
 
-Sobre las constantes, podéis notar que el nombre de ejemplo que he utilizado \`MY_CONSTANT\` tiene una nomenclatura muy específica. Esto no es casual. Por convención, las constantes en JavaScript se suelen definir utilizando dicha nomenclatura, aunque por supuesto, no estás obligado a seguirla.
+Sobre las constantes, podéis notar que el nombre de ejemplo que he utilizado `MY_CONSTANT` tiene una nomenclatura muy específica. Esto no es casual. Por convención, las constantes en JavaScript se suelen definir utilizando dicha nomenclatura, aunque por supuesto, no estás obligado a seguirla.
 
 ## El scope global
 
