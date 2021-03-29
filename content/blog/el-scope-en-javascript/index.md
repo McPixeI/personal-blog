@@ -11,11 +11,11 @@ tags:
 
 ## Declaración de variables
 
-Antes de hablar de scope, hagamos un pequeño repaso de las variables.
+Antes de hablar de scope, es importante hacer un pequeño repaso a la declaración de variables y sus implicaciones.
 
-Declarar una variable en programación, significa hacer uso de un nombre (o identificador) para representar valores. De esta manera, podemos referenciar dichos valores y usarlos cuando nos convenga. Estos valores tienen la particularidad de que pueden variar, de ahí a que se llamen "**variables**" (sorprendente, lo sé🕵️‍♂️). Por eso, si quieres asignar un valor permanente a un identificador, hablamos de utilizar "**constantes**".
+Declarar una variable en programación, significa hacer uso de un nombre o identificador para representar valores. De esta manera, podemos referenciar dichos valores y usarlos cuando nos convenga. Estos valores tienen la particularidad de que pueden variar, de ahí a que se llamen "**variables**" (sorprendente, lo sé🕵️‍♂️). Por el mismo motivo, si quieres asignar un valor permanente a un identificador, hablamos de utilizar "**constantes**". Como dato, las constantes no existían en JS hasta la llegada del estándar [ES2015](https://262.ecma-international.org/6.0/).
 
-Actualmente existen tres formas de declarar variables en JavaScript: Utilizando las palabras clave `var`, `let `y `const`.
+Actualmente existen tres formas de declarar variables en JavaScript: Utilizando las palabras clave `var`, `let`y `const`.
 
 ```javascript
 /*Forma "antigua" de declarar variables previa a ES2015*/
@@ -30,7 +30,7 @@ const MY_CONSTANT = 'whatever';
 
 A simple vista, entre la declaración de variables mediante las keyword **var** o **let** no parece tener gran diferencia, pero tiene sus implicaciones. Esto lo veremos en los siguientes apartados en los que explicaremos los tipos de scope en JavaScript.
 
-Sobre las constantes, podéis notar que el nombre de ejemplo que he utilizado `MY_CONSTANT` tiene una nomenclatura muy específica. Esto no es casual. Por convención, las constantes en JavaScript se suelen definir utilizando dicha nomenclatura, aunque por supuesto, no estás obligado a seguirla.
+Sobre las constantes, puedes notar que el nombre de ejemplo que he utilizado `MY_CONSTANT` tiene una nomenclatura muy específica. Esto no es casual. Por convención, las constantes en JavaScript se suelen definir utilizando dicha nomenclatura, aunque por supuesto, no estás obligado a seguirla.
 
 ## El scope global
 
@@ -68,9 +68,26 @@ console.log(name); //undefined
 
 ## El scope de bloque
 
-El estándar [ES2015](https://262.ecma-international.org/6.0/) trajo consigo el el scope de bloque para las palabras clave **let** y **const.** Este tipo de scope significa que las variables y constantes solo están definidas dentro del bloque de código al que pertenecen.
+El estándar [ES2015](https://262.ecma-international.org/6.0/) trajo consigo las palabras clave **let** y **const**, las cuales hacen uso del scope de bloque. Este tipo de scope significa que las variables y constantes solo están definidas dentro del bloque de código al que pertenecen.
 
-La principal diferencia entre el scope local y el de bloque, es que los bloques no generan un nuevo scope. Los scopes de bloque son por ejemplo: condiciones, bucles... (if/else, for, for/in, for/of...)
+Un bloque en JavaScript es una agrupación de declaraciones entre llaves (`{}`):
+
+```javascript
+{
+  ListaDeDeclaraciones
+}
+```
+
+La principal diferencia entre el scope local y el de bloque, es que los bloques no generan un nuevo scope. 
+
+Algunos ejemplos generales de bloques pueden ser condiciones, bucles... :
+* `if/else`
+* `for`
+* `for/if`
+* ...
+
+
+
 
 ```javascript
 //El bloque 'if' no define un nuevo scope
