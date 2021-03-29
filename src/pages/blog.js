@@ -15,7 +15,6 @@ const Blog = ({ data, location }) => {
   const handleSearchResults = res => {
     setPosts(res)
   }
-  console.log(location)
   return (
     <Layout location={location}>
       <SEO title="Artículos" />

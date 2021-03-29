@@ -10,7 +10,7 @@ module.exports = {
     social: {
       twitter: `McPixeI`,
     },
-    logo: `${__dirname}/src/images/logo.jpg`,
+    logo: `https://samutorres.com/logo.jpg`,
   },
   plugins: [
     `gatsby-plugin-sitemap`,
