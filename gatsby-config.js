@@ -147,7 +147,7 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#2d688b`,
         display: `minimal-ui`,
-        icon: `src/images/favicon.jpg`, // This path is relative to the root of the site.
+        icon: `src/images/logo.jpg`, // This path is relative to the root of the site.
       },
     },
     `gatsby-plugin-react-helmet`,
