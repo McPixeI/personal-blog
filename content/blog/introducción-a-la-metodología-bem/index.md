@@ -54,16 +54,16 @@ Los **modificadores** son variantes de componentes o elementos que modifican su 
 Vamos a ver uno de los casos más sencillos y fáciles de interpretar... un botón. Vamos con el HTML:
 
 ```html
-<button class="btn"> /*Bloque*/
+<button class="btn"> <!--Bloque-->
   Texto
 </button>
 
-<button class="btn btn--success"> /*Bloque con modificador*/
+<button class="btn btn--success"> <!--Bloque con modificador-->
   Texto
 </button>
 
-<button class="btn btn--success"> /*Bloque con modificador*/
-  <span class="btn__icon">♥</span> /*Elemento*/
+<button class="btn btn--danger"> <!--Bloque con modificador-->
+  <span class="btn__icon">♥</span> <!--Elemento-->
   Texto
 </button>
 ```
@@ -73,8 +73,9 @@ Vamos a ver cómo podría ser el CSS tipo BEM para este sencillo caso:
 ```css
 .btn { 
     color: #fff;
-    background-color: #666;
+    background-color: #2d688b;
     padding: 8px 12px;
+    border: 1px solid #2d688b;
     display: inline-block;
     text-decoration: none;
     border-radius: 4px;
@@ -83,6 +84,12 @@ Vamos a ver cómo podría ser el CSS tipo BEM para este sencillo caso:
 
 .btn--success {
     background-color: green;
+    border: 1px solid green;
+}
+
+.btn--danger {
+    background-color: #d84d4a;
+    border: 1px solid #d84d4a;
 }
 
 .btn__icon {
@@ -96,7 +103,8 @@ Si trabajamos con SCSS, a priori la jerarquía se hace todavía más notable:
 ```scss
 .btn {
     color: #fff;
-    background-color: #666;
+    background-color: #2d688b;
+    border: 1px solid #2d688b;
     padding: 8px 12px;
     display: inline-block;
     text-decoration: none;
@@ -106,6 +114,11 @@ Si trabajamos con SCSS, a priori la jerarquía se hace todavía más notable:
     //Modificadores
     &--success {
       background-color: green;
+      border: 1px solid green;
+    }
+    &--danger {
+      background-color: #d84d4a;
+      border: 1px solid #d84d4a;
     }
 
     //Elementos
