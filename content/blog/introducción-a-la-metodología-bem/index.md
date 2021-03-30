@@ -13,7 +13,7 @@ Uno de los mayores quebraderos de cabeza a la hora de escribir CSS puede ser, si
 
 ## Qué es BEM
 
-> ¿Qué nombre le pongo a esto?
+> "Block Element Modifier is a methodology that helps you to create reusable components and code sharing in front-end development" - getbem.com
 
 La metodología BEM aboga por el uso de una de nomenclatura de clases CSS simple y fácil de leer. Un lenguaje común que funciona (o al menos eso promete) tanto para proyectos pequeños como a gran escala. Si llevas tiempo trabajando con CSS, seguro que como mínimo has oído hablar de esta metodología, y si no es así, te recomiendo que sigas leyendo este artículo, puesto que te servirá como punto de partida.
 
