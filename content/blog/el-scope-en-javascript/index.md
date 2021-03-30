@@ -41,7 +41,7 @@ Una variable **tiene scope global cuando está declarada fuera del cuerpo de una
 const name = 'Pepa';
 
 function sayHello() {
-  console.log(`Hello ${name}`);
+  console.log(`Hola ${name}`);
 }
 
 sayHello(); //Hola Pepa
@@ -81,13 +81,11 @@ Un bloque en JavaScript es una agrupación de declaraciones entre llaves (`{}`):
 La principal diferencia entre el scope local y el de bloque, es que los bloques no generan un nuevo scope. 
 
 Algunos ejemplos generales de bloques pueden ser condiciones, bucles... :
+
 * `if/else`
 * `for`
 * `for/if`
 * ...
-
-
-
 
 ```javascript
 //El bloque 'if' no define un nuevo scope
