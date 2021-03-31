@@ -68,7 +68,7 @@ Vamos a ver uno de los casos más sencillos y fáciles de interpretar... un bot�
 </button>
 ```
 
-Vamos a ver cómo podría ser el CSS tipo BEM para este sencillo caso:
+A continuación tenemos un ejemplo sencillo de cómo puede ser el CSS tipo BEM para este caso:
 
 ```css
 .btn { 
@@ -98,7 +98,7 @@ Vamos a ver cómo podría ser el CSS tipo BEM para este sencillo caso:
 }
 ```
 
-Si trabajamos con SCSS, a priori la jerarquía se hace todavía más notable:
+Si trabajas con algún preprocesador, como por ejemplo SCSS, el ejemplo sería algo así, donde a priori la jerarquía se hace todavía más notable gracias a las anidaciones:
 
 ```scss
 .btn {
@@ -129,7 +129,7 @@ Si trabajamos con SCSS, a priori la jerarquía se hace todavía más notable:
 }
 ```
 
-Como puedes ver, los estilos "base" están definidos en el propio bloque (.btn). **Los modificadores solo contienen los estilos que alteran la presentación de dicho bloque** (don't repeat yourself). Es por eso que, si queremos añadir un modificador en nuestro nodo HTML, este siempre debe ir precedido de la clase de su bloque, para que herede también los estilos base:
+Como puedes ver, los estilos "base" están definidos en el propio bloque `.btn`. **Los modificadores solo contienen los estilos que alteran la presentación de dicho bloque** (don't repeat yourself). Es por eso que, si queremos añadir un modificador en nuestro nodo HTML, este siempre debe ir precedido de la clase de su bloque, para que herede también los estilos base:
 
 ```html
 <!--MAL-->
