@@ -55,20 +55,28 @@ Vamos a ver uno de los casos más sencillos y fáciles de interpretar... un bot�
 
 ```html
 <button class="btn"> <!--Bloque-->
-  Texto
+  Button
 </button>
 
 <button class="btn btn--success"> <!--Bloque con modificador-->
-  Texto
+  With modifier
 </button>
 
 <button class="btn btn--danger"> <!--Bloque con modificador-->
   <span class="btn__icon">♥</span> <!--Elemento-->
-  Texto
+  With modifier and element
 </button>
 ```
 
-A continuación tenemos un ejemplo sencillo de cómo puede ser el CSS tipo BEM para este caso:
+En el ejemplo anterior tenemos el HTML relativo a tres botones.  
+
+* El primero es un "bloque" simple. Un botón sin ningún tipo de modificador ni elementos (hijos) asociados. Este primero es el componente que contendrá todos los estilos base del botón en sí. 
+
+* El segundo caso, es un botón con un modificador. Este modificador hará que, además de los estilos heredados del propio \`btn\`, se le sumen los estilos específicos del modificador.
+
+* El tercer caso es un ejemplo de botón con un elemento asociado, en este caso el icono, donde se puede apreciar que respeta la nomenclatura \`bloque__elemento\`. 
+
+A continuación tenemos un ejemplo sencillo de cómo puede ser el CSS tipo BEM para el HTML anterior:
 
 ```css
 .btn { 
@@ -140,6 +148,10 @@ Como puedes ver, los estilos "base" están definidos en el propio bloque `.btn`.
 ```
 
 En cuanto a los elementos, también pueden tener sus propios modificadores.
+
+Si quieres verlo todo junto, puedes trastear con el siguiente codepen:
+
+https://codepen.io/mcpixel/pen/OJWRWmV
 
 ### BEM o no BEM
 
