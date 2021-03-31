@@ -15,6 +15,7 @@ const PostInfo = ({author, date}) => {
         width={50}
         height={50}
         quality={95}
+        imgStyle={{ borderRadius: '100%' }}
         alt="Profile picture"
       />
       <div className='d-flex flex-direction-column'>

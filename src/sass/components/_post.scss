@@ -104,9 +104,6 @@
     font-family: $fontFamily-sans;
     &__img{
         margin-right: $spacing-3;
-        img {
-            border-radius: 50%;
-        }
     }
     &__name{
         font-size: $fontSize-1;
