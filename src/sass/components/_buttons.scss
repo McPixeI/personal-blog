@@ -52,6 +52,8 @@
     &.gotop{
         position: fixed;
         bottom: 0;
+        bottom: constant(safe-area-inset-bottom); /*iOS < 11.2*/
+        bottom: env(safe-area-inset-bottom); /*iOS 11.2 >*/
         right: 0;
         z-index: 1;
         visibility: hidden;
