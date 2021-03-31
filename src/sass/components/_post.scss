@@ -103,6 +103,7 @@
     align-items: center;
     font-family: $fontFamily-sans;
     &__img{
+        border-radius: 100%;
         margin-right: $spacing-3;
     }
     &__name{
