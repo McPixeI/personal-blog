@@ -7,6 +7,10 @@ tags:
   - css
   - html
 ---
+![Heading image css](https://images.unsplash.com/photo-1523437113738-bbd3cc89fb19?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1951&q=80 "Heading image css")
+
+*Foto por* [Pankaj Patel](https://unsplash.com/@pankajpatel) en Unsplash
+
 Como su propio nombre indica, el CSS (Cascading Style Sheets) es un lenguaje que funciona con el concepto de "cascada". El concepto de cascada implica que **el orden de las reglas en CSS es importante**. Cuando dos reglas tienen la misma especificidad, se aplica la que se ha definido en último lugar (o más abajo, podríamos decir). Pero, ¿qué es la especificidad?
 
 ## La especificidad
@@ -114,5 +118,5 @@ Cada una de estas columnas está relacionada con unos tipos de selectores, y se 
 
 Si todavía quieres saber más, te dejo un par de enlaces más "gráficos" que seguro te serán de utilidad:
 
-* Aquí tienes una [calculadora de especificidad](https://specificity.keegan.st/) online interactiva, creado por \[Keegan Street].
+* Aquí tienes una [calculadora de especificidad](https://specificity.keegan.st/) online interactiva, creado por *Keegan Street*.
 * Y este detallado [artículo](https://devopedia.org/css-specificity) sobre los cálculos relativos a la especificidad con tablas e imágenes para facilitar la comprensión.
