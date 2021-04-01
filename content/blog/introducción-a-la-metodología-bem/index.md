@@ -166,12 +166,12 @@ La nomenclatura BEM nos ayuda a definir **componentes modulares y reusables** en
 }
 ```
 
-2. **Cuidado con las anidaciones**. Al principio puede resultar complicado discernir dónde poner el límite en las relaciones padre-elemento, pudiendo llegar a generar un CSS demasiado anidado y terminar siendo un churro incomprensible para tu equipo, sobretodo si estás usando SCSS con sus anidaciones "&", donde puede llegar un punto en que se pierda el contexto. 
+2. **Cuidado con las anidaciones**. Al principio puede resultar complicado discernir dónde poner el límite en las relaciones bloque/elemento, pudiendo llegar a generar un CSS demasiado anidado y terminar siendo un churro incomprensible para tu equipo, sobretodo si estás usando SCSS con sus anidaciones "&", donde puede llegar un punto en que se pierda el contexto. 
 
-   Pero hay que entender que esto es una limitación de cómo utilizamos SCSS, y no del propio BEM. Por eso es importante tener clara la separación entre tus bloques, y como recomendación, y vigilar con la profunidad de tus selectores.
+   En cualquier caso, hay que entender que esto es una limitación de cómo utilizamos SCSS y no del propio BEM. Por eso es importante tener clara la separación entre tus bloques. Como recomendación, yo para proyectos personales hago uso de BEM anidado con SCSS, pero para proyectos compartidos con otras personas, suelo apostar por no anidar selectores aunque utilice BEM, para facilitar así la lectura a los demás. 
 
 ### Para terminar
 
-BEM no deja de ser una herramienta más para facilitarnos la vida. Eres totalmente libre de elegir esta metodología u cualquier otra, **siempre que se adapte a tu proyecto y a tu equipo**. Además hoy en día, con el auge de librerías JS como React o VUE, acompañadas del css modular o CSS-IN-JS, están ofreciendo otras alternativas (con una filosofía similar) perfectamente viables.
+BEM no deja de ser una herramienta más para facilitarnos la vida. Eres totalmente libre de elegir esta metodología o cualquier otra, **siempre que se adapte a tu proyecto y a tu equipo**. Además hoy en día, con el auge de librerías JS como React o VUE, que han favorecido al surgimiento de otras aproximaciones como los módulos de CSS o el "CSS-in-JS", están ofreciendo otras alternativas (con una filosofía similar) perfectamente viables.
 
-Por último, te dejo el enlace de la [web oficial](http://getbem.com/), donde tienen varios recursos que te pueden ayudar a profundizar más en esta metdología. Espero que te sirva 🙂
+Por último, te dejo el enlace a la [web oficial](http://getbem.com/) de BEM, donde tienen varios recursos que te pueden ayudar a profundizar más en esta metdología. Espero que te sirva 🙂
