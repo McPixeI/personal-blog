@@ -7,6 +7,10 @@ tags:
   - css
   - html
 ---
+![Heading image css](https://images.unsplash.com/photo-1523437113738-bbd3cc89fb19?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1951&q=80 "Heading image css")
+
+*Foto por* [Pankaj Patel](https://unsplash.com/@pankajpatel) en Unsplash
+
 Como su propio nombre indica, el CSS (Cascading Style Sheets) es un lenguaje que funciona con el concepto de "cascada". El concepto de cascada implica que **el orden de las reglas en CSS es importante**. Cuando dos reglas tienen la misma especificidad, se aplica la que se ha definido en último lugar (o más abajo, podríamos decir). Pero, ¿qué es la especificidad?
 
 ## La especificidad
@@ -101,7 +105,7 @@ Hasta ahora hemos hablado de qué selectores tienen más o menos especificidad, 
 
 La verdad es que puedes tener una muy buena base y no encontrarte problemas en tus maquetas sin necesidad de conocer esta parte (yo lo hice durante años). De todos modos, si tienes curiosidad y quieres entrar en más detalle, continúa leyendo🤓.
 
-El peso de la especificidad de un selector se mide utilizando cuatro valores dividios en cuatro respectivas columnas: `[C1,C2,C3,C4]`.
+El peso de la especificidad de un selector se mide utilizando cuatro valores divididos en cuatro respectivas columnas: `[C1,C2,C3,C4]`.
 
 Cada una de estas columnas está relacionada con unos tipos de selectores, y se suman puntos en cada una de ellas en función de dichos selectores. Hay que tener en cuenta que el peso de las columnas va de mayor a menor, de izquierda a derecha:
 
@@ -114,5 +118,5 @@ Cada una de estas columnas está relacionada con unos tipos de selectores, y se 
 
 Si todavía quieres saber más, te dejo un par de enlaces más "gráficos" que seguro te serán de utilidad:
 
-* Aquí tienes una [calculadora de especificidad](https://specificity.keegan.st/) online interactiva, creado por \[Keegan Street].
+* Aquí tienes una [calculadora de especificidad](https://specificity.keegan.st/) online interactiva, creado por *Keegan Street*.
 * Y este detallado [artículo](https://devopedia.org/css-specificity) sobre los cálculos relativos a la especificidad con tablas e imágenes para facilitar la comprensión.
