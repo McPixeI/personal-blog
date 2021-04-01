@@ -54,7 +54,7 @@ Seguramente habrás notado que existen otros selectores que no hemos mencionado,
 
 Por otro lado, los llamados estilos *inline*, siempre sobreescriben a los estilos definidos en hojas de estilo externas, de modo que se puede considerar que tienen siempre mayor especificidad.
 
-### El uso de *!important*
+### Aviso "*important*"
 
 La declaración `!important` sobreescribe cualquier otra declaración del mismo tipo que hayas definido. Puedes pensar en esta declaración como la que tiene mayor especificidad, aunque realmente lo que hace es saltarse las reglas de especificidad y machacarlas.
 
