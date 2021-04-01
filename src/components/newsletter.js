@@ -40,7 +40,7 @@ const Newsletter = () => {
                 />
                 <span className="error">{errors.email && errors.email.message}</span>
                 <span className="success">{submitted && '¡Hecho! Gracias por tu apoyo'}</span>
-                <button className="btn btn--primary newsletter__btn" type="submit">¡Me suscribo!</button>
+                <button className="btn btn--primary btn--flat newsletter__btn" type="submit">¡Me suscribo!</button>
             </form>
         </div>
         

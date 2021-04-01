@@ -16,7 +16,7 @@
     
     &--primary{
         border: 2px solid $color-primary;
-        box-shadow: 4x 4px 0px $color-primary;        
+        box-shadow: 4px 4px 0px $color-primary;        
         background-color: $color-primary;
         min-width: 140px;
         &:hover{
@@ -44,6 +44,10 @@
             background-color: $color-secondary;
             box-shadow: none;
         }
+    }
+
+    &--flat {
+        box-shadow: none;
     }
 
     &__icon {
