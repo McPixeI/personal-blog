@@ -1,6 +1,6 @@
 import { Link } from "gatsby";
 import React from "react";
-import { slugify } from "../utils/helpers";
+import _ from "lodash"
 
 export default function TagList ({tags, title}) {
 
@@ -11,10 +11,11 @@ export default function TagList ({tags, title}) {
           {tags.map(tag => (
             <Link
               key={tag}
-              to={`/tags/${slugify(tag)}`}
+              to={`/tags/${_.kebabCase(tag)}`}
               className='tag-item'
             >
-              {tag}
+              {tag}              {console.log(tag)}
+
             </Link>
           ))}
         </div>

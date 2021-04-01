@@ -1,16 +1,15 @@
 import { Link } from "gatsby";
 import React from "react";
-import {headingToAnchor} from "../utils/helpers"
 import { useActiveHash } from "../hooks/use-active-hash"
+import _ from "lodash"
 
 export default function ToC ({headings}) {
     
     const getHeadingIds = headings =>{
         let idList = []
-        const hashToId = str => str.slice(1)    
         headings
           .forEach(heading => {
-            idList.push(hashToId(headingToAnchor(heading.value))) 
+            idList.push(_.kebabCase(heading.value)) 
           })
         return idList
     }
@@ -27,9 +26,9 @@ export default function ToC ({headings}) {
                 <ul className="toc">                
                     {hasHeadings && headings
                         .map(heading => {
-                            let isActive = isDesktop && (headingToAnchor(heading.value) === `#${activeHash}`)
+                            let isActive = isDesktop && (`#${_.kebabCase(heading.value)}` === `#${activeHash}`)
                             return <li key={heading.value}>
-                                        <Link to={headingToAnchor(heading.value)} data-current={isActive}>
+                                        <Link to={`#${_.kebabCase(heading.value)}`} data-current={isActive}>
                                             {heading.value}
                                         </Link>
                                     </li>
