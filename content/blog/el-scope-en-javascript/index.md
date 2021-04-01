@@ -97,8 +97,8 @@ console.log(name) // Pepa
 console.log(superPower) //Uncaught ReferenceError: superPower is not defined
 ```
 
-## Por qué se desaconseja actualmente el uso de *var*
+## Por qué utilizar *let* en lugar de *var*
 
-* A diferencia de las variables declaradas con **let**, con **var** puedes definir la misma variable múltiples veces.
+* A diferencia de las variables declaradas con **let**, con **var** puedes definir la misma variable múltiples veces, lo cual puede provocar inconsistencias o dificultades para depurar.
 * Las variables declaradas con **var** no tienen scope de bloque, sino que pertenecen al cuerpo de la función que las contiene, independientemente de la profundidad en la que se haya definido dicha variable dentro de la función.
-* Las declaraciones con var hacen uso de **[hoisting](https://developer.mozilla.org/es/docs/Glossary/Hoisting)**. Este término indica que cuando una variable se declara mediante **var**, dicha declaración automáticamente se coloca en la parte superior de la función a la que pertenece, antes de ejecutar dicha función, evitando así errores de utilizar una variable todavía no definida. Esto a simple vista parece una ventaja, pero era causante de muchos bugs, en algunos casos difíciles de identificar, cuando todavía no existía la keyword **let**.
+* Las declaraciones con var hacen uso de **[hoisting](https://developer.mozilla.org/es/docs/Glossary/Hoisting)**. Este término indica que cuando una variable se declara mediante **var**, dicha declaración automáticamente se coloca en la parte superior de la función a la que pertenece (en memoria, antes de ejecutar dicha función), evitando así errores a la hora de utilizar una variable todavía no definida. Esto a simple vista parece una ventaja, pero era causante de muchos bugs, en algunos casos difíciles de identificar, cuando todavía no existía la keyword **let**.
