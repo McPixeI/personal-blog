@@ -105,7 +105,7 @@ Hasta ahora hemos hablado de qué selectores tienen más o menos especificidad, 
 
 La verdad es que puedes tener una muy buena base y no encontrarte problemas en tus maquetas sin necesidad de conocer esta parte (yo lo hice durante años). De todos modos, si tienes curiosidad y quieres entrar en más detalle, continúa leyendo🤓.
 
-El peso de la especificidad de un selector se mide utilizando cuatro valores dividios en cuatro respectivas columnas: `[C1,C2,C3,C4]`.
+El peso de la especificidad de un selector se mide utilizando cuatro valores divididos en cuatro respectivas columnas: `[C1,C2,C3,C4]`.
 
 Cada una de estas columnas está relacionada con unos tipos de selectores, y se suman puntos en cada una de ellas en función de dichos selectores. Hay que tener en cuenta que el peso de las columnas va de mayor a menor, de izquierda a derecha:
 
