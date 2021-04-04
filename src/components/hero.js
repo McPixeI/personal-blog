@@ -9,7 +9,7 @@ const bio = {
   name: 'Samuel Torres',
   age: 32,
   occupation: 'Front-end developer',
-  interests: ['javascript','css'],
+  interests: ['coding','videogames'],
   pizza: true
 }
 ` : `

@@ -36,13 +36,17 @@
         
     }
 
-    code[class*=language-], pre[class*=language-] {
+    code[class*=language-], 
+    pre[class*=language-] {
         padding: 0;
         margin: 0;
+        font-size: 14px;
     }
 
     @include media(md){
-        code[class*=language-], pre[class*=language-] {
+        code[class*=language-], 
+        pre[class*=language-] {
+            font-size: $fontSize-1;
             padding: 1em 0;
         }
         &[data-is-root='true']:after{
