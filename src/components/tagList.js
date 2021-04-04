@@ -14,7 +14,7 @@ export default function TagList ({tags, title}) {
               to={`/tags/${_.kebabCase(tag)}`}
               className='tag-item'
             >
-              {tag}              {console.log(tag)}
+              {tag}
 
             </Link>
           ))}

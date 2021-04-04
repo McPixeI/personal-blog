@@ -217,8 +217,10 @@ input[type=email]:focus {
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
 	background: #112c3b;
+  border-radius: 0;
 }
-code[class*="language-"], pre[class*="language-"] {
+code[class*="language-"], 
+pre[class*="language-"] {
   white-space: pre-wrap !important;
   word-break: break-word !important;
   margin-bottom: 2rem;
@@ -227,7 +229,7 @@ code[class*="language-"], pre[class*="language-"] {
 :not(pre) > code[class*=language-text], pre[class*=language-text]{
   background: $color-accent;
   color: $color-text;
-  padding: 3px 6px;
+  padding: 1px 3px;
 }
 
 .error {

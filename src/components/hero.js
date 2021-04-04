@@ -1,9 +1,18 @@
 import * as React from "react"
 import Code from "./code"
+import { isMobileOnly } from "react-device-detect";
 
 const Hero = ({isRootPath}) => {
 
-  let codeConent = `
+  let codeConent = isMobileOnly ? `
+const bio = {
+  name: 'Samuel Torres',
+  age: 32,
+  occupation: 'Front-end developer',
+  interests: ['javascript','css'],
+  pizza: true
+}
+` : `
 const bio = {
   name: 'Samuel Torres',
   age: 32,

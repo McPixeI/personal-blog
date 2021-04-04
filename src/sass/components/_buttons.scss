@@ -64,7 +64,8 @@
         visibility: hidden;
         will-change: transform, visibility;
         transform: translateY(100%);
-        opacity: 0.8;
+        opacity: .8;
+        box-shadow: none;
         @include transition(all .2s ease-out);
 
         &[data-visible='true']{

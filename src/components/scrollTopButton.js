@@ -1,6 +1,7 @@
 import * as React from "react"
 import { useState, useEffect } from "react"
 import _ from 'lodash';
+import { isMobileSafari } from "react-device-detect";
 
 const ScrollTopButton = ({offset}) => {
 
@@ -20,11 +21,13 @@ const ScrollTopButton = ({offset}) => {
     return () => window.removeEventListener('scroll', throttledScroll)
   })
 
-  return (
-    <button className="btn btn--primary gotop" onClick={handleClick} data-visible={visible}>
-      <span className='arrow-up'>↑</span> Volver arriba
-    </button>
-  )
+  if (!isMobileSafari) {
+    return <button className="btn btn--primary gotop" onClick={handleClick} data-visible={visible}>
+              <span className='arrow-up'>↑</span> Volver arriba
+          </button>
+  } else {
+    return null
+  }
 }
 
 export default ScrollTopButton
