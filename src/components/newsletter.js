@@ -28,8 +28,8 @@ const Newsletter = () => {
 
     return (
         <div className="newsletter">
-            <h3>¡Suscríbete!</h3>
-            <p>Te avisaré por correo cada vez que publique un nuevo artículo. Tranquil@, no escribo tan a menudo...</p>      
+            <h3>¡Mantente al día!</h3>
+            <p>Te puedo avisar por correo cada vez que publique un nuevo artículo. Tranquil@, no escribo tan a menudo...</p>      
             <form onSubmit={handleSubmit(onSubmit)}>
                 <input className="newsletter__input"
                     name="email" 
