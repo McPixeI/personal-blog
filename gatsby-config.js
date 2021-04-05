@@ -133,6 +133,7 @@ module.exports = {
                     }
                     frontmatter {
                       title
+                      description
                       date
                     }
                   }

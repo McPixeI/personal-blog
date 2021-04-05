@@ -1,50 +1,11 @@
-import React, { useState } from "react"
-import addToMailchimp from 'gatsby-plugin-mailchimp'
-import { useForm } from "react-hook-form";
-
-
+import React from "react"
 const Newsletter = () => {
-
-    const { register, handleSubmit, reset, errors, setError } = useForm();
-    const [submitted, setSubmitted] = useState(false);
-    const defaultValues = {
-        input: ''
-    }
-  
-    const onSubmit =  data => {
-        addToMailchimp(data.email)
-            .then(data => {
-                if (data.result === "error") {
-                    setError("email", {
-                        type: "manual",
-                        message: "Vaya, ha ocurrido un error..."
-                      });
-                } else {
-                    setSubmitted(true);
-                    reset({ defaultValues })
-                }
-            })
-    }
-
     return (
         <div className="newsletter">
             <h3>¡Mantente al día!</h3>
-            <p>Te puedo avisar por correo cada vez que publique un nuevo artículo. Tranquil@, no escribo tan a menudo...</p>      
-            <form onSubmit={handleSubmit(onSubmit)}>
-                <input className="newsletter__input"
-                    name="email" 
-                    ref={register({ required: 'El campo no puede estar vacío' })}
-                    type="email"
-                    aria-label="Subscribe"
-                    placeholder="Tu correo..."
-                />
-                <span className="error">{errors.email && errors.email.message}</span>
-                <span className="success">{submitted && '¡Hecho! Gracias por tu apoyo'}</span>
-                <button className="btn btn--primary btn--flat newsletter__btn" type="submit">¡Me suscribo!</button>
-            </form>
-        </div>
-        
-         
+            <p>Te puedo avisar por correo cada vez que publique un nuevo artículo. Tranquil@, no escribo tan a menudo...</p>
+            <a target='_blank' rel='nofollow noreferrer' href='https://eepurl.com/htD7LL' className="btn btn--primary btn--flat newsletter__btn">¡Me suscribo!</a>      
+        </div>     
     )
 }
 
