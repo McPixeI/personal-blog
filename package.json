@@ -4,9 +4,7 @@
   "description": "My personal blog",
   "version": "0.1.0",
   "author": "Samuel Torres",
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
-  },
+  "license": "MIT",
   "dependencies": {
     "@weknow/gatsby-remark-codepen": "^0.1.0",
     "gatsby": "^3.0.1",
@@ -50,15 +48,9 @@
   "devDependencies": {
     "prettier": "2.2.1"
   },
-  "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
-  "keywords": [
-    "gatsby"
-  ],
-  "license": "0BSD",
-  "main": "n/a",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
+    "url": "https://github.com/McPixeI/personal-blog"
   },
   "scripts": {
     "build": "gatsby build",
