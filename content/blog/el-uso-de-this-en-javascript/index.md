@@ -10,13 +10,13 @@ tags:
 
 *Foto por [Sydney Rae](https://unsplash.com/@srz) en Unsplash*
 
-Hace unos días escribí un artículo sobre [el scope en JavaScript](https://samutorres.com/blog/el-scope-en-javascript). Si bien dicho artículo puede servir como base para comprender los distintos tipos de scope, hay otro concepto importante en JavaScript, sobretodo para la programación orientada a objetos, que suele causar confusión al principio y tiene parentesco con el scope: la keyword `this`. 
+Hace unos días escribí un artículo sobre [el scope en JavaScript](https://samutorres.com/blog/el-scope-en-javascript). Si bien dicho artículo puede servir como base para comprender los distintos tipos de scope, hay otro concepto importante en JavaScript, sobre todo para la programación orientada a objetos, que suele causar confusión al principio y tiene parentesco con el scope: la keyword `this`. 
 
 He pensado dedicarle un artículo completo a esta palabra clave, puesto que creo que tiene la suficiente complejidad como para tratarla aparte. Así también evitamos que los artículos que publique terminen siendo peligrosamente largos y aburridos 👀.
 
 ## Qué es la palabra clave *this*
 
-En la mayoría de lenguajes de programación que hacen uso de la keyword `this`, esta se suele utilizar como una referencia a un objeto instanciado por una clase. En JavaScript esto no es así.
+En la mayoría de lenguajes de programación que hacen uso de la keyword `this`, ésta se suele utilizar como una referencia a un objeto instanciado por una clase. En JavaScript esto no es así.
 
 Por norma general, en JavaScript la keyword **`this` hace referencia al objeto al que pertenece, obteniendo su valor en el momento en el que una función es invocada**. Esto implica dos conceptos clave:
 
@@ -53,7 +53,7 @@ dog.sayHello(); // Hola, soy Pepa
 
 ### En una función
 
-Dentro de una función, `this` hace uso del binding predefinido, o en otras palabras, hace referencia al objeto global.
+Dentro de una función, `this` hace uso del binding predefinido o, en otras palabras, hace referencia al objeto global.
 
 ```javascript
 function foo() {
@@ -78,9 +78,9 @@ foo(); // undefined
 
 ### *this* en funciones de flecha
 
-Las funciones de flecha no "bindean" su propio `this`. Lo que hacen es heredarlo del scope del padre. Veamos unos cuantos ejemplos para tener una idea más clara, puesto que las funciones de flecha funcionan un poco diferente a las funciones clásicas.
+Las funciones de flecha **no "bindean" su propio `this`**. Lo que hacen es heredarlo del scope del padre. Veamos unos cuantos ejemplos para tener una idea más clara, puesto que las funciones de flecha funcionan un poco diferente a las funciones clásicas.
 
-En este primer ejemplo, tenemos una función de flecha que devuelve el valor de `this`.  Como puedes ver, del mismo modo que con las funciones "normales", esta devuelve el objeto global (Window), pero por motivos distintos. En este caso, la función está buscando el valor de this en su "padre", que en este caso sería el objeto global:
+En este primer ejemplo, tenemos una función de flecha que devuelve el valor de `this`.  Como puedes ver, del mismo modo que con las funciones "normales", ésta devuelve el objeto global (Window) pero **por motivos distintos**. En este caso, la función está buscando el valor de this en su "padre" que, en este caso, sería el objeto global:
 
 ```javascript
 const foo = () => {
@@ -90,21 +90,22 @@ const foo = () => {
 foo(); // [object Window]
 ```
 
-Veamos ahora qué pasa si utilizamos `this` dentro de un método definido como una función de flecha. Para facilitarlo, voy a usar el mismo ejemplo que hemos usado para las funciones normales, pero adaptado:
+Veamos ahora qué pasa si utilizamos `this` dentro de un método definido como una función de flecha. Para facilitarlo, voy a usar el mismo ejemplo que hemos usado para las funciones normales pero adaptado:
 
 ```javascript
 let dog = { 
     name: 'Pepa',
     sayHello: () => { 
-        return `Hola, soy ${this.name}`
+        return `Hola, soy ${this.name}`;
     }
 }
 
 dog.sayHello(); // Hola, soy
 ```
 
-¡OJO! Ahora `dog.sayHello()` está devolviendo simplemente: `'Hola, soy'`. ¿Por qué es esto? 
-Vamos a cambiar el método para ver qué devuelve `this`:
+¡OJO! Ahora `dog.sayHello()` está devolviendo simplemente: `'Hola, soy'`. 
+
+¿Por qué pasa esto? Vamos a cambiar el método para ver qué devuelve `this`:
 
 ```javascript
 let dog = { 
@@ -118,21 +119,23 @@ dog.sayHello(); // [object Window]
 ```
 
 Exacto, `this` sigue haciendo referencia al objeto global, por eso no es capaz de devolver el nombre de 'Pepa', porque está buscando `window.name` en lugar de `dog.name`.
-Básicamente las funciones flecha no hacen uso de `this`, así que obligatoriamente tienen que heredarlo del "exterior". Estas funciones son más adecuadas para [programación funcional](https://opensource.com/article/17/6/functional-javascript#:~:text=JavaScript%20is%20a%20multi%2Dparadigm,%2C%20procedural%2C%20and%20functional%20paradigms.&text=Immutability%20is%20a%20core%20tenet,about%20and%20debug%20your%20programs.), o simplemente para iterar con objetos o usar callbacks.
+
+
+Básicamente, las funciones flecha no hacen uso de `this`, así que obligatoriamente tienen que heredarlo del "exterior". Estas funciones son más adecuadas para [programación funcional](https://opensource.com/article/17/6/functional-javascript#:~:text=JavaScript%20is%20a%20multi%2Dparadigm,%2C%20procedural%2C%20and%20functional%20paradigms.&text=Immutability%20is%20a%20core%20tenet,about%20and%20debug%20your%20programs.) o, simplemente, para iterar con objetos o usar callbacks.
 
 Tengo pensado dedicarle un artículo completo a las funciones de flecha (se me acumula la faena) pero mientras tanto, si quieres saber algo más acerca de ellas, el siguiente [artículo](https://javascript.info/arrow-functions) es corto y conciso. 
 
 ## Cómo realizar un bindeo explícito
 
-Lo que hemos visto hasta ahora se conoce como asignación o bindeo implícito. Por suerte, JavaScript nos permite asignar explícitamente una referencia a `this`, ayudándonos así a resolver muchos de los problemas comunes que provoca el uso de esta keyword. Esto es gracias a los métodos `bind()`, `call()` y `apply()`.
+Lo que hemos visto hasta ahora se conoce como asignación o bindeo implícito. Por suerte, JavaScript nos permite asignar explícitamente una referencia a `this` ayudándonos así a resolver muchos de los problemas comunes que provoca el uso de esta keyword. Esto es gracias a los métodos `bind()`, `call()` y `apply()`.
 
 ### bind
 
-El método `bind()` crea una nueva función, que al llamarse aigna a `this` el valor que se le pasa por parámetro.
+El método `bind()` crea una nueva función que, al ser invocada, asigna a `this` el valor que se le pasa por parámetro.
 
 `fun.bind(thisArg[, arg1[, arg2[, ...]]])`
 
-Sigamos con el mismo tipo de ejemplo. Pongamos que tenemos el siguiente código:
+Veamos una variante del ejemplo anterior, para seguir con la misma tónica. Pongamos que tenemos el siguiente código:
 
 ```javascript
 let dog = { 
@@ -140,13 +143,13 @@ let dog = {
 }
 
 const sayHello = function() {
-    console.log(`Hola, soy ${this.name}`) 
+    console.log(`Hola, soy ${this.name}`);
 }
 
 sayHello(); // Hola, soy
 ```
 
-En el código anterior, vemos que ahora el tenemos un método `sayHello()` que hace uso de `this` pero está fuera del objeto 'dog'. por lo tanto puedes vaticinar que no encuentra el nombre cuando se ejecuta la función.
+En el código anterior, vemos que ahora tenemos un método `sayHello()` que hace uso de `this` pero está fuera del objeto 'dog', por lo tanto, puedes vaticinar que no encuentra el nombre cuando se ejecuta la función.
 
 Vamos a ver cómo podríamos arreglarlo usando el método `bind()`:
 
@@ -156,7 +159,7 @@ let dog = {
 }
 
 const sayHello = function() {
-    console.log(`Hola, soy ${this.name}`) 
+    console.log(`Hola, soy ${this.name}`);
 }
 
 const bindedSayHello = sayHello.bind(dog); //Definimos una nueva función bindeando el objeto al método sayHello
@@ -168,7 +171,7 @@ Ahora sí. Hemos creado una nueva función (`bindedSayHello`), a partir de la an
 
 ### call
 
-El método `call()`, a diferencia de `bind()`, ejecutará la función directamente, sin necesidad de tener que crear una nueva. Por lo demás, la sintaxis es prácticamente la misma:
+El método `call()`, a diferencia de `bind()`, ejecutará la función directamente sin necesidad de tener que crear una nueva. Por lo demás, la sintaxis es prácticamente la misma:
 
 `function.call(thisArg[, arg1[, arg2[, ...]]])`
 
@@ -180,7 +183,7 @@ let dog = {
 }
 
 const sayHello = function() {
-    console.log(`Hola, soy ${this.name}`) 
+    console.log(`Hola, soy ${this.name}`);
 }
 
 sayHello.call(dog); // Hola, soy Pepa
@@ -188,7 +191,7 @@ sayHello.call(dog); // Hola, soy Pepa
 
 ### apply
 
-El método `apply()` únicamente se diferencia del método `call()` en la forma en que se le pasan los argumentos, puesto que este los acepta en forma de array:
+El método `apply()` únicamente se diferencia del método `call()` en la forma en la que se le pasan los argumentos, puesto que éste los acepta en forma de array:
 
 `fun.apply(thisArg[, argsArray])`
 
@@ -200,16 +203,16 @@ let dog = {
 }
 
 const sayHello = function() {
-    console.log(`Hola, soy ${this.name}`) 
+    console.log(`Hola, soy ${this.name}`);
 }
 
 sayHello.apply(dog); // Hola, soy Pepa
 ```
 
-Estos tres métodos ofrecen muchas más posibilidades que para lo que hemos visto en los ejemplos de este artículo (ni siquiera estamos pasándoles más argumentos aparte del bindeo). De todos modos ya te puede servir para hacerte una idea de cuándo utilizarlos y cuál elegir en función de tus necesidades.
+Estos tres métodos ofrecen muchas más posibilidades que para lo que hemos visto en los ejemplos de este artículo (ni siquiera estamos pasándoles más argumentos aparte del bindeo). De todos modos, ya te puede servir para hacerte una idea de cuándo utilizarlos y cuál elegir en función de tus necesidades.
 
 Si quieres profundizar más en estos métodos de bindeo explícito, te dejo sus respectivos enlaces a la MDN:
 
-* https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Function/bind
-* https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Function/call
-* https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Function/apply
+* [Documentación de bind](<* https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Function/bind>)
+* [Documentación de call](<* [](<* https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Function/bind>)https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Function/call>)
+* [Documentación de apply](<* [](<* [](<* https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Function/bind>)https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Function/call>)https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Function/apply>)
