@@ -213,6 +213,6 @@ Estos tres métodos ofrecen muchas más posibilidades que para lo que hemos vist
 
 Si quieres profundizar más en estos métodos de bindeo explícito, te dejo sus respectivos enlaces a la MDN:
 
-* [Documentación de bind](<* https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Function/bind>)
-* [Documentación de call](<* [](<* https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Function/bind>)https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Function/call>)
-* [Documentación de apply](<* [](<* [](<* https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Function/bind>)https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Function/call>)https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Function/apply>)
+* [Documentación de bind](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Function/bind)
+* [Documentación de call]( https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Function/bind)
+* [Documentación de apply](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Function/apply)
