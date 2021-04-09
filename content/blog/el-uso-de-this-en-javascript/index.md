@@ -7,7 +7,6 @@ tags:
   - javascript
 ---
 ![this heading img](https://images.unsplash.com/photo-1507652955-f3dcef5a3be5?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80 "this heading img")
-
 *Foto por [Sydney Rae](https://unsplash.com/@srz) en Unsplash*
 
 Hace unos días escribí un artículo sobre [el scope en JavaScript](https://samutorres.com/blog/el-scope-en-javascript). Si bien dicho artículo puede servir como base para comprender los distintos tipos de scope, hay otro concepto importante en JavaScript, sobre todo para la programación orientada a objetos, que suele causar confusión al principio y tiene parentesco con el scope: la keyword `this`. 
