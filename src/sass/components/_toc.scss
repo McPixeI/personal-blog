@@ -1,16 +1,28 @@
 .toc {
     list-style: none;
-    a{
+    &__item {
+        margin: 0;
+        &--depth-3,
+        &--depth-4 {
+            .toc__link {
+                padding: $spacing-2 $spacing-4;
+                &[data-current='true']{
+                    color: $color-primary;
+                }
+            }
+        }
+    }
+    
+    &__link{
+        padding: $spacing-2 0;
         font-family: $fontFamily-sans;
         font-size: 14px;
-        align-items: center;
-        display: flex;
-        align-items: flex-start;
-        text-align: left;
+        display: block;
         text-decoration: none;
         transition: color 0.2s ease-in-out;
         &[data-current='true']{
             color: $color-primary;
         }
     }
+
 }

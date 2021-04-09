@@ -20,11 +20,11 @@ export default function ToC ({headings}) {
        return  <>
                 <h3 className="sidebar-title">Contenido del artículo</h3>
                 <ul className="toc">                
-                    {hasHeadings && headings
-                        .map(heading => {
+                    {hasHeadings && 
+                        headings.map(heading => {
                             let isActive = !isMobile && (_.kebabCase(heading.value) === activeHash)
-                            return <li key={heading.value}>
-                                        <Link to={`#${_.kebabCase(heading.value)}`} data-current={isActive}>
+                            return <li key={heading.value} className={`toc__item toc__item--depth-${heading.depth}`} >
+                                        <Link className={`toc__link`} to={`#${_.kebabCase(heading.value)}`} data-current={isActive}>
                                             {heading.value}
                                         </Link>
                                     </li>

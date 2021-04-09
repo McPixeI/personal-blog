@@ -91,6 +91,8 @@
     }
     &__body{
         flex: 1 1;
+        padding-bottom: $spacing-8;
+        word-break: break-word;
         ul, ol{
             padding-left: $spacing-4;
         }
