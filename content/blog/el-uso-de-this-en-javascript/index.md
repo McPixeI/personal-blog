@@ -40,7 +40,7 @@ console.log(this === window) // true
 Dentro de un método perteneciente a un objeto, `this` hace referencia al "propietario" de dicho método.
 
 ```javascript
-let dog = { // Objeto "propietario"
+const dog = { // Objeto "propietario"
     name: 'Pepa',
     sayHello: function () { // Método perteneciente a objeto "dog"
         return `Hola, soy ${this.name}` //this, hace referencia a "dog"
@@ -92,7 +92,7 @@ foo(); // [object Window]
 Veamos ahora qué pasa si utilizamos `this` dentro de un método definido como una función de flecha. Para facilitarlo, voy a usar el mismo ejemplo que hemos usado para las funciones normales pero adaptado:
 
 ```javascript
-let dog = { 
+const dog = { 
     name: 'Pepa',
     sayHello: () => { 
         return `Hola, soy ${this.name}`;
@@ -107,10 +107,10 @@ dog.sayHello(); // Hola, soy
 ¿Por qué pasa esto? Vamos a cambiar el método para ver qué devuelve `this`:
 
 ```javascript
-let dog = { 
+const dog = { 
     name: 'Pepa',
     sayHello: () => { 
-        return this;
+        return `Hola, soy ${this.name}`;
     }
 }
 
@@ -118,7 +118,6 @@ dog.sayHello(); // [object Window]
 ```
 
 Exacto, `this` sigue haciendo referencia al objeto global, por eso no es capaz de devolver el nombre de 'Pepa', porque está buscando `window.name` en lugar de `dog.name`.
-
 
 Básicamente, las funciones flecha no hacen uso de `this`, así que obligatoriamente tienen que heredarlo del "exterior". Estas funciones son más adecuadas para [programación funcional](https://opensource.com/article/17/6/functional-javascript#:~:text=JavaScript%20is%20a%20multi%2Dparadigm,%2C%20procedural%2C%20and%20functional%20paradigms.&text=Immutability%20is%20a%20core%20tenet,about%20and%20debug%20your%20programs.) o, simplemente, para iterar con objetos o usar callbacks.
 
@@ -137,7 +136,7 @@ El método `bind()` crea una nueva función que, al ser invocada, asigna a `this
 Veamos una variante del ejemplo anterior, para seguir con la misma tónica. Pongamos que tenemos el siguiente código:
 
 ```javascript
-let dog = { 
+const dog = { 
     name: 'Pepa'
 }
 
@@ -153,7 +152,7 @@ En el código anterior, vemos que ahora tenemos un método `sayHello()` que hace
 Vamos a ver cómo podríamos arreglarlo usando el método `bind()`:
 
 ```javascript
-let dog = { 
+const dog = { 
     name: 'Pepa'
 }
 
@@ -177,7 +176,7 @@ El método `call()`, a diferencia de `bind()`, ejecutará la función directamen
 Ejemplo:
 
 ```javascript
-let dog = { 
+const dog = { 
     name: 'Pepa'
 }
 
@@ -197,7 +196,7 @@ El método `apply()` únicamente se diferencia del método `call()` en la forma 
 Para conseguir el mismo resultado que en el caso anterior, el código sería el siguiente:
 
 ```javascript
-let dog = { 
+const dog = { 
     name: 'Pepa'
 }
 
@@ -213,5 +212,5 @@ Estos tres métodos ofrecen muchas más posibilidades que para lo que hemos vist
 Si quieres profundizar más en estos métodos de bindeo explícito, te dejo sus respectivos enlaces a la MDN:
 
 * [Documentación de bind](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Function/bind)
-* [Documentación de call]( https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Function/call)
+* [Documentación de call](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Function/call)
 * [Documentación de apply](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Function/apply)
