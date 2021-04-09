@@ -8,8 +8,7 @@ tags:
   - html
 ---
 ![Heading image css](https://images.unsplash.com/photo-1523437113738-bbd3cc89fb19?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1951&q=80 "Heading image css")
-
-*Foto por* [Pankaj Patel](https://unsplash.com/@pankajpatel) en Unsplash
+*Foto por [Pankaj Patel](https://unsplash.com/@pankajpatel) en Unsplash*
 
 Como su propio nombre indica, el CSS (Cascading Style Sheets) es un lenguaje que funciona con el concepto de "cascada". El concepto de cascada implica que **el orden de las reglas en CSS es importante**. Cuando dos reglas tienen la misma especificidad, se aplica la que se ha definido en último lugar (o más abajo, podríamos decir). Pero ¿qué es la especificidad?
 
@@ -19,7 +18,7 @@ La especificidad en CSS **es la forma que tienen los navegadores para calcular q
 
 Seguro que alguna vez te has encontrado un caso en el que tienes más de una regla definida para un mismo elemento y, sin embargo, la última regla definida no es la que el navegador está interpretando. Esto es debido a que has definido alguna otra regla en un selector con más especificidad que este. Vamos a ver, entonces, qué tipos de selectores existen y qué especificidad asociada tienen.
 
-### Tipos de selectores
+## Tipos de selectores
 
 En la siguiente lista se muestran los distintos tipos de selectores ordenados **de menor a mayor** especificidad:
 
@@ -59,13 +58,13 @@ Seguramente habrás notado que existen otros selectores que no hemos mencionado 
 
 Por otro lado, **los llamados estilos *inline* siempre sobreescriben a los definidos en hojas de estilo externas**, de modo que se puede considerar que tienen siempre mayor especificidad.
 
-### Aviso "*important*"
+## Aviso "*important*"
 
 La declaración `!important` sobreescribe cualquier otra declaración del mismo tipo que hayas definido. Puedes pensar en esta declaración como la que tiene mayor especificidad, aunque realmente lo que hace es saltarse las reglas de especificidad y machacarlas.
 
 El uso de esta declaración está **totalmente desaconsejado**, puesto que puede dificultar mucho depurar los problemas con tu código y la única forma de sobreescribir un `!important` es añadiendo otro dentro de un selector con más especificidad o haciendo que aparezca después en el código, lo cual terminaría convirtiendo tu CSS en algo realmente dificil de mantener. La regla es no hacer uso de ellos salvo para casos extremos como por ejemplo: sobreescribir estilos inline que te añada algún plugin externo, etc.
 
-### Evitar los conflictos de especificidad
+## Evitar los conflictos de especificidad
 
 Existen varias formas de ayudar a evitar los conflictos de especificidad. Aquí van algunas de ellas:
 
@@ -102,7 +101,7 @@ nav li a{
 }
 ```
 
-### Cómo se calcula internamente el peso o valor de los selectores
+## Cómo se calcula internamente el peso o valor de los selectores
 
 Hasta ahora hemos hablado de qué selectores tienen más o menos especificidad, pero no te he explicado cómo el navegador calcula realmente dichos valores o pesos de cada uno de ellos.
 
