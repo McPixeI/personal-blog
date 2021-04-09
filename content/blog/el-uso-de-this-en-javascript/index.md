@@ -1,6 +1,6 @@
 ---
 title: El uso de 'this' en JavaScript
-date: 2021-04-08T20:25:47.975Z
+date: 2021-04-09T11:01:34.617Z
 description: Analizamos una de las características más confusas del lenguaje
   JavaScript, con sus bondades y sus carencias
 tags:
