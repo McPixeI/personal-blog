@@ -149,7 +149,7 @@ Si quieres verlo todo junto, puedes trastear con el siguiente codepen:
 
 https://codepen.io/mcpixel/pen/OJWRWmV
 
-### BEM o no BEM
+## BEM o no BEM
 
 La nomenclatura BEM nos ayuda a definir **componentes modulares y reusables** en nuestros desarrollos de forma sencilla. De todos modos, antes de utilizar esta nomenclatura hay que tener en cuenta un par de aspectos importantes:
 
@@ -170,7 +170,7 @@ La nomenclatura BEM nos ayuda a definir **componentes modulares y reusables** en
 
    En cualquier caso, hay que entender que esto es una limitación de cómo utilizamos SCSS y no del propio BEM. Por eso es importante tener clara la separación entre tus bloques. Como recomendación, yo para proyectos personales hago uso de BEM anidado con SCSS, pero para proyectos compartidos con otras personas, suelo apostar por no anidar selectores aunque utilice BEM, para facilitar así la lectura a los demás. 
 
-### Para terminar
+## Para terminar
 
 BEM no deja de ser una herramienta más para facilitarnos la vida. Eres totalmente libre de elegir esta metodología o cualquier otra **siempre que se adapte a tu proyecto y a tu equipo**. Además, hoy en día, con el auge de librerías JS como React o VUE, que han favorecido al surgimiento de otras aproximaciones como los módulos de CSS o el "CSS-in-JS", están ofreciendo otras alternativas (con una filosofía similar) perfectamente viables.
 
