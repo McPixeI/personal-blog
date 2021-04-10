@@ -94,7 +94,7 @@ Veamos ahora qué pasa si utilizamos `this` dentro de un método definido como u
 ```javascript
 const dog = { 
     name: 'Pepa',
-    sayHello: () => { 
+    sayHello: () => { // Función de flecha
         return `Hola, soy ${this.name}`;
     }
 }
@@ -109,8 +109,8 @@ dog.sayHello(); // Hola, soy
 ```javascript
 const dog = { 
     name: 'Pepa',
-    sayHello: () => { 
-        return this;
+    sayHello: () => { //Función de flecha
+        return this; //Probamos a devolver 'this' para ver qué esta pasando
     }
 }
 
