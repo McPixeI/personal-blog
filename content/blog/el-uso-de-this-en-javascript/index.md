@@ -110,7 +110,7 @@ dog.sayHello(); // Hola, soy
 const dog = { 
     name: 'Pepa',
     sayHello: () => { 
-        return `Hola, soy ${this.name}`;
+        return this;
     }
 }
 
