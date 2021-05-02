@@ -75,6 +75,8 @@ console.log(gameTitles); //["Returnal", "Resident Evil Village", "Little Nightma
 
 ```
 
-Bastante mejor, ¿no?
+Bastante mejor, ¿no? 
 
-> OJO: El `return` dentro de la función `map` es muy importante. Es un error común omitirlo y no obtener el resultado deseado. Debes tener claro que por cada iteración en cada uno de los elementos del array se debe devolver el nuevo resultado para que forme parte del nuevo array que genera este método.
+Ahora automáticamente definimos el nuevo array que necesitamos, asigándole como valor el resultado de 'mapear' el anterior. Lo que estamos haciendo es que, por cada entrada del listado `gameList`, estamos retornando el título del juego `game.title`. Cada uno de estos retornos, pasará a formar parte del nuevo array que definimos (`gameTitles`).
+
+> OJO: El `return` dentro de la función `map` es muy importante. Es un error común omitirlo y no obtener el resultado deseado (en este caso devolvería `[undefined, undefined, undefined]`). Debes tener claro que por cada iteración en cada uno de los elementos del array se debe devolver el nuevo resultado para que forme parte del nuevo array que genera este método.
