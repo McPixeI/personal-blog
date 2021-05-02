@@ -62,7 +62,12 @@ for (let index = 0; index < gameList.length; index++) {
 console.log(gameTitles); //["Returnal", "Resident Evil Village", "Little Nightmares 2"]
 ```
 
-En el ejemplo anterior nos hemos visto obligados a crear un nuevo array vacío (`gameTitles`), al cual le vamos añadiendo mediante el método `push` los nombres de cada juego, iterando sobre la lista `gameList`. Esto se podría haber resuelto también utilizando los métodos `forEach` o `for of`.
+El ejemplo anterior hace lo siguiente:
+1. Definimos un nuevo array vacío que contendrá en el futuro los nombres de los juegos
+2. Utilizando el bucle `for`, iteramos para cada posición de `gameList`
+3. Por cada iteración, añadimos el título del juego al array que habíamos definido previamente vacío, haciendo uso del método `push`
+
+Esto se podría haber resuelto también utilizando los métodos `forEach` o `for of`.
 
 Veamos ahora cómo podríamos resolverlo utilizando el método `map`, con una aproximación más funcional:
 
@@ -75,9 +80,11 @@ console.log(gameTitles); //["Returnal", "Resident Evil Village", "Little Nightma
 
 ```
 
-Bastante mejor, ¿no? 
+¡Bastante mejor! Ahora directamente definimos el nuevo array que necesitamos, asignándole como valor el resultado de 'mapear' el anterior. 
 
-Ahora automáticamente definimos el nuevo array que necesitamos, asignándole como valor el resultado de 'mapear' el anterior. Lo que estamos haciendo es que, por cada entrada del listado `gameList`, estamos retornando el título del juego `game.title`. Cada uno de estos retornos, pasará a formar parte del nuevo array que definimos (`gameTitles`).
+Lo que hace el código anterior es lo siguiente:
+1. Por cada entrada del listado `gameList`, se retorna el valor de su título `game.title`
+2. Cada uno de los valores retornados pasará a formar parte del nuevo array definido `gameTitles`
 
 > OJO: El `return` dentro de la función `map` es muy importante. Es un error común omitirlo y no obtener el resultado deseado (en este caso devolvería `[undefined, undefined, undefined]`). Debes tener claro que por cada iteración en cada uno de los elementos del array se debe devolver el nuevo resultado para que forme parte del nuevo array que genera este método.
 
@@ -92,7 +99,7 @@ La sintaxis que sigue es la siguiente:
 var newArray = arr.filter(callback(currentValue[, index[, array]])[, thisArg])
 ```
 
-Dentro del callback, el único parámetro obligatorio es el `currentValue`, al cual se le someterá a la 'condición' de filtro.
+Dentro del callback, el único parámetro obligatorio es el `currentValue`, al cual se le someterá a la condición de filtro.
 
 Vamos con otro ejemplo. Supongamos ahora que nuestro presupuesto es de 60 euros, así que necesitamos ver qué juegos son los que podemos permitirnos. El método `filter` nos viene de perlas para este caso:
 
@@ -103,7 +110,10 @@ let affordables = gameList.filter(game => {
 console.log(affordables); //[{ title: 'Resident Evil Village', platform: 'PC', price: 59 },{ title: 'Little Nightmares 2', platform: 'PC', price: 20 }]
 ```
 
-El ejemplo anterior define una nueva variable (`affordables`) que contendrá el resultado de filtrar el listado de juegos completo. Dentro del método `filter` tenemos un callback, al cual le pasámos el parámetro `game`, el equivalente al `currentValue` (podrías ponerle el nombre que te dé la gana). En el cuerpo de este callback establecemos la condición de filtro, donde sólo los elementos que cumplan dicha condición (precio inferior o igual a 60 euros) formarán parte del nuevo array.
+El ejemplo anterior hace lo siguiente:
+1. Se define una nueva variable (`affordables`) que contendrá el resultado de filtrar el listado de juegos completo. 
+2. Dentro del método `filter` tenemos un callback, al cual le pasámos el parámetro `game`, el equivalente al `currentValue` (podrías ponerle el nombre que te dé la gana). 
+3. En el cuerpo del callback establecemos la condición de filtro, donde sólo los elementos que cumplan dicha condición (precio inferior o igual a 60 euros) formarán parte del nuevo array.
 
 > Cuidado con el `return` aquí también 😉
 
@@ -112,7 +122,7 @@ Como vemos en el `console.log`, el nuevo array solo contiene las entradas de los
 
 ### Combinando Map y Filter
 
-En el último ejemplo hemos conseguido una array con los juegos que nos podemos permitir, pero, ¿y si solo queremos la lista con los nombres de dichos juegos y no el restro de entradas? Vamos a ver un ejemplo combinado entre `map` y `filter`:
+En el último ejemplo hemos conseguido una array con los juegos que nos podemos permitir, pero, ¿y si sólo queremos la lista con los nombres de dichos juegos y no el restro de entradas? Vamos a ver un ejemplo combinado entre `map` y `filter`:
 
 ```javascript
 let affordables = gameList.filter(game => {
@@ -142,7 +152,7 @@ La sintaxis que sigue es la siguiente:
 arr.reduce(callback(acumulador, valorActual[, índice[, array]])[, valorInicial])
 ```
 
-Vamos con otro ejemplo doble. Este ejemplo nos servirá para ver cómo podemos utilizar juntos los métodos `map` y `reduce` a la vez que aprendemos este último.
+Vamos con otro ejemplo doble. Este nos servirá para ver cómo podemos utilizar juntos los métodos `map` y `reduce` a la vez que aprendemos este último.
 
 Imagina ahora que nos interesa saber a cuánto asciende la suma de los precios de todos los juegos de nuestra lista. 
 
