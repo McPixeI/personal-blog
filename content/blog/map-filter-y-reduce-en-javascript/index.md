@@ -10,7 +10,7 @@ tags:
 
 Una de las características más visibles de la programación funcional es la forma en que se trabaja con listas o arrays. Tener una estructura de datos basada en arrays y operar sobre los mismos en el front-end de tu aplicación es, posiblemente, una de las tareas más comunes que vas a encontrarte en el día a día como desarrollador front-end. 
 
-La idea de este artículo es explorar los tres métodos más utilizados para el tratamiento de arrays y que son uno de los pilares de la programación funcional. Se trata de los métodos `map`, `filter` y `reduce`. Los tres son métodos pertenecientes al Array prototype, es decir, estos se encuentran disponibles de forma nativa en tu navegador.
+La idea de este artículo es explorar los tres métodos más utilizados para el tratamiento de arrays y que son uno de los **pilares de la programación funcional**. Se trata de los métodos `map`, `filter` y `reduce`. Los tres son métodos pertenecientes al Array prototype, es decir, estos se encuentran disponibles de forma nativa en tu navegador.
 
 Vamos a familiarizarnos con estas funciones 👇
 
@@ -63,6 +63,7 @@ console.log(gameTitles); //["Returnal", "Resident Evil Village", "Little Nightma
 ```
 
 El ejemplo anterior hace lo siguiente:
+
 1. Definimos un nuevo array vacío que contendrá en el futuro los nombres de los juegos
 2. Utilizando el bucle `for`, iteramos para cada posición de `gameList`
 3. Por cada iteración, añadimos el título del juego al array que habíamos definido previamente vacío, haciendo uso del método `push`
@@ -77,17 +78,16 @@ let gameTitles = gameList.map(game => {
 });
 
 console.log(gameTitles); //["Returnal", "Resident Evil Village", "Little Nightmares 2"]
-
 ```
 
 ¡Bastante mejor! Ahora directamente definimos el nuevo array que necesitamos, asignándole como valor el resultado de 'mapear' el anterior. 
 
 Lo que hace el código anterior es lo siguiente:
+
 1. Por cada entrada del listado `gameList`, se retorna el valor de su título `game.title`
 2. Cada uno de los valores retornados pasará a formar parte del nuevo array definido `gameTitles`
 
 > OJO: El `return` dentro de la función `map` es muy importante. Es un error común omitirlo y no obtener el resultado deseado (en este caso devolvería `[undefined, undefined, undefined]`). Debes tener claro que por cada iteración en cada uno de los elementos del array se debe devolver el nuevo resultado para que forme parte del nuevo array que genera este método.
-
 
 ### Filter
 
@@ -111,6 +111,7 @@ console.log(affordables); //[{ title: 'Resident Evil Village', platform: 'PC', p
 ```
 
 El ejemplo anterior hace lo siguiente:
+
 1. Se define una nueva variable (`affordables`) que contendrá el resultado de filtrar el listado de juegos completo. 
 2. Dentro del método `filter` tenemos un callback, al cual le pasámos el parámetro `game`, el equivalente al `currentValue` (podrías ponerle el nombre que te dé la gana). 
 3. En el cuerpo del callback establecemos la condición de filtro, donde sólo los elementos que cumplan dicha condición (precio inferior o igual a 60 euros) formarán parte del nuevo array.
@@ -119,10 +120,11 @@ El ejemplo anterior hace lo siguiente:
 
 Como vemos en el `console.log`, el nuevo array solo contiene las entradas de los juegos 'Resident Evil' y 'Little Nightmares', puesto que 'Returnal' tenía un precio superior a 60 euros.
 
-
 ### Combinando Map y Filter
 
-En el último ejemplo hemos conseguido una array con los juegos que nos podemos permitir, pero, ¿y si sólo queremos la lista con los nombres de dichos juegos y no el restro de entradas? Vamos a ver un ejemplo combinado entre `map` y `filter`:
+En el último ejemplo hemos conseguido una array con los juegos que nos podemos permitir, pero, ¿y si sólo queremos la lista con los nombres de dichos juegos y no el restro de entradas? 
+
+Vamos a ver un ejemplo combinado entre `map` y `filter`:
 
 ```javascript
 let affordables = gameList.filter(game => {
@@ -140,7 +142,6 @@ En este último ejemplo hemos hecho lo siguiente:
 2. Del resultado anterior, obtenemos un array que contenga únicamente los nombres de dichos juegos
 
 ¡Y listo!
-
 
 ### Reduce
 
