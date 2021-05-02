@@ -1,11 +1,14 @@
 ---
 title: Map, filter y reduce en Javascript
-date: 2021-05-02T18:52:29.716Z
+date: 2021-05-02T20:53:43.281Z
 description: Introducción a los métodos más utilizados para el tratamiento de
   arrays en Javascript con un enfoque funcional
 tags:
   - javascript
 ---
+![decorative heading image](https://images.unsplash.com/photo-1494961104209-3c223057bd26?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1592&q=80 "decorative heading image")
+*Foto por [Guillaume Bolduc](https://unsplash.com/@guibolduc) en Unsplash*
+
 > "La programación funcional es un paradigma de programación que nos ayuda a escribir un código más legible, mantenible y testeable". 
 
 Una de las características más visibles de la programación funcional es la forma en que se trabaja con listas o arrays. Tener una estructura de datos basada en arrays y operar sobre los mismos en el front-end de tu aplicación es, posiblemente, una de las tareas más comunes que vas a encontrarte en el día a día como desarrollador front-end. 
