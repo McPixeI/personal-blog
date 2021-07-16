@@ -1,8 +1,8 @@
 ---
 title: "React Hooks: useState"
-date: 2021-07-16T20:08:31.151Z
-description: Aprende a manejar el estado de tus componentes de función en React
-  mediante el Hook de estado useState
+date: 2021-07-16T21:18:31.802Z
+description: Aprende a manejar el estado de tus componentes en React mediante el
+  Hook de estado useState
 tags:
   - react
   - hooks
@@ -92,7 +92,7 @@ Haciendo uso del atributo `onClick`, le añadimos al botón una función que deb
 ¿A quuién hemos dicho antes que hay que llamar para modificar al estado? Exacto, a `setLikes`:
 
 ```jsx
-    <button onClick={() => setLikes(likes + 1)}>Like</button>
+<button onClick={() => setLikes(likes + 1)}>Like</button>
 ```
 
 > Cuidado: Los controladores de eventos o "event handlers" son funciones o referencias a funciones, es por ello que no llamamos directamente a `setLikes()`, sino que lo hacemos dentro de una función de flecha (`onClick={() => ...}`)
