@@ -7,7 +7,7 @@ tags:
   - react
   - hooks
 ---
-Los [Hooks](https://es.reactjs.org/docs/hooks-intro.html) se incorporaron a React en la versión 16.8 Hasta la llegada de los mismossi querías manejar el estado u otras características de un componente de tu aplicación estabas obligado a utilizar componentes de clase. Ahora esto ha cambiado y podemos hacer uso del estado de componentes definidos como funciones, lo cual simplifica mucho trabajar con los mismos.
+Los [Hooks](https://es.reactjs.org/docs/hooks-intro.html) se incorporaron a React en la versión 16.8. Hasta la llegada de los mismos, si querías manejar el estado u otras características de un componente de tu aplicación estabas obligado a utilizar componentes de clase. Ahora esto ha cambiado y podemos hacer uso del estado de componentes definidos como funciones, lo cual simplifica mucho trabajar con los mismos.
 
 En este primer artíclo de la serie que tengo prevista sobre Hooks en React, hablaremos del Hook de estado o `useState()`, pero vamos por orden. En primer lugar... ¿Qué es un Hook?
 
