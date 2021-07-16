@@ -109,20 +109,20 @@ export default SocialCount;
 
 ### Manejar más de un estado
 
-¿Qué pasaría ahora si quisiéramos añadir también un recuento de dislikes? Pues muy simple, añadimos un nuevo `useState()` para los dislikes tal y como hemos hecho anteriormente:
+¿Qué pasaría ahora si quisiéramos añadir también un botón de dislikes y su recuento total? Pues la solución es simple, añadimos un nuevo `useState()` para los dislikes tal y como hemos hecho anteriormente con los likes:
 
 ```javascript
 const [dislikes, setDislikes] = useState(0);
 ```
 
-Ahora tenemos definida una nueva variable que guardará este nuevo estado (`dislikes`), también inicializado a 0, y podremos modificarlo de nuevo utilizando un controlador de eventos en un nuevo botón que creamos para añadir dislikes:
+Ahora tenemos definida una nueva variable que guardará este nuevo estado (`dislikes`), también inicializado a 0, y podremos modificarlo de nuevo utilizando un controlador de eventos en un nuevo botón que vamos a crear para añadir los dislikes:
 
 ```jsx
 <p>Dislikes count: {dislikes}</p>
 <button onClick={() => setDislikes(dislikes + 1)}>Dislike</button>
 ```
 
-Con lo cual nuestro código quedaría así:
+Con lo cual nuestro código quedaría así:
 
 ```jsx
 import React, { useState } from "react";
@@ -145,15 +145,15 @@ function SocialCount() {
 export default SocialCount;
 ```
 
-Con esto ya tendríamos un componente muy básico capaz de manejar dos estados de forma independiente, controlando ambos contadores por separado. Nuestra aplicación pintaría algo así (ya... no le hemos puesto CSS):
+Con esto ya tendríamos un componente muy básico capaz de manejar dos estados de forma independiente, controlando ambos contadores por separado. Nuestra aplicación pintaría algo así (ya... no le hemos puesto CSS):
 
 ![likes-dislikes count](likes-dislikes.jpg "likes-dislikes count")
 
 ### Para terminar
 
-Obviamente este es un ejemplo muy simple y nuestro componente todavía no funciona como debería hacer un contador real de likes/dislikes. De hecho ahora mismo no es más que dos contadores independientes sin límite de interacción ni persistencia, pero cumple con el propósito de explicar cómo y para qué se utiliza el Hook de estado.
+Obviamente este es un ejemplo muy simple y nuestro componente todavía no funciona como debería hacer un contador real de likes/dislikes. De hecho ahora mismo no es más que dos contadores independientes sin límite de interacción ni persistencia, pero cumple con el propósito de explicar cómo y para qué se utiliza el Hook de estado.
 
-En próximos artículos iremos mejorando este componente para cumplir con las siguientes funcionalidades, mientras aprendemos nuevos Hooks:
+En próximos artículos iremos mejorando este componente para cumplir con las siguientes funcionalidades, mientras aprendemos nuevos Hooks:
 
-* **Control de estado complejo**. Nos servirá para explicar el Hook `useReducer()`.
-* **Persistencia**. Nos ayudaremos del Hook `useEffect()`.
+* **Control de estado complejo**. Nos servirá para explicar el Hook `useReducer()`.
+* **Persistencia**. Usaremos una de las múltiples aplicaciones del Hook `useEffect()`.
