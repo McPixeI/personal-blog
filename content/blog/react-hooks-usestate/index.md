@@ -6,7 +6,6 @@ description: Aprende a manejar el estado de tus componentes de función en React
 tags:
   - react
   - hooks
-  - useState
 ---
 Los [Hooks](https://es.reactjs.org/docs/hooks-intro.html) se incorporaron a React en la versión 16.8. Hasta la llegada de los mismos, si querías manejar el estado u otras características de un componente de tu aplicación estabas obligado a utilizar componentes de clase. Ahora esto ha cambiado y podemos hacer uso del estado de componentes definidos como funciones, lo cual simplifica mucho trabajar con los mismos.
 
