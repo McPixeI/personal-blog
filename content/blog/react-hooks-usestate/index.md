@@ -38,14 +38,13 @@ Nuestro componente inicial luce así:
 ```jsx
 import React from "react";
 
-function SocialCount() { 
-
-  return (
-    <div> 
-      <p>Likes count:</p> //Aquí mostraremos el recuento
-      <button>Like</button>
+function SocialCount() {
+  return (
+    <div>
+      <p>Likes count:</p>
+      <button>Like</button>
     </div>
-  );
+  );
 }
 
 export default SocialCount;
@@ -105,9 +104,9 @@ Nuestro componente ahora pasaría a tener el siguiente contenido:
 import React, { useState } from "react";
 
 function SocialCount() {
-
+  
   const [likes, setLikes] = useState(0);
-
+  
   return (
     <div>
       <p>Likes count: {likes}</p>
@@ -140,18 +139,18 @@ Con lo cual nuestro código quedaría así:
 import React, { useState } from "react";
 
 function SocialCount() {
-
+  
   const [likes, setLikes] = useState(0);
   const [dislikes, setDislikes] = useState(0);
-
+  
   return (
-    <div>
-        <p>Likes count: {likes}</p>
-        <p>Dislikes count: {dislikes}</p>
-        <button onClick={() => setLikes(likes + 1)}>Like</button>
-        <button onClick={() => setDislikes(dislikes + 1)}>Dislike</button>
-    </div>
-  );
+    <div>
+      <p>Likes count: {likes}</p>
+      <p>Dislikes count: {dislikes}</p>
+      <button onClick={() => setLikes(likes + 1)}>Like</button>
+      <button onClick={() => setDislikes(dislikes + 1)}>Dislike</button>
+    </div>
+  );
 }
 
 export default SocialCount;
