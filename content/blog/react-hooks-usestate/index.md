@@ -7,6 +7,10 @@ tags:
   - react
   - hooks
 ---
+![React Hooks](photo-1576062710756-2b7a0ced9e2d.jpg "React Hooks")
+
+*Foto por [Grant Durr](https://unsplash.com/@blizzard88) en Unsplash*
+
 Los [Hooks](https://es.reactjs.org/docs/hooks-intro.html) se incorporaron a React en la versión 16.8. Hasta la llegada de los mismos, si querías manejar el estado u otras características de un componente de tu aplicación estabas obligado a utilizar componentes de clase. Ahora esto ha cambiado y podemos hacer uso del estado de componentes definidos como funciones, lo cual simplifica mucho trabajar con los mismos.
 
 En este primer artículo de la serie que tengo prevista sobre Hooks en React, hablaremos del Hook de estado o `useState()`, pero vamos por orden. 
@@ -25,7 +29,7 @@ Entre otras cosas, te ayudan a **controlar el estado de tus componentes** sin ne
 
 En el momento en el que estás desarrollando un componente de función y surge la necesidad de añadirle un estado, es el momento de utilizar la función `useState()`. De cara a facilitar la comprensión de este artículo vamos a trabajar con un ejemplo que nos va a servir a lo largo del mismo.
 
-Crearemos un componente "social" que va a consistir en un contador de likes/dislikes. Para este primer artículo, únicamente implementaremos ambos botones y les agregaremos control de estado utilizando `useState()`. En próximos artículos lo iremos mejorando haciendo uso de otros Hooks como `useReducer() ` y `useEffect()`.
+Crearemos un componente "social" que va a consistir en un contador de likes/dislikes. Para este primer artículo, únicamente implementaremos ambos botones y les agregaremos control de estado utilizando `useState()`. En próximos artículos lo iremos mejorando haciendo uso de otros Hooks como `useReducer()` y `useEffect()`.
 
 > Puedes ver todo el código relativo a este artículo y jugar con él en el siguiente [codesandbox](https://codesandbox.io/s/wandering-cloud-c4cbn?file=/src/components/LikeButton.js:0-275).
 
@@ -91,7 +95,7 @@ Haciendo uso del atributo `onClick`, le añadimos al botón una función que deb
     <button onClick={() => setLikes(likes + 1)}>Like</button>
 ```
 
->Cuidado: Los controladores de eventos o "event handlers" son funciones o referencias a funciones, es por ello que no llamamos directamente a `setLikes()`, sino que lo hacemos dentro de una función de flecha (`onClick={() => ...}`)
+> Cuidado: Los controladores de eventos o "event handlers" son funciones o referencias a funciones, es por ello que no llamamos directamente a `setLikes()`, sino que lo hacemos dentro de una función de flecha (`onClick={() => ...}`)
 
 Lo que hace el código anterior es que cada vez que se pulse el botón, se ejecutará la función que modifica el estado (`setLikes`), a la cual **le pasamos como parámetro el nuevo estado**, que en este caso sería el resultado de sumarle 1 al valor actual (`likes + 1`).
 
