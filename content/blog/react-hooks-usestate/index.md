@@ -23,7 +23,7 @@ Entre otras cosas, te ayudan a **controlar el estado de tus componentes** sin ne
 
 ## El Hook de estado
 
-En el momento en el que estás desarrollando un componente de función y surge la necesidad de a    ñadirle un estado, es el momento de utilizar la función `useState()`. De cara a facilitar la comprensión de este artículo vamos a trabajar con un ejemplo que nos va a servir a lo largo del mismo.
+En el momento en el que estás desarrollando un componente de función y surge la necesidad de añadirle un estado, es el momento de utilizar la función `useState()`. De cara a facilitar la comprensión de este artículo vamos a trabajar con un ejemplo que nos va a servir a lo largo del mismo.
 
 Vamos a trabajar en un componente "social" que va a consistir en un contador de likes/dislikes. Para este primer artículo, únicamente implementaremos ambos botones y les agregaremos control de estado utilizando `useState()`. En próximos artículos lo iremos mejorando haciendo uso de otros Hooks como `useReducer() `y `useEffect()`.
 
