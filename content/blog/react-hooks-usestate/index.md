@@ -1,6 +1,6 @@
 ---
 title: "React Hooks: useState"
-date: 2021-07-16T19:18:04.011Z
+date: 2021-07-16T20:08:31.151Z
 description: Aprende a manejar el estado de tus componentes de función en React
   mediante el Hook de estado useState
 tags:
@@ -20,7 +20,7 @@ Entre otras cosas, te ayudan a **controlar el estado de tus component
 
 > Si te interesa saber más sobre la motivación y la necesidad de la creación de los Hooks, en [este enlace](https://es.reactjs.org/docs/hooks-intro.html#motivation) tienes una justificación escrita por el propio equipo de React.
 
-## El Hook de estado
+## El Hook useState
 
 En el momento en el que estás desarrollando un componente de función y detectas que debes añadirle un estado, es el momento de hacer uso de la función `useState()`. De cara a facilitar la comprensión de este artículo vamos a trabajar con un ejemplo que nos va a servir a lo largo del mismo.
 
