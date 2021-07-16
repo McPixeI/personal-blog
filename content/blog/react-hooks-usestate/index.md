@@ -25,7 +25,7 @@ Entre otras cosas, te ayudan a **controlar el estado de tus componentes** sin ne
 
 En el momento en el que estás desarrollando un componente de función y surge la necesidad de añadirle un estado, es el momento de utilizar la función `useState()`. De cara a facilitar la comprensión de este artículo vamos a trabajar con un ejemplo que nos va a servir a lo largo del mismo.
 
-Crearemos un componente "social" que va a consistir en un contador de likes/dislikes. Para este primer artículo, únicamente implementaremos ambos botones y les agregaremos control de estado utilizando `useState()`. En próximos artículos lo iremos mejorando haciendo uso de otros Hooks como `useReducer() `y `useEffect()`.
+Crearemos un componente "social" que va a consistir en un contador de likes/dislikes. Para este primer artículo, únicamente implementaremos ambos botones y les agregaremos control de estado utilizando `useState()`. En próximos artículos lo iremos mejorando haciendo uso de otros Hooks como `useReducer() ` y `useEffect()`.
 
 > Puedes ver todo el código relativo a este artículo y jugar con él en el siguiente [codesandbox](https://codesandbox.io/s/wandering-cloud-c4cbn?file=/src/components/LikeButton.js:0-275).
 
@@ -47,7 +47,7 @@ function SocialCount() { 
 export default SocialCount;
 ```
 
-Simplemente se trata de un componente que renderiza un botón y un texto que pretende renderizar el recuento total de likes. En este punto detectamos que debemos añadirle un estado para controlar dicho recuento. Para ello recurriremos a `useState()`, que se importa de la siguiente forma:
+Simplemente se trata de un componente que renderiza un botón y un texto que pretende mostrar el recuento total de likes. En este punto detectamos que debemos añadirle un estado para controlar dicho recuento. Para ello recurriremos a `useState()`, que se importa de la siguiente forma:
 
 ```javascript
 import React, { useState } from 'react';
@@ -61,16 +61,18 @@ const [ likes, setLikes ] = useState(0);
 
 Esta definición agrega estado al componente y lo hace iniciándolo con el valor de cero. 
 
-La función `useState() `devuelve dos valores, los cuales se corresponden a `likes `y `setLikes `(el nombre podría haber sido cualquier otro). Este tipo de asignaciones se conocen como **asignación de desestructuración**, y si no estás familiarizad@ con ellas, te aconsejo echar un vistazo [aquí](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#descripci%C3%B3n).
+La función `useState()` devuelve dos valores, los cuales se corresponden a `likes` y `setLikes` (el nombre podría haber sido cualquier otro). Este tipo de asignaciones se conocen como **asignación de desestructuración**, y si no estás familiarizad@ con ellas, te aconsejo echar un vistazo [aquí](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#descripci%C3%B3n).
 
-A `useState()` se le pasa como argumento el estado inicial, que se corresponde con la variable `likes` y que en este caso hemos definido a cero. La variable `setCounter` se asigna a una función que utilizaremos para modificar el estado, es decir, cada vez que queramos cambiar el valor de `likes`, tendremos que hacer uso de la función `setLikes`.
+A `useState()` se le pasa como argumento el estado inicial, que se corresponde con la variable `likes` y que en este caso hemos definido a cero. 
+
+La variable `setCounter` se asigna a una función que utilizaremos para modificar el estado, es decir, cada vez que queramos cambiar el valor de `likes`, tendremos que hacer uso de la función `setLikes`.
 
 ### Mostrando el valor del estado
 
 Ahora vamos a probar a pintar por pantalla el valor de nuestro contador de likes. Para ello, simplemente podemos añadir la variable en el template que retorna nuestro componente:
 
 ```jsx
-<p>Me gustas: {likes}</p>
+<p>Likes count: {likes}</p>
 ```
 
 En esta situación, el contador mostrará el valor cero, puesto que así lo hemos definido en el `useState(0)`. Además, nuestro botón todavía no es funcional, así que por mucho que pulsemos sobre el mismo, no cambiará su valor. Por lo tanto, nuestro componente pintaría lo siguiente:
@@ -79,7 +81,11 @@ En esta situación, el contador mostrará el valor cero, puesto que así lo hemo
 
 ### Manejo de eventos
 
-Vamos ahora a modificar el estado de nuestro componente. Haciendo uso del atributo `onClick`, le añadimos al botón una función que debe ejecutar la modificación del estado. ¿A qué hemos dicho antes que hay que llamar para modificar al estado? Exacto, a `setLikes`:
+Vamos ahora a modificar el estado de nuestro componente. 
+
+Haciendo uso del atributo `onClick`, le añadimos al botón una función que debe ejecutar la modificación del estado. 
+
+¿A quuién hemos dicho antes que hay que llamar para modificar al estado? Exacto, a `setLikes`:
 
 ```jsx
     <button onClick={() => setLikes(likes + 1)}>Like</button>
@@ -117,7 +123,7 @@ export default SocialCount;
 const [dislikes, setDislikes] = useState(0);
 ```
 
-Ahora tenemos definida una nueva variable que guardará este nuevo estado (`dislikes`), también inicializado a 0, y podremos modificarlo de nuevo utilizando un controlador de eventos en un nuevo botón que vamos a crear para añadir los dislikes:
+Ahora tenemos definida una nueva variable que guardará este nuevo estado (`dislikes`), también inicializado a cero, y podremos modificarlo de nuevo utilizando un controlador de eventos en un nuevo botón que vamos a crear para añadir los dislikes:
 
 ```jsx
 <p>Dislikes count: {dislikes}</p>
