@@ -19,7 +19,7 @@ Entre otras cosas, te ayudan a **controlar el estado de tus component
 
 > Si te interesa saber más sobre la motivación y la necesidad de la creación de los Hooks, en [este enlace](https://es.reactjs.org/docs/hooks-intro.html#motivation) tienes una justificación escrita por el propio equipo de React.
 
-## El Hook useState
+## El Hook de estado
 
 En el momento en el que estás desarrollando un componente de función y detectas que debes añadirle un estado, es el momento de hacer uso de la función `useState()`. De cara a facilitar la comprensión de este artículo vamos a trabajar con un ejemplo que nos va a servir a lo largo del mismo.
 
