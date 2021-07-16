@@ -25,7 +25,7 @@ Entre otras cosas, te ayudan a **controlar el estado de tus componentes** sin ne
 
 En el momento en el que estás desarrollando un componente de función y surge la necesidad de añadirle un estado, es el momento de utilizar la función `useState()`. De cara a facilitar la comprensión de este artículo vamos a trabajar con un ejemplo que nos va a servir a lo largo del mismo.
 
-Vamos a trabajar en un componente "social" que va a consistir en un contador de likes/dislikes. Para este primer artículo, únicamente implementaremos ambos botones y les agregaremos control de estado utilizando `useState()`. En próximos artículos lo iremos mejorando haciendo uso de otros Hooks como `useReducer() `y `useEffect()`.
+Crearemos un componente "social" que va a consistir en un contador de likes/dislikes. Para este primer artículo, únicamente implementaremos ambos botones y les agregaremos control de estado utilizando `useState()`. En próximos artículos lo iremos mejorando haciendo uso de otros Hooks como `useReducer() `y `useEffect()`.
 
 > Puedes ver todo el código relativo a este artículo y jugar con él en el siguiente [codesandbox](https://codesandbox.io/s/wandering-cloud-c4cbn?file=/src/components/LikeButton.js:0-275).
 
