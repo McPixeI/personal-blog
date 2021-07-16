@@ -7,7 +7,7 @@ tags:
   - react
   - hooks
 ---
-![React Hooks](photo-1576062710756-2b7a0ced9e2d.jpg "React Hooks")
+![React Hooks](photo-1563115298-e9585e7943d4.jpg "React Hooks")
 
 *Foto por [Grant Durr](https://unsplash.com/@blizzard88) en Unsplash*
 
