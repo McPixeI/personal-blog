@@ -6,6 +6,7 @@ description: Aprende a manejar el estado de tus componentes en React mediante el
 tags:
   - react
   - hooks
+  - javascript
 ---
 ![React Hooks](photo-1563115298-e9585e7943d4.jpg "React Hooks")
 
@@ -88,7 +89,7 @@ Vamos ahora a modificar el estado de nuestro componente.
 
 Haciendo uso del atributo `onClick`, le añadimos al botón una función que debe ejecutar la modificación del estado. 
 
-¿A quuién hemos dicho antes que hay que llamar para modificar al estado? Exacto, a `setLikes`:
+¿A quién hemos dicho antes que hay que llamar para modificar al estado? Exacto, a `setLikes`:
 
 ```jsx
 <button onClick={() => setLikes(likes + 1)}>Like</button>
