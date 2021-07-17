@@ -6,6 +6,7 @@ description: Aprende a manejar el estado de tus componentes en React mediante el
 tags:
   - react
   - hooks
+  - javascript
 ---
 ![React Hooks](photo-1563115298-e9585e7943d4.jpg "React Hooks")
 
@@ -68,7 +69,7 @@ La función `useState()` devuelve dos valores, los cuales se corresponden a `lik
 
 A `useState()` se le pasa como argumento el estado inicial, que se corresponde con la variable `likes` y que en este caso hemos definido a cero. 
 
-La variable `setCounter` se asigna a una función que utilizaremos para modificar el estado, es decir, cada vez que queramos cambiar el valor de `likes`, tendremos que hacer uso de la función `setLikes`.
+La variable `setLikes` se asigna a una función que utilizaremos para modificar el estado, es decir, cada vez que queramos cambiar el valor de `likes`, tendremos que hacer uso de la función `setLikes`.
 
 ### Mostrando el valor del estado
 
@@ -88,7 +89,7 @@ Vamos ahora a modificar el estado de nuestro componente.
 
 Haciendo uso del atributo `onClick`, le añadimos al botón una función que debe ejecutar la modificación del estado. 
 
-¿A quuién hemos dicho antes que hay que llamar para modificar al estado? Exacto, a `setLikes`:
+¿A quién hemos dicho antes que hay que llamar para modificar al estado? Exacto, a `setLikes`:
 
 ```jsx
 <button onClick={() => setLikes(likes + 1)}>Like</button>
@@ -96,7 +97,7 @@ Haciendo uso del atributo `onClick`, le añadimos al botón una función que deb
 
 > Cuidado: Los controladores de eventos o "event handlers" son funciones o referencias a funciones, es por ello que no llamamos directamente a `setLikes()`, sino que lo hacemos dentro de una función de flecha (`onClick={() => ...}`)
 
-Lo que hace el código anterior es que cada vez que se pulse el botón, se ejecutará la función que modifica el estado (`setLikes`), a la cual **le pasamos como parámetro el nuevo estado**, que en este caso sería el resultado de sumarle 1 al valor actual (`likes + 1`).
+Lo que hace el código anterior es que cada vez que se pulse el botón, se ejecutará la función que modifica el estado (`setLikes`), a la cual **le pasamos como parámetro el valor del nuevo estado**, que en este caso sería el resultado de sumarle 1 al valor actual (`likes + 1`).
 
 Nuestro componente ahora pasaría a tener el siguiente contenido:
 
