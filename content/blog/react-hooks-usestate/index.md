@@ -196,7 +196,7 @@ Con esto ya tendríamos un componente muy básico capaz de manejar dos estados d
 
 Puedes repasar el código y jugar con él en el siguiente sandbox:
 
-https://codesandbox.io/embed/social-buttons-c4cbn?autoresize=1&fontsize=14&hidenavigation=1&module=%2Fsrc%2Fcomponents%2FSocialCount.js&theme=dar
+https://codesandbox.io/s/social-buttons-c4cbn?autoresize=1&fontsize=14&hidenavigation=1&module=%2Fsrc%2Fcomponents%2FSocialCount.js&theme=dar
 
 ![likes-dislikes count](likes-dislikes.jpg "likes-dislikes count")
 
