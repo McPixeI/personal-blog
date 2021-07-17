@@ -108,7 +108,7 @@ function SocialCount() {
 export default SocialCount;
 ```
 
-En esta situación, el contador mostrará el valor cero, puesto que así lo hemos definido en el `useState(0)`. Además, nuestro botón todavía no es funcional, así que por mucho que pulsemos sobre el mismo, no cambiará su valor. 
+En esta situación, el contador mostrará el valor cero, puesto que así lo hemos definido en el `useState(0)`. Además, **nuestro botón todavía no realiza ninguna acción**, así que por mucho que pulsemos sobre el mismo, no cambiará su valor. 
 
 Puedes probarlo por ti mismo en el siguiente sandbox:
 
