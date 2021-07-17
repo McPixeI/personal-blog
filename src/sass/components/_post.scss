@@ -96,6 +96,10 @@
         ul, ol{
             padding-left: $spacing-4;
         }
+        code[class*=language-], pre[class*=language-]{
+            white-space: pre !important;
+        }
+
     }
 }
 
