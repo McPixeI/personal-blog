@@ -60,7 +60,19 @@ import React, { useState } from 'react';
 Ahora que ya podemos hacer uso del mismo, en el cuerpo de nuestra función vamos a definir el estado de la siguiente forma:
 
 ```javascript
-const [ likes, setLikes ] = useState(0);
+import React, { useState } from 'react';
+
+function SocialCount() {
+  const [ likes, setLikes ] = useState(0); // highlight-line
+  return (
+    <div>
+      <p>Likes count:</p>
+      <button>Like</button>
+    </div>
+  );
+}
+
+export default SocialCount;
 ```
 
 Esta definición agrega estado al componente y lo hace iniciándolo con el valor de cero. 
@@ -75,8 +87,20 @@ La variable `setLikes` se asigna a una función que utilizaremos para modificar 
 
 Ahora vamos a probar a pintar por pantalla el valor de nuestro contador de likes. Para ello, simplemente podemos añadir la variable en el template que retorna nuestro componente:
 
-```jsx
-<p>Likes count: {likes}</p>
+```javascript
+import React, { useState } from 'react';
+
+function SocialCount() {
+  const [ likes, setLikes ] = useState(0); 
+  return (
+    <div>
+      <p>Likes count: {likes}</p> // highlight-line
+      <button>Like</button>
+    </div>
+  );
+}
+
+export default SocialCount;
 ```
 
 En esta situación, el contador mostrará el valor cero, puesto que así lo hemos definido en el `useState(0)`. Además, nuestro botón todavía no es funcional, así que por mucho que pulsemos sobre el mismo, no cambiará su valor. Por lo tanto, nuestro componente pintaría lo siguiente:
@@ -124,7 +148,7 @@ export default SocialCount;
 ¿Qué pasaría ahora si quisiéramos añadir también un botón de dislikes y su recuento total? Pues la solución es simple, añadimos un nuevo `useState()` para los dislikes tal y como hemos hecho anteriormente con los likes:
 
 ```javascript
-const [dislikes, setDislikes] = useState(0); // highlight-line
+const [dislikes, setDislikes] = useState(0);
 ```
 
 Ahora tenemos definida una nueva variable que guardará este nuevo estado (`dislikes`), también inicializado a cero, y podremos modificarlo de nuevo utilizando un controlador de eventos en un nuevo botón que vamos a crear para añadir los dislikes:
