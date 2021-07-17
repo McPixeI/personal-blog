@@ -36,7 +36,7 @@ Crearemos un componente "social" que va a consistir en un contador de "likes/dis
 
 Nuestro componente inicial luce así:
 
-```javascript
+```jsx
 import React from "react";
 
 function SocialCount() {
@@ -59,7 +59,7 @@ import React, { useState } from 'react';
 
 Ahora que ya podemos hacer uso del mismo, en el cuerpo de nuestra función vamos a definir el estado de la siguiente forma:
 
-```javascript
+```jsx
 import React, { useState } from 'react';
 
 function SocialCount() {
