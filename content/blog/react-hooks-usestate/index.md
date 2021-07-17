@@ -192,13 +192,11 @@ function SocialCount() {
 export default SocialCount;
 ```
 
-Con esto ya tendríamos un componente muy básico capaz de manejar dos estados de forma independiente, controlando ambos contadores por separado. Nuestra aplicación pintaría algo así (ya... no le hemos puesto CSS).
+Con esto ya tendríamos un componente muy básico capaz de manejar dos estados de forma independiente, controlando ambos contadores por separado. 
 
-Puedes repasar el código y jugar con él en el siguiente sandbox:
+En el siguiente sandbox puedes ver el estado actual de nuestra aplicación y jugar con ella, así como inspeccionar el código (ya... todavía no le hemos puesto CSS).
 
-https://codesandbox.io/s/social-buttons-c4cbn?view=split&autoresize=1&fontsize=14&hidenavigation=1&module=%2Fsrc%2Fcomponents%2FSocialCount.js&theme=dar
-
-![likes-dislikes count](likes-dislikes.jpg "likes-dislikes count")
+https://codesandbox.io/s/social-buttons-c4cbn?view=split&autoresize=1&fontsize=12&hidenavigation=1&module=%2Fsrc%2Fcomponents%2FSocialCount.js&theme=dark
 
 ### Para terminar
 
