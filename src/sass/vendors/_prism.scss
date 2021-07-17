@@ -24,6 +24,10 @@ pre[class*="language-"]
 	-ms-hyphens: none;
 	hyphens: none;
 }
+code[class*="language-"],
+pre[class*="language-"]{
+	white-space: pre-wrap
+}
 
 /* Code blocks */
 pre[class*="gatsby-code-"] {
