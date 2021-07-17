@@ -196,7 +196,7 @@ Con esto ya tendríamos un componente muy básico capaz de manejar dos estados d
 
 En el siguiente sandbox puedes ver el estado actual de nuestra aplicación y jugar con ella, así como inspeccionar el código (ya... todavía no le hemos puesto CSS).
 
-https://codesandbox.io/s/social-buttons-c4cbn?view=split&autoresize=1&fontsize=12&hidenavigation=1&module=%2Fsrc%2Fcomponents%2FSocialCount.js&theme=dark
+https://codesandbox.io/s/social-buttons-c4cbn?autoresize=1&fontsize=12&hidenavigation=1&module=%2Fsrc%2Fcomponents%2FSocialCount.js&theme=dark
 
 ### Para terminar
 
