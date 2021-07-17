@@ -69,7 +69,7 @@ La función `useState()` devuelve dos valores, los cuales se corresponden a `lik
 
 A `useState()` se le pasa como argumento el estado inicial, que se corresponde con la variable `likes` y que en este caso hemos definido a cero. 
 
-La variable `setCounter` se asigna a una función que utilizaremos para modificar el estado, es decir, cada vez que queramos cambiar el valor de `likes`, tendremos que hacer uso de la función `setLikes`.
+La variable `setLikes` se asigna a una función que utilizaremos para modificar el estado, es decir, cada vez que queramos cambiar el valor de `likes`, tendremos que hacer uso de la función `setLikes`.
 
 ### Mostrando el valor del estado
 
