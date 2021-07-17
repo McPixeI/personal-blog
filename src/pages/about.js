@@ -2,7 +2,7 @@ import React from "react"
 
 // Components
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 import { StaticImage } from "gatsby-plugin-image"
 import Newsletter from "../components/newsletter"
 import Sidebar from "../components/sidebar"
@@ -11,7 +11,7 @@ const About = ({
   location
 }) => (
   <Layout location={location}>
-    <SEO title={'Sobre mí'} />
+    <Seo title={'Sobre mí'} />
     <section className="content-section">
       <h1 className="section-title">Sobre mí</h1>
       <h2 className="section-subtitle"><span role="img" aria-label='hello'>👋</span>Hola, soy Samuel Torres</h2>

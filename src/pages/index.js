@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 
 import Section from "../components/section"
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 import PostList from "../components/post/postList"
 import Sidebar from "../components/sidebar"
 import TagList from "../components/tagList"
@@ -17,7 +17,7 @@ const BlogIndex = ({ data, location }) => {
 
   return (
     <Layout location={location}>
-      <SEO title='Inicio'/>
+      <Seo title='Inicio'/>
       <div className="main-content">
         <Section title='Últimos posts'>
           <PostList posts={posts} moreBtn/>

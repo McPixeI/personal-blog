@@ -2,7 +2,7 @@ import * as React from "react"
 import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 import ShareButtons from "../components/shareButtons"
 import ToC from "../components/toc"
 import { getFormattedDate } from "../utils/helpers";
@@ -32,7 +32,7 @@ const BlogPostTemplate = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO
+      <Seo
         title={title}
         description={description || post.excerpt}
       />

@@ -2,7 +2,7 @@ import * as React from "react"
 import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 import Search from "../components/search"
 import PostList from "../components/post/postList"
 import Section from "../components/section"
@@ -17,7 +17,7 @@ const Blog = ({ data, location }) => {
   }
   return (
     <Layout location={location}>
-      <SEO title="Artículos" />
+      <Seo title="Artículos" />
       <Section>
         <h1 className="section-title">Artículos</h1>
         <h2 className="section-subtitle">Todos los artículos, tutoriales y opiniones hasta la fecha.</h2>
