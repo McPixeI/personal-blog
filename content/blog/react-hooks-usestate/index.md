@@ -100,6 +100,7 @@ function SocialCount() {
     <div>
       <p>Likes count: {likes}</p> // highlight-line
       
+      
       <button>Like</button>
     </div>
   );
