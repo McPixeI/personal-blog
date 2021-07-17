@@ -59,7 +59,7 @@ import React, { useState } from 'react';
 
 Ahora que ya podemos hacer uso del mismo, en el cuerpo de nuestra función vamos a definir el estado de la siguiente forma:
 
-```javascript
+```jsx
 import React, { useState } from 'react';
 
 function SocialCount() {
@@ -89,16 +89,16 @@ La variable `setLikes` se asigna a una función que utilizaremos para modificar 
 
 Ahora vamos a probar a pintar por pantalla el valor de nuestro contador de likes. Para ello, simplemente podemos añadir la variable en el template que retorna nuestro componente:
 
-```javascript
+```jsx
 import React, { useState } from 'react';
 
 function SocialCount() {
+  
   const [ likes, setLikes ] = useState(0); 
   
   return (
     <div>
       <p>Likes count: {likes}</p> // highlight-line
-
       <button>Like</button>
     </div>
   );
@@ -155,12 +155,7 @@ export default SocialCount;
 const [dislikes, setDislikes] = useState(0);
 ```
 
-Ahora tenemos definida una nueva variable que guardará este nuevo estado (`dislikes`), también inicializado a cero, y podremos modificarlo de nuevo utilizando un controlador de eventos en un nuevo botón que vamos a crear para añadir los dislikes:
-
-```jsx
-<p>Dislikes count: {dislikes}</p>
-<button onClick={() => setDislikes(dislikes + 1)}>Dislike</button>
-```
+Ahora tenemos definida una nueva variable que guardará este nuevo estado (`dislikes`), también inicializado a cero, y podremos modificarlo de nuevo utilizando un controlador de eventos en un nuevo botón que vamos a crear para añadir los dislikes. Con lo cual nuestro código quedaría así:
 
 Con lo cual nuestro código quedaría así:
 
@@ -175,9 +170,9 @@ function SocialCount() {
   return (
     <div>
       <p>Likes count: {likes}</p>
-      <p>Dislikes count: {dislikes}</p>
+      <p>Dislikes count: {dislikes}</p> // highlight-line
       <button onClick={() => setLikes(likes + 1)}>Like</button>
-      <button onClick={() => setDislikes(dislikes + 1)}>Dislike</button>
+      <button onClick={() => setDislikes(dislikes + 1)}>Dislike</button> // highlight-line
     </div>
   );
 }
