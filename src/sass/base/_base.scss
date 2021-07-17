@@ -214,19 +214,19 @@ input[type=email]:focus {
 
 
 /*PRISM overrides*/
-:not(pre) > code[class*="language-"],
-pre[class*="language-"] {
+:not(pre) > code[class*="gatsby-code-"],
+pre[class*="gatsby-code-"] {
 	background: #112c3b;
   border-radius: 0;
 }
-code[class*="language-"], 
-pre[class*="language-"] {
+code[class*="gatsby-code-"], 
+pre[class*="gatsby-code-"] {
   white-space: pre-wrap !important;
   word-break: break-word !important;
   margin-bottom: 2rem;
 }
 
-:not(pre) > code[class*=language-text], pre[class*=language-text]{
+:not(pre) > code[class*=gatsby-code-text], pre[class*=gatsby-code-text]{
   background: $color-accent;
   color: $color-text;
   padding: 1px 3px;

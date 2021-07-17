@@ -84,9 +84,14 @@ module.exports = {
               elements: [`h2`, `h3`, `h4`],
             },
           },
+          {
+            resolve: `gatsby-remark-prismjs`,
+            options: {
+              classPrefix: 'gatsby-code-',
+            },
+          },
           `gatsby-remark-copy-linked-files`,
-          `gatsby-remark-smartypants`,
-          `gatsby-remark-prismjs`,
+          `gatsby-remark-smartypants`,          
         ],
       },
     },

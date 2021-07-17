@@ -36,20 +36,20 @@
         
     }
 
-    code[class*=language-], 
-    pre[class*=language-] {
+    code[class*=gatsby-code-], 
+    pre[class*=gatsby-code-] {
         padding: 0;
         margin: 0;
         font-size: 14px;
     }
 
     @include media(md){
-        code[class*=language-], 
-        pre[class*=language-] {
+        code[class*=gatsby-code-], 
+        pre[class*=gatsby-code-] {
             font-size: $fontSize-1;
             padding: 1em 0;
         }
-        &[data-is-root='true']:after{
+        &:after{
             position: absolute;
             content: "";
             bottom: 0;
