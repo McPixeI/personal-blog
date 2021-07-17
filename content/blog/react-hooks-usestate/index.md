@@ -89,7 +89,7 @@ La variable `setLikes` se asigna a una función que utilizaremos para modificar 
 
 Ahora vamos a probar a pintar por pantalla el valor de nuestro contador de likes. Para ello, simplemente podemos añadir la variable en el template que retorna nuestro componente:
 
-```jsx
+```javascript
 import React, { useState } from 'react';
 
 function SocialCount() {
