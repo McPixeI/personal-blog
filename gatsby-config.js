@@ -90,6 +90,7 @@ module.exports = {
               classPrefix: 'gatsby-code-',
             },
           },
+          `gatsby-remark-embedder`,
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,          
         ],
