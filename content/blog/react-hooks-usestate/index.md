@@ -89,7 +89,7 @@ La variable `setLikes` se asigna a una función que utilizaremos para modificar 
 
 Ahora vamos a probar a pintar por pantalla el valor de nuestro contador de likes. Para ello, simplemente podemos añadir la variable en el template que retorna nuestro componente:
 
-```javascript
+```jsx
 import React, { useState } from 'react';
 
 function SocialCount() {
@@ -120,7 +120,7 @@ Haciendo uso del atributo `onClick`, le añadimos al botón una función que deb
 
 ¿A quién hemos dicho antes que hay que llamar para modificar al estado? Exacto, a `setLikes`:
 
-```javascript
+```jsx
 <button onClick={() => setLikes(likes + 1)}>Like</button>
 ```
 
@@ -130,7 +130,7 @@ Lo que hace el código anterior es que cada vez que se pulse el botón, se ejecu
 
 Nuestro componente ahora pasaría a tener el siguiente contenido:
 
-```javascript
+```jsx
 import React, { useState } from "react";
 
 function SocialCount() {
@@ -161,7 +161,7 @@ Ahora tenemos definida una nueva variable que guardará este nuevo estado (`disl
 
 Con lo cual nuestro código quedaría así:
 
-```javascript
+```jsx
 import React, { useState } from "react";
 
 function SocialCount() {
