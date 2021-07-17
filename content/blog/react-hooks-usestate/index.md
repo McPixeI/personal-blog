@@ -97,7 +97,7 @@ Haciendo uso del atributo `onClick`, le añadimos al botón una función que deb
 
 > Cuidado: Los controladores de eventos o "event handlers" son funciones o referencias a funciones, es por ello que no llamamos directamente a `setLikes()`, sino que lo hacemos dentro de una función de flecha (`onClick={() => ...}`)
 
-Lo que hace el código anterior es que cada vez que se pulse el botón, se ejecutará la función que modifica el estado (`setLikes`), a la cual **le pasamos como parámetro el nuevo estado**, que en este caso sería el resultado de sumarle 1 al valor actual (`likes + 1`).
+Lo que hace el código anterior es que cada vez que se pulse el botón, se ejecutará la función que modifica el estado (`setLikes`), a la cual **le pasamos como parámetro el valor del nuevo estado**, que en este caso sería el resultado de sumarle 1 al valor actual (`likes + 1`).
 
 Nuestro componente ahora pasaría a tener el siguiente contenido:
 
