@@ -56,6 +56,10 @@ pre[class*="gatsby-code-"] {
 	color: #8292a2;
 }
 
+.token.comment {
+	white-space: pre-wrap;
+}
+
 .token.punctuation {
 	color: #f8f8f2;
 }
