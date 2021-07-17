@@ -98,6 +98,7 @@ function SocialCount() {
   return (
     <div>
       <p>Likes count: {likes}</p> // highlight-line
+
       <button>Like</button>
     </div>
   );
