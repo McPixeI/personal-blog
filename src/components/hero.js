@@ -2,7 +2,7 @@ import * as React from "react"
 import Code from "./code"
 import { isMobileOnly } from "react-device-detect";
 
-const Hero = ({isRootPath}) => {
+const Hero = () => {
 
   let codeConent = isMobileOnly ? `
 const bio = {
@@ -23,9 +23,8 @@ const bio = {
   `
   
   return (
-    <section className="hero" data-is-root={isRootPath}>
+    <section className="hero">
       <div className="container">
-        {isRootPath && (
         <div className="hero__content">
             <h1>
               <span>Hola,</span> bienvenido a mi blog
@@ -33,7 +32,6 @@ const bio = {
             <h2>Escribo tutoriales, consejos y opiniones sobre Front-end</h2>
             <Code language="javascript" content={codeConent}/>
         </div>
-        )}
       </div>
     </section>
   )

@@ -9,7 +9,7 @@ const Layout = ({ location, children }) => {
   return (
     <>
       <Header/>
-      <Hero isRootPath={isRootPath}/>
+      {isRootPath && <Hero/>}
       <main className='main container'>
           {children}
       </main>    

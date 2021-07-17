@@ -22,7 +22,7 @@ const BlogPostTemplate = ({ data, location }) => {
   const { title, description, date, tags } = post.frontmatter
   const { previous, next } = data
   const formattedDate = getFormattedDate(date)
-  
+
   const disqusConfig = {
     shortname: process.env.GATSBY_DISQUS_NAME,
     config: { identifier: process.env.GATSBY_DISQUS_NAME, url: slug, title: title },
