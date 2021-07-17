@@ -110,9 +110,11 @@ function SocialCount() {
 export default SocialCount;
 ```
 
-En esta situación, el contador mostrará el valor cero, puesto que así lo hemos definido en el `useState(0)`. Además, nuestro botón todavía no es funcional, así que por mucho que pulsemos sobre el mismo, no cambiará su valor. Por lo tanto, nuestro componente pintaría lo siguiente:
+En esta situación, el contador mostrará el valor cero, puesto que así lo hemos definido en el `useState(0)`. Además, nuestro botón todavía no es funcional, así que por mucho que pulsemos sobre el mismo, no cambiará su valor. 
 
-![likes count](count-0.jpg "likes count")
+Puedes probarlo por ti mismo en el siguiente sandbox:
+
+https://codesandbox.io/s/social-buttons-forked-mjcy1?autoresize=1&fontsize=12&hidenavigation=1&module=%2Fsrc%2Fcomponents%2FSocialCount.js&theme=dark
 
 ### Manejo de eventos
 
@@ -130,7 +132,7 @@ Haciendo uso del atributo `onClick`, le añadimos al botón una función que deb
 
 Lo que hace el código anterior es que cada vez que se pulsa el botón, se ejecutará la función que modifica el estado (`setLikes`), a la cual **le pasamos como parámetro el valor del nuevo estado**, que en este caso sería el resultado de sumarle 1 al valor actual (`likes + 1`).
 
-Con esto ya tenemos nuestro primer contador funcional con estado. Puedes ver el código y el resultado en el siguiente sandbox. También puedes jugar con él a tu gusto:
+Con esto ya tenemos nuestro primer contador funcional con estado. Puedes ver el código y el resultado a continuación:
 
 https://codesandbox.io/s/social-buttons-forked-1d58h?view=split&autoresize=1&fontsize=12&hidenavigation=1&module=%2Fsrc%2Fcomponents%2FSocialCount.js&theme=dark
 
@@ -175,7 +177,7 @@ export default SocialCount;
 
 Con esto ya tendríamos un componente muy básico capaz de manejar dos estados de forma independiente, controlando ambos contadores por separado. 
 
-En el siguiente sandbox puedes ver el estado actual de nuestra aplicación, así como inspeccionar el código (ya... todavía no le hemos puesto CSS).
+En el siguiente sandbox puedes ver el estado actual de nuestra aplicación (ya... en algún punto tendremos que añadirle CSS 😅).
 
 https://codesandbox.io/s/social-buttons-c4cbn?view=split&autoresize=1&fontsize=12&hidenavigation=1&module=%2Fsrc%2Fcomponents%2FSocialCount.js&theme=dark
 
