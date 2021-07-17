@@ -36,7 +36,7 @@ Crearemos un componente "social" que va a consistir en un contador de likes/disl
 
 Nuestro componente inicial luce así:
 
-```jsx
+```javascript
 import React from "react";
 
 function SocialCount() {
@@ -59,7 +59,7 @@ import React, { useState } from 'react';
 
 Ahora que ya podemos hacer uso del mismo, en el cuerpo de nuestra función vamos a definir el estado de la siguiente forma:
 
-```jsx
+```javascript
 import React, { useState } from 'react';
 
 function SocialCount() {
@@ -100,7 +100,6 @@ function SocialCount() {
     <div>
       <p>Likes count: {likes}</p> // highlight-line
       
-      
       <button>Like</button>
     </div>
   );
@@ -121,7 +120,7 @@ Haciendo uso del atributo `onClick`, le añadimos al botón una función que deb
 
 ¿A quién hemos dicho antes que hay que llamar para modificar al estado? Exacto, a `setLikes`:
 
-```jsx
+```javascript
 <button onClick={() => setLikes(likes + 1)}>Like</button>
 ```
 
@@ -131,7 +130,7 @@ Lo que hace el código anterior es que cada vez que se pulse el botón, se ejecu
 
 Nuestro componente ahora pasaría a tener el siguiente contenido:
 
-```jsx
+```javascript
 import React, { useState } from "react";
 
 function SocialCount() {
@@ -162,7 +161,7 @@ Ahora tenemos definida una nueva variable que guardará este nuevo estado (`disl
 
 Con lo cual nuestro código quedaría así:
 
-```jsx
+```javascript
 import React, { useState } from "react";
 
 function SocialCount() {
