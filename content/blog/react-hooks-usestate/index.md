@@ -124,7 +124,7 @@ export default SocialCount;
 ¿Qué pasaría ahora si quisiéramos añadir también un botón de dislikes y su recuento total? Pues la solución es simple, añadimos un nuevo `useState()` para los dislikes tal y como hemos hecho anteriormente con los likes:
 
 ```javascript
-const [dislikes, setDislikes] = useState(0);
+const [dislikes, setDislikes] = useState(0); // highlight-line
 ```
 
 Ahora tenemos definida una nueva variable que guardará este nuevo estado (`dislikes`), también inicializado a cero, y podremos modificarlo de nuevo utilizando un controlador de eventos en un nuevo botón que vamos a crear para añadir los dislikes:
