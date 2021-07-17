@@ -63,7 +63,7 @@ Ahora que ya podemos hacer uso del mismo, en el cuerpo de nuestra función vamos
 import React, { useState } from 'react';
 
 function SocialCount() {
-  
+ 
   const [ likes, setLikes ] = useState(0); // highlight-line
   
   return (
