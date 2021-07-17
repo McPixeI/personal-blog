@@ -167,7 +167,7 @@ import React, { useState } from "react";
 function SocialCount() {
   
   const [likes, setLikes] = useState(0);
-  const [dislikes, setDislikes] = useState(0);
+  const [dislikes, setDislikes] = useState(0); // highlight-line
   
   return (
     <div>
