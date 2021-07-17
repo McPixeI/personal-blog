@@ -32,8 +32,6 @@ En el momento en el que estás desarrollando un componente de función y surge l
 
 Crearemos un componente "social" que va a consistir en un contador de "likes/dislikes". Para este primer artículo, únicamente implementaremos ambos botones y les agregaremos control de estado utilizando `useState()`. En próximos artículos lo iremos mejorando haciendo uso de otros Hooks como `useReducer()` y `useEffect()`.
 
-> Puedes ver todo el código relativo a este artículo y jugar con él en el siguiente [codesandbox](https://codesandbox.io/s/wandering-cloud-c4cbn?file=/src/components/LikeButton.js:0-275).
-
 Nuestro componente inicial luce así:
 
 ```jsx
@@ -114,7 +112,7 @@ En esta situación, el contador mostrará el valor cero, puesto que así lo hemo
 
 Puedes probarlo por ti mismo en el siguiente sandbox:
 
-https://codesandbox.io/s/social-buttons-forked-mjcy1?autoresize=1&fontsize=12&hidenavigation=1&module=%2Fsrc%2Fcomponents%2FSocialCount.js&theme=dark
+https://codesandbox.io/s/social-buttons-v1-mjcy1?autoresize=1&fontsize=12&hidenavigation=1&module=%2Fsrc%2Fcomponents%2FSocialCount.js&theme=dark
 
 ### Manejo de eventos
 
@@ -134,7 +132,7 @@ Lo que hace el código anterior es que cada vez que se pulsa el botón, se ejecu
 
 Con esto ya tenemos nuestro primer contador funcional con estado. Puedes ver el código y el resultado a continuación:
 
-https://codesandbox.io/s/social-buttons-forked-1d58h?view=split&autoresize=1&fontsize=12&hidenavigation=1&module=%2Fsrc%2Fcomponents%2FSocialCount.js&theme=dark
+https://codesandbox.io/s/social-buttons-v2-1d58h?view=split&autoresize=1&fontsize=12&hidenavigation=1&module=%2Fsrc%2Fcomponents%2FSocialCount.js&theme=dark
 
 ### Manejar más de un estado
 
@@ -179,7 +177,7 @@ Con esto ya tendríamos un componente muy básico capaz de manejar dos estados d
 
 En el siguiente sandbox puedes ver el estado actual de nuestra aplicación (ya... en algún punto tendremos que añadirle CSS 😅).
 
-https://codesandbox.io/s/social-buttons-c4cbn?view=split&autoresize=1&fontsize=12&hidenavigation=1&module=%2Fsrc%2Fcomponents%2FSocialCount.js&theme=dark
+https://codesandbox.io/s/social-buttons-v3-c4cbn?view=split&autoresize=1&fontsize=12&hidenavigation=1&module=%2Fsrc%2Fcomponents%2FSocialCount.js&theme=dark
 
 ### Para terminar
 
