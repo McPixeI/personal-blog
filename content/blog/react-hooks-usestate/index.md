@@ -142,7 +142,9 @@ function SocialCount() {
   return (
     <div>
       <p>Likes count: {likes}</p>
-      <button onClick={() => setLikes(likes + 1)}>Like</button> // highlight-line
+      // highlight-start
+      <button onClick={() => setLikes(likes + 1)}>Like</button> 
+      // highlight-end
     
     </div>
   );
@@ -174,10 +176,14 @@ function SocialCount() {
   return (
     <div>
       <p>Likes count: {likes}</p>
-      <p>Dislikes count: {dislikes}</p> // highlight-line
+      // highlight-start
+      <p>Dislikes count: {dislikes}</p>
+      // highlight-end
       
       <button onClick={() => setLikes(likes + 1)}>Like</button>
-      <button onClick={() => setDislikes(dislikes + 1)}>Dislike</button> // highlight-line
+      // highlight-start
+      <button onClick={() => setDislikes(dislikes + 1)}>Dislike</button> 
+      // highlight-end
     
     </div>
   );
