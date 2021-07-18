@@ -174,4 +174,4 @@ La nomenclatura BEM nos ayuda a definir **componentes modulares y reusables** en
 
 BEM no deja de ser una herramienta más para facilitarnos la vida. Eres totalmente libre de elegir esta metodología o cualquier otra **siempre que se adapte a tu proyecto y a tu equipo**. Además, hoy en día, con el auge de librerías JS como React o VUE, que han favorecido al surgimiento de otras aproximaciones como los módulos de CSS o el "CSS-in-JS", están ofreciendo otras alternativas (con una filosofía similar) perfectamente viables.
 
-Por último, te dejo el enlace a la [web oficial](http://getbem.com/) de BEM donde tienen varios recursos que te pueden ayudar a profundizar más en esta metodología. Espero que te sirva 🙂
+Por último, recordarte que con una simple búsqueda en Google tienes a mano un montón de información sobre esta metodología. Espero que te haya servido de ayuda 🙂
