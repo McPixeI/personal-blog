@@ -10,7 +10,7 @@ const Post = ({post}) => {
           <article
             className="post"
             itemScope
-            itemType="http://schema.org/Article"
+            itemType="https://schema.org/Article"
           >
             <div>
               <h2>
