@@ -144,8 +144,6 @@ const [dislikes, setDislikes] = useState(0);
 
 Ahora tenemos definida una nueva variable que guardará este nuevo estado (`dislikes`), también inicializado a cero, y podremos modificarlo de nuevo utilizando un controlador de eventos en un nuevo botón que vamos a crear para añadir los dislikes. Con lo cual nuestro código quedaría así:
 
-Con lo cual nuestro código quedaría así:
-
 ```jsx
 import React, { useState } from "react";
 
