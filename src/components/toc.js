@@ -10,7 +10,7 @@ export default function ToC ({headings}) {
         let idList = []
         headings
           .forEach(heading => {
-            idList.push(_.kebabCase(heading.value)) 
+            idList.push(_.kebabCase(heading.value.toLowerCase())) 
           })
         return idList
     }
