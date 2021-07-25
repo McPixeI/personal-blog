@@ -10,23 +10,22 @@ tags:
 ---
 ## Introducción
 
-En el [artículo anterior](https://samutorres.com/blog/react-hooks-usestate) comenzamos a trabajar en un pequeño componente de React que nos sirvió para endender el Hook `useState`.
+En el [artículo anterior](https://samutorres.com/blog/react-hooks-usestate) comenzamos a trabajar en un pequeño componente de React que nos sirvió para explicar el Hook `useState`.
 
-El objetivo de nuestro componente es reproducir el comportamiento de un componente de "likes/dislikes" como el que utiliza Youtube. Vamos a utilizar como punto de partida el componente que habíamos creado utilizando `useState` y que podéis ver a continuación:
+El objetivo de nuestro componente es reproducir el comportamiento de un componente de "likes/dislikes" como el que utiliza Youtube. Vamos a utilizar como punto de partida el que habíamos creado utilizando `useState` y que puedes ver a continuación:
 
 https://codesandbox.io/s/social-buttons-v3-c4cbn?autoresize=1&fontsize=12&hidenavigation=1&module=%2Fsrc%2Fcomponents%2FSocialCount.js&theme=dark
 
 ## Cuándo y por qué usar useReducer
 
-Vamos a analizar el comportamiento final que queremos conseguir en nuestro componente. A groso modo se puede resumir en la siguiente funcionalidad:
+Vamos a analizar el comportamiento final que queremos conseguir en nuestro componente. A groso modo se puede resumir en la siguientes acciones:
 
 * El usuario pulsa sobre el botón de like:
-
   1. Si no hay nada pulsado todavía: `likes + 1`
   2. El botón de like ya estaba pulsado por el usuario: `likes - 1`
   3. El botón dislike ya estaba pulsado por el usuario: `likes + 1` y `dislikes - 1`
-* El usuario pulsa sobre el botón de dislike:
 
+* El usuario pulsa sobre el botón de dislike:
   1. Si no hay nada pulsado todavía: `dislikes + 1`
   2. El botón de dislike ya estaba pulsado por el usuario: `dislikes - 1`
   3. El botón like ya estaba pulsado por el usuario: `dislikes + 1` y `likes - 1`
@@ -45,12 +44,12 @@ Este Hook te **permite añadir estado a tus componentes funcionales mediante una
 
 ### Creando la función reductora
 
-La función reductora recibirá como parámetros lo siguiente:
+La función reductora recibe los siguientes parámetros:
 
-* El estado a "reducir" 
-* El tipo de acción que se está ejecutando
+* El estado a "reducir" (`state`)
+* El tipo de acción que se está ejecutando (`action`)
 
-Dependiendo de la acción recibida, se encargará de realizar unas operaciones definidas u otras, y devolver el nuevo estado de nuestro componente. La estructura vendría a ser la siguiente:
+Dependiendo de la acción recibida, se encargará de realizar unas operaciones definidas u otras y devolver el nuevo estado. La estructura vendría a ser la siguiente:
 
 ```javascript
 function myReducer(state, action) {
@@ -73,7 +72,7 @@ function myReducer(state, action) {
 
 Vamos a explicar al detalle el ejemplo anterior:
 1. La función reductora recibe como parámetros el estado y la acción `myReducer(state, action)`
-2. Se establecen condiciones, para que según la acción recibida, se trate al estado de una forma u otra
+2. Se establecen condiciones, para que según la acción recibida, se realicen unas operaciones u otras en dicho estado
 3. Siempre se devuelve el nuevo estado de nuestro componente
 
 Visto lo anterior, para el caso de nuestro componente, que actualmente tiene dos contadores de likes/dislikes, el código de nuestro reductor quedaría así:
