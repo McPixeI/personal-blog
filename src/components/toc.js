@@ -22,9 +22,9 @@ export default function ToC ({headings}) {
                 <ul className="toc">                
                     {hasHeadings && 
                         headings.map(heading => {
-                            let isActive = !isMobile && (_.kebabCase(heading.value) === activeHash)
+                            let isActive = !isMobile && (_.kebabCase(heading.value.toLowerCase()) === activeHash)
                             return <li key={heading.value} className={`toc__item toc__item--depth-${heading.depth}`} >
-                                        <Link className={`toc__link`} to={`#${_.kebabCase(heading.value)}`} data-current={isActive}>
+                                        <Link className={`toc__link`} to={`#${_.kebabCase(heading.value.toLowerCase())}`} data-current={isActive}>
                                             {heading.value}
                                         </Link>
                                     </li>
