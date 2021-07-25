@@ -1,6 +1,6 @@
 ---
 title: "React Hooks: De useState a useReducer"
-date: 2021-07-24T15:58:26.886Z
+date: 2021-07-25T21:46:13.025Z
 description: Modificamos un componente de React realizado con el Hook useState,
   para que funcione con useReducer
 tags:
