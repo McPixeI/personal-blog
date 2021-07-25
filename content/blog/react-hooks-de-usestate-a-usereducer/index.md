@@ -41,26 +41,35 @@ El Hook `useReducer` es una alternativa a `useState` para estados complejos. Est
 
 ![arquitectura-flux](flux-simple-f8-diagram-explained-1300w.png "arquitectura-flux")
 
-Este Hook te **permite añadir estado a tus componentes funcionales mediante una función reductora.** Dicha función reductora recibirá como parámetros lo siguiente:
+Este Hook te **permite añadir estado a tus componentes funcionales mediante una función reductora.**  
+
+### Creando la función reductora
+
+La función reductora recibirá como parámetros lo siguiente:
 
 * El estado a "reducir" 
 * El tipo de acción que se está ejecutando
 
-Dependiendo de la acción recibida, se encargará de realizar unas operaciones definidas u otras, y devolver el nuevo estado de nuestro componente. 
-
-Vamos a implementar la función reductora para nuestro componente.
-
-### Creando la función reductora
+Dependiendo de la acción recibida, se encargará de realizar unas operaciones definidas u otras, y devolver el nuevo estado de nuestro componente. La estructura vendría a ser la siguiente:
 
 
-
-```jsx
-import React, { useReducer } from "react";
-
-const [state, dispatch] = useReducer(
-  reducer,
-  initialState
-)
+```javascript
+function myReducer(state, action) {
+  switch (action.type) {
+    case "PRIMARY_ACTION":
+      return {
+        ...state, //Usamos spread operator para recoger el valor del estado
+        //A continuación modificaríamos el estado a placer
+      };
+    case "SECONDARY_ACTION":
+      return {
+        ...state,
+        //A continuación modificaríamos el estado a placer
+      };
+    default:
+      return state;
+  }
+}
 ```
 
 Vamos a explicar paso por paso la estructura y la funcionalidad de `useReducer`, para posteriormente poder replicar el comportamiento de nuestro componente con dicho Hook.
