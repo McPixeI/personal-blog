@@ -8,6 +8,10 @@ tags:
   - react
   - hooks
 ---
+![placeholder img](photo-1533073526757-2c8ca1df9f1c.jpg "placeholder img")
+
+*Foto por [Javier Allegue](https://unsplash.com/@soymeraki) en Unsplash*
+
 ## Introducción
 
 En el [artículo anterior](https://samutorres.com/blog/react-hooks-usestate) comenzamos a trabajar en un pequeño componente de React que nos sirvió para explicar el Hook `useState`.
