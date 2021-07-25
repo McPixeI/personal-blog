@@ -96,7 +96,15 @@ function socialReducer(state, action) {
 }
 ```
 
-Con esto ya tendríamos nuestra función reductora definida. Ahora bien... ¿Cómo hacemos uso de la misma? Lo explicamos a continuación.
+Qué hace el código anterior:
+
+* Establecemos una condición por cada acción definida. En nuestro caso tenemos un caso para `"LIKE"` y otro para "DISLIKE".
+* Si la acción es de tipo `"LIKE"`, se aumenta el valor de `state.likes` y se retorna el estado con dicha modificación
+* Si la acción es de tipo `"DISLIKE"`, se aumenta el valor de `state.dislikes` y se retorna el estado con dicha modificación
+
+Del mismo modo que con `useState` haríamos directamente algo como `setLikes(likes + 1)`, en el caso de `useReducer` esta lógica sucede dentro de la función reductora. 
+
+Una vez tenemos definida nuestra función reductora, vamos a ver cómo podemos comenzar a utilizarla.
 
 ### Definiendo el estado con useReducer
 
@@ -104,7 +112,7 @@ La forma más sencilla para declarar este Hook es la siguiente:
 
 `const [state, dispatch] = useReducer(reducer, initialState);`
 
-Este Hook recibe como parámetro el `reducer`, que es la función que hemos definido anteriormente, y el estado inicial `initialState`, que es el valor del estado inicial de nuestro componente.
+Este Hook recibe como parámetro el `reducer` (que es la función que hemos definido anteriormente), y el estado inicial `initialState`, que es el valor del estado inicial de nuestro componente.
 
 Además retorna dos valores:
 1. `state`, que es el estado reducido
@@ -135,31 +143,19 @@ const [state, dispatch] = useReducer(socialReducer, initialState);
 
 ```
 
+Entendiendo el código anterior:
 
-El código del ejemplo anterior tiene lo siguiente:
-
-* Se ha definido el estado inicial del componente: `initialState`. En este caso es un objeto que contiene las claves `likes` y `dislikes`, las cuales verán modificado mediante la función reductora.
+* Se ha definido el estado inicial del componente: `initialState`. En este caso es un objeto que contiene las claves `likes` y `dislikes`, las cuales verán modificado su valor mediante la función reductora.
 * Se ha definido la función reductora `socialReducer`, la cual se encargará de devolver el nuevo estado con las modificaciones realizadas en función de la acción recibida.
 * Se declara el Hook `useReducer`, el cual recibe como parámetro la función reductora `socialReducer` y el estado inicial `initialState`.
 
 En este punto, ya tenemos un estado para nuestro componente y la opción de ejecutar accciones. Para ello, entra en juego el método `dispatch()`.
 
-### Acciones
+### Acciones y dispatch
 
 En primer lugar debes conocer y definir qué acciones puede recibir tu función reductora. En nestro caso, hemos definido las acciones de `"LIKE"` y `"DISLIKE"`.
 
-Ahora, de forma muy similar a como hacíamos con el Hook `useState`, para ejecutar acciones, en lugar de hacerlo así:
-
-```jsx
-...
-const [likes, setLikes] = useState(0);
-...
-<button onClick={() => setLikes(likes + 1)}>Like</button>
-...
-
-```
-
-Lo que haremos es utilizar el método `dispatch()`, que sigue la siguiente nomenclatura:
+Para ejecutar las acciones, el Hook `useReducer` nos proporciona el método `dispatch()`, que sigue la siguiente nomenclatura:
 
 `dispatch({ type: "ACTION_NAME", payload: actionData })`
 
@@ -167,7 +163,7 @@ Este método recibe como parámetro un objeto que contiene dos claves:
 1. `type`: Nombre de la acción
 2. `payload`: Datos relacionados con la acción. Este es opcional y se utiliza para pasar información "extra" a la función reductora en caso de ser necesario.
 
-Por lo tanto, nuestros botones de like/dislike quedarían así:
+Por lo tanto, lo que queremos ahora es que en función de si se pulsa el botón de "like" o el de "dislike", se haga un "dispatch" de la acción "LIKE" o "DISLIKE" respectivamente:
 
 ```jsx
 ...
@@ -177,8 +173,10 @@ Por lo tanto, nuestros botones de like/dislike quedarían así:
 
 ```
 
-A continuación puedes ver el resultado de nuestra versión del componente utilizando `useReducer`:
+Con esto ya tendríamos una versión con la misma funcionalidad que la que teníamos en [el artículo anterior](https://samutorres.com/blog/react-hooks-usestate), pero utilizando `useReducer` en lugar de `useState`. 
+
+A continuación puedes ver el resultado y el código completo:
  
 https://codesandbox.io/s/social-buttons-v4-itlj2?file=/src/components/SocialCount.js?view=split&autoresize=1&fontsize=12&hidenavigation=1&module=%2Fsrc%2Fcomponents%2FSocialCount.js&theme=dark
 
-En el siguiente artículo modificaremos nuestro componente para que replique la funcionalidad deseada, y profundizaremos así más en el Hook `useReducer` para controlar un estado algo más complejo. Y...sí, puede que también añadamos algo de estilos 😅
+En el siguiente artículo modificaremos nuestro componente para que replique la funcionalidad deseada y profundizaremos más en el Hook `useReducer` para controlar un estado algo más complejo. Y...sí, puede que por fin añadamos algo de estilos 😅
