@@ -75,7 +75,7 @@ function myReducer(state, action) {
 
 Vamos a explicar al detalle el ejemplo anterior:
 
-1. La función reductora recibe como parámetros el estado y la acción `myReducer(state, action).`
+1. La función reductora recibe como parámetros el estado y la acción `myReducer(state, action)`.
 2. Se establecen condiciones para que, según la acción recibida, se realicen unas operaciones u otras en dicho estado. Es decir, se debe declarar una instancia `case` por cada acción posible dentro de la declaración `switch`.
 3. Siempre se devuelve el nuevo estado de nuestro componente.
 
