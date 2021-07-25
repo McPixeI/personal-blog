@@ -14,7 +14,7 @@ En el [artículo anterior](https://samutorres.com/blog/react-hooks-usestate) com
 
 El objetivo de nuestro componente es reproducir el comportamiento de un componente de "likes/dislikes" como el que utiliza Youtube. Vamos a utilizar como punto de partida el que habíamos creado utilizando `useState` y que puedes ver a continuación:
 
-https://codesandbox.io/s/social-buttons-v3-c4cbn?autoresize=1&fontsize=12&hidenavigation=1&module=%2Fsrc%2Fcomponents%2FSocialCount.js&theme=dark
+https://codesandbox.io/s/social-buttons-v3-c4cbn?view=split&autoresize=1&fontsize=12&hidenavigation=1&module=%2Fsrc%2Fcomponents%2FSocialCount.js&theme=dark
 
 ## Cuándo y por qué usar useReducer
 
