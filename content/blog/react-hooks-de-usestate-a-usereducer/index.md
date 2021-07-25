@@ -136,7 +136,13 @@ const [state, dispatch] = useReducer(socialReducer, initialState);
 ```
 
 
-Una vez tenemos definido nuestro estado inicial, nuestra función reductora y hemos definido el Hook `useReducer`, ya podemos hacer uso del mismo. Para ello es donde entran en acción (valga la redundancia) las acciones y el método `dispatch()`.
+El código del ejemplo anterior tiene lo siguiente:
+
+* Se ha definido el estado inicial del componente: `initialState`. En este caso es un objeto que contiene las claves `likes` y `dislikes`, las cuales verán modificado mediante la función reductora.
+* Se ha definido la función reductora `socialReducer`, la cual se encargará de devolver el nuevo estado con las modificaciones realizadas en función de la acción recibida.
+* Se declara el Hook `useReducer`, el cual recibe como parámetro la función reductora `socialReducer` y el estado inicial `initialState`.
+
+En este punto, ya tenemos un estado para nuestro componente y la opción de ejecutar accciones. Para ello, entra en juego el método `dispatch()`.
 
 ### Acciones
 
@@ -153,13 +159,13 @@ const [likes, setLikes] = useState(0);
 
 ```
 
-Lo que haremos es utilizar el método que nos ofrece el Hook `useReducer`. Se trata de `dispatch()`, y sigue la siguiente nomenclatura:
+Lo que haremos es utilizar el método `dispatch()`, que sigue la siguiente nomenclatura:
 
 `dispatch({ type: "ACTION_NAME", payload: actionData })`
 
-Este método recibe como parámetros un objeto que contiene dos claves:
+Este método recibe como parámetro un objeto que contiene dos claves:
 1. `type`: Nombre de la acción
-2. `payload`: Datos relacionados con la acción. Este es opcional y se utiliza para pasar información "extra" a la función reductora en caso de ser necesario. De momento no lo utilizaremos.
+2. `payload`: Datos relacionados con la acción. Este es opcional y se utiliza para pasar información "extra" a la función reductora en caso de ser necesario.
 
 Por lo tanto, nuestros botones de like/dislike quedarían así:
 
@@ -171,6 +177,8 @@ Por lo tanto, nuestros botones de like/dislike quedarían así:
 
 ```
 
-LOREM IPSUM
-
+A continuación puedes ver el resultado de nuestra versión del componente utilizando `useReducer`:
+ 
 https://codesandbox.io/s/social-buttons-v4-itlj2?file=/src/components/SocialCount.js?autoresize=1&fontsize=12&hidenavigation=1&module=%2Fsrc%2Fcomponents%2FSocialCount.js&theme=dark
+
+En el siguiente artículo modificaremos nuestro componente para que replique la funcionalidad deseada, y profundizaremos así más en el Hook `useReducer` para controlar un estado algo más complejo. Y...sí, puede que también añadamos algo de estilos 😅
