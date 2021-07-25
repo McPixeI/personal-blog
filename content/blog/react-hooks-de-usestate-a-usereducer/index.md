@@ -81,12 +81,12 @@ Visto lo anterior, para el caso de nuestro componente, que actualmente tiene dos
 ```javascript
 function socialReducer(state, action) {
   switch (action.type) {
-    case "like": //Si el usuario pulsa like
+    case "LIKE": //Si el usuario pulsa like
       return {
         ...state,
         likes: state.likes + 1 //Aumentamos el contador de likes
       };
-    case "dislike": //Si el usuario pulsa dislike
+    case "DISLIKE": //Si el usuario pulsa dislike
       return {
         ...state,
         dislikes: state.dislikes + 1 //Aumentamos el contador de dislikes
@@ -123,12 +123,12 @@ const initialState = {
   dislikes: 24
 };
 
-//Definimos nuestro reductor
+//Definimos la función reductora
 function socialReducer(state, action) { 
   ...
 }
 
-//Definimos nuestro estado con useReducer
+//Añadimos estado con useReducer
 const [state, dispatch] = useReducer(socialReducer, initialState);
 
 ...
@@ -140,6 +140,38 @@ const [state, dispatch] = useReducer(socialReducer, initialState);
 Una vez tenemos definido nuestro estado inicial, nuestra función reductora y hemos definido el Hook `useReducer`, ya podemos hacer uso del mismo. Para ello es donde entran en acción (valga la redundancia) las acciones y el método `dispatch()`.
 
 ### Acciones
+
+En primer lugar debes conocer y definir qué acciones puede recibir tu función reductora. En nestro caso, hemos definido las acciones de `"LIKE"` y `"DISLIKE"`.
+
+Ahora, de forma muy similar a como hacíamos con el Hook `useState`, para ejecutar acciones, en lugar de hacerlo así:
+
+```jsx
+...
+const [likes, setLikes] = useState(0);
+...
+<button onClick={() => setLikes(likes + 1)}>Like</button>
+...
+
+```
+
+Lo que haremos es utilizar el método que nos ofrece el Hook `useReducer`. Se trata de `dispatch()`, y sigue la siguiente nomenclatura:
+
+`dispatch({ type: "ACTION_NAME", payload: actionData })`
+
+Este método recibe como parámetros un objeto que contiene dos claves:
+1. `type`: Nombre de la acción
+2. `payload`: Datos relacionados con la acción. Este es opcional y se utiliza para pasar información "extra" a la función reductora en caso de ser necesario. De momento no lo utilizaremos.
+
+Por lo tanto, nuestros botones de like/dislike quedarían así:
+
+```jsx
+...
+<button onClick={() => dispatch({ type: "LIKE" })}>Like</button>
+<button onClick={() => dispatch({ type: "DISLIKE" })}>Dislike</button>
+...
+
+```
+
 
 
 ## Pasando de useState a useReducer
