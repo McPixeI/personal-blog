@@ -12,7 +12,9 @@ tags:
 
 En el [artículo anterior](https://samutorres.com/blog/react-hooks-usestate) comenzamos a trabajar en un pequeño componente de React que nos sirvió para explicar el Hook `useState`.
 
-El objetivo de nuestro componente es reproducir el comportamiento de un componente de "likes/dislikes" como el que utiliza Youtube. Vamos a utilizar como punto de partida el que habíamos creado utilizando `useState` y que puedes ver a continuación:
+El objetivo de nuestro componente es reproducir el comportamiento de un componente de "likes/dislikes" como el que utiliza Youtube. 
+
+Vamos a utilizar como punto de partida el que habíamos creado utilizando `useState` y que puedes ver a continuación:
 
 https://codesandbox.io/s/social-buttons-v3-c4cbn?view=split&autoresize=1&fontsize=12&hidenavigation=1&module=%2Fsrc%2Fcomponents%2FSocialCount.js&theme=dark
 
@@ -72,10 +74,10 @@ function myReducer(state, action) {
 
 Vamos a explicar al detalle el ejemplo anterior:
 1. La función reductora recibe como parámetros el estado y la acción `myReducer(state, action)`
-2. Se establecen condiciones, para que según la acción recibida, se realicen unas operaciones u otras en dicho estado
+2. Se establecen condiciones, para que según la acción recibida, se realicen unas operaciones u otras en dicho estado. Es decir, se debe declarar una instancia `case` por cada acción posible dentro de la declaración `switch`.
 3. Siempre se devuelve el nuevo estado de nuestro componente
 
-Visto lo anterior, para el caso de nuestro componente, que actualmente tiene dos contadores de likes/dislikes, el código de nuestro reductor quedaría así:
+Para el caso de nuestro componente, que actualmente tiene dos un contador de likes y otro de dislikes, el código de nuestro reductor quedaría así:
 
 ```javascript
 function socialReducer(state, action) {
@@ -112,7 +114,7 @@ La forma más sencilla para declarar este Hook es la siguiente:
 
 `const [state, dispatch] = useReducer(reducer, initialState);`
 
-Este Hook recibe como parámetro el `reducer` (que es la función que hemos definido anteriormente), y el estado inicial `initialState`, que es el valor del estado inicial de nuestro componente.
+Este Hook recibe como parámetros el `reducer` (que es la función que hemos definido anteriormente) y el estado inicial `initialState`, que es el valor del estado inicial de nuestro componente.
 
 Además retorna dos valores:
 1. `state`, que es el estado reducido
@@ -153,7 +155,7 @@ En este punto, ya tenemos un estado para nuestro componente y la opción de ejec
 
 ### Acciones y dispatch
 
-En primer lugar debes conocer y definir qué acciones puede recibir tu función reductora. En nestro caso, hemos definido las acciones de `"LIKE"` y `"DISLIKE"`.
+En primer lugar debes conocer y definir qué acciones puede recibir tu función reductora. En nestro caso, de momento hemos definido las acciones de `"LIKE"` y `"DISLIKE"`.
 
 Para ejecutar las acciones, el Hook `useReducer` nos proporciona el método `dispatch()`, que sigue la siguiente nomenclatura:
 
