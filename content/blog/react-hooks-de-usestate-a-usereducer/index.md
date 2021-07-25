@@ -14,9 +14,7 @@ En el [artículo anterior](https://samutorres.com/blog/react-hooks-usestate) com
 
 El objetivo de nuestro componente es reproducir el comportamiento de un componente de "likes/dislikes" como el que utiliza Youtube. Vamos a utilizar como punto de partida el componente que habíamos creado utilizando `useState` y que podéis ver a continuación:
 
-https://codesandbox.io/s/social-buttons-v3-c4cbn
-
-
+https://codesandbox.io/s/social-buttons-v3-c4cbn?autoresize=1&fontsize=12&hidenavigation=1&module=%2Fsrc%2Fcomponents%2FSocialCount.js&theme=dark
 
 Vamos a analizar el comportamiento final que queremos conseguir en nuestro componente. A groso modo se puede resumir en la siguiente funcionalidad:
 
