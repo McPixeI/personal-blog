@@ -179,6 +179,6 @@ Por lo tanto, nuestros botones de like/dislike quedarían así:
 
 A continuación puedes ver el resultado de nuestra versión del componente utilizando `useReducer`:
  
-https://codesandbox.io/s/social-buttons-v4-itlj2?file=/src/components/SocialCount.js?autoresize=1&fontsize=12&hidenavigation=1&module=%2Fsrc%2Fcomponents%2FSocialCount.js&theme=dark
+https://codesandbox.io/s/social-buttons-v4-itlj2?file=/src/components/SocialCount.js?view=split&autoresize=1&fontsize=12&hidenavigation=1&module=%2Fsrc%2Fcomponents%2FSocialCount.js&theme=dark
 
 En el siguiente artículo modificaremos nuestro componente para que replique la funcionalidad deseada, y profundizaremos así más en el Hook `useReducer` para controlar un estado algo más complejo. Y...sí, puede que también añadamos algo de estilos 😅
