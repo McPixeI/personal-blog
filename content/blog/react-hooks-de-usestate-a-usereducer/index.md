@@ -61,12 +61,12 @@ Dependiendo de la acción recibida, se encargará de realizar unas operaciones d
 ```javascript
 function myReducer(state, action) {
   switch (action.type) {
-    case "PRIMARY_ACTION":
+    case "ACTION_NAME":
       return {
         ...state, //Recogemos el valor del estado actual
         //A continuación modificaríamos el estado a placer
       };
-    case "SECONDARY_ACTION":
+    case "ANOTHER_ACTION_NAME":
       return {
         ...state, //Recogemos el valor del estado actual
         //A continuación modificaríamos el estado a placer
