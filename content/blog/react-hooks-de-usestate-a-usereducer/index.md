@@ -100,7 +100,7 @@ function socialReducer(state, action) {
 
 Qué hace el código anterior:
 
-* Establecemos una condición por cada acción definida. En nuestro caso tenemos un caso para `"LIKE"` y otro para "DISLIKE".
+* Establecemos una condición por cada acción definida. En nuestro caso tenemos un caso para `"LIKE"` y otro para `"DISLIKE"`.
 * Si la acción es de tipo `"LIKE"`, se aumenta el valor de `state.likes` y se retorna el estado con dicha modificación
 * Si la acción es de tipo `"DISLIKE"`, se aumenta el valor de `state.dislikes` y se retorna el estado con dicha modificación
 
@@ -155,7 +155,7 @@ En este punto, ya tenemos un estado para nuestro componente y la opción de ejec
 
 ### Acciones y dispatch
 
-En primer lugar debes conocer y definir qué acciones puede recibir tu función reductora. En nestro caso, de momento hemos definido las acciones de `"LIKE"` y `"DISLIKE"`.
+En primer lugar debes conocer y definir qué acciones puede recibir tu función reductora. En nuestro caso, de momento hemos definido las acciones de `"LIKE"` y `"DISLIKE"`.
 
 Para ejecutar las acciones, el Hook `useReducer` nos proporciona el método `dispatch()`, que sigue la siguiente nomenclatura:
 
@@ -165,7 +165,7 @@ Este método recibe como parámetro un objeto que contiene dos claves:
 1. `type`: Nombre de la acción
 2. `payload`: Datos relacionados con la acción. Este es opcional y se utiliza para pasar información "extra" a la función reductora en caso de ser necesario.
 
-Por lo tanto, lo que queremos ahora es que en función de si se pulsa el botón de "like" o el de "dislike", se haga un "dispatch" de la acción "LIKE" o "DISLIKE" respectivamente:
+Por lo tanto, lo que queremos ahora es que en función de si se pulsa el botón de "like" o el de "dislike", se haga un "dispatch" de la acción `"LIKE"` o `"DISLIKE"` respectivamente:
 
 ```jsx
 ...
