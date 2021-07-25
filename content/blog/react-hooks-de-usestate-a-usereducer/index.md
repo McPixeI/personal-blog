@@ -52,7 +52,6 @@ La función reductora recibirá como parámetros lo siguiente:
 
 Dependiendo de la acción recibida, se encargará de realizar unas operaciones definidas u otras, y devolver el nuevo estado de nuestro componente. La estructura vendría a ser la siguiente:
 
-
 ```javascript
 function myReducer(state, action) {
   switch (action.type) {
