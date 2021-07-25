@@ -57,12 +57,12 @@ function myReducer(state, action) {
   switch (action.type) {
     case "PRIMARY_ACTION":
       return {
-        ...state, //Usamos spread operator para recoger el valor del estado
+        ...state, //Recogemos el valor del estado actual
         //A continuación modificaríamos el estado a placer
       };
     case "SECONDARY_ACTION":
       return {
-        ...state,
+        ...state, //Recogemos el valor del estado actual
         //A continuación modificaríamos el estado a placer
       };
     default:
