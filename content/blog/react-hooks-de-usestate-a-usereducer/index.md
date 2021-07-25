@@ -71,12 +71,38 @@ function myReducer(state, action) {
 }
 ```
 
-Vamos a explicar paso por paso la estructura y la funcionalidad de `useReducer`, para posteriormente poder replicar el comportamiento de nuestro componente con dicho Hook.
+Vamos a explicar al detalle el ejemplo anterior:
+1. La función reductora recibe como parámetros el estado y la acción `myReducer(state, action)`
+2. Se establecen condiciones, para que según la acción recibida, se trate al estado de una forma u otra
+3. Siempre se devuelve el nuevo estado de nuestro componente
+
+Visto lo anterior, para el caso de nuestro componente, que actualmente tiene dos contadores de likes/dislikes, el código de nuestro reductor quedaría así:
+
+```javascript
+function socialReducer(state, action) {
+  switch (action.type) {
+    case "like": //Si el usuario pulsa like
+      return {
+        ...state,
+        likes: state.likes + 1 //Aumentamos el contador de likes
+      };
+    case "dislike": //Si el usuario pulsa dislike
+      return {
+        ...state,
+        dislikes: state.dislikes + 1 //Aumentamos el contador de dislikes
+      };
+    default:
+      return state;
+  }
+}
+```
+
+Con esto ya tendríamos nuestra función reductora definida. Ahora bien... ¿Cómo hacemos uso de la misma? Lo explicamos a continuación.
+
+### Definiendo el estado con useReducer
+
+
 
 ### Acciones
-
-### Reducer
-
-### Dispatch
 
 ## Pasando de useState a useReducer
