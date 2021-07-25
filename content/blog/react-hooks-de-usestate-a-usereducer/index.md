@@ -16,6 +16,8 @@ El objetivo de nuestro componente es reproducir el comportamiento de un componen
 
 https://codesandbox.io/s/social-buttons-v3-c4cbn
 
+
+
 Vamos a analizar el comportamiento final que queremos conseguir en nuestro componente. A groso modo se puede resumir en la siguiente funcionalidad:
 
 * El usuario pulsa sobre el botón de like:
