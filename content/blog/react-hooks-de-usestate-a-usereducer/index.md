@@ -101,8 +101,45 @@ Con esto ya tendríamos nuestra función reductora definida. Ahora bien... ¿Có
 
 ### Definiendo el estado con useReducer
 
+La forma más sencilla para declarar este Hook es la siguiente:
 
+`const [state, dispatch] = useReducer(reducer, initialState);`
+
+Este Hook recibe como parámetro el `reducer`, que es la función que hemos definido anteriormente, y el estado inicial `initialState`, que es el valor del estado inicial de nuestro componente.
+
+Además retorna dos valores:
+1. `state`, que es el estado reducido
+2. `dispatch`, que es el método "accionador" encargado de enviar la acción al reductor.
+
+El código para nuestro componente sería por lo tanto el siguiente:
+
+```javascript
+//Importamos useReducer
+import React, { useReducer } from "react"; 
+
+//Definimos un estado inicial
+const initialState = { 
+  likes: 107,
+  dislikes: 24
+};
+
+//Definimos nuestro reductor
+function socialReducer(state, action) { 
+  ...
+}
+
+//Definimos nuestro estado con useReducer
+const [state, dispatch] = useReducer(socialReducer, initialState);
+
+...
+
+
+```
+
+
+Una vez tenemos definido nuestro estado inicial, nuestra función reductora y hemos definido el Hook `useReducer`, ya podemos hacer uso del mismo. Para ello es donde entran en acción (valga la redundancia) las acciones y el método `dispatch()`.
 
 ### Acciones
+
 
 ## Pasando de useState a useReducer
