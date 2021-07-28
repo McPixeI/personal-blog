@@ -10,7 +10,7 @@ tags:
 ---
 ## Introducción
 
-En el [artículo anterior](https://samutorres.com/blog/react-hooks-de-usestate-a-usereducer) explicamos las bases del Hook de React `useReducer`. Si todavía no lo has leído, te invito a hacerlo, puesto que las bases de lo que vamos a desarrollar en este artículo se encuentran allí.
+En el [artículo anterior](https://samutorres.com/blog/react-hooks-de-usestate-a-usereducer) explicamos las bases del Hook `useReducer`. Si todavía no lo has leído, te invito a hacerlo, puesto que las bases de lo que vamos a desarrollar a continuación se encuentran allí.
 
 En este artículo vamos a implementar por fin la funcionalidad del componente de "likes/dislikes" para que reproduzca el comportamiento del que tiene Youtube en sus vídeos.
 
