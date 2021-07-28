@@ -48,7 +48,9 @@ const actions = {
 
 ## Definiendo el estado inicial del componente
 
-Definimos también el estado inicial del componente. En este caso, necesitamos saber lo siguiente:
+El componente necesita un estado inicial, que será la información inicial que contenga y sobre la cual trabajará. 
+
+Para el caso de nuestro componente de likes/dislikes, necesitamos saber la siguiente información:
 
 * Estado del contador de likes (`likes`)
 * Estado del contador de dislikes (`dislikes`)
@@ -66,7 +68,7 @@ const initialState = {
 };
 ```
 
-En una aplicación real, estos estados podríamos recibirlos como resulatdo de, por ejemplo, una llamada AJAX, pero para el propósito de este artículo, hemos omitido esta parte y definido un estado inicial cualquiera.
+En una aplicación real, estos estados podríamos recibirlos como resultado de, por ejemplo, una llamada AJAX, pero para el propósito de este artículo hemos omitido esta parte y definido un estado inicial cualquiera.
 
 ## Creando la función reductora
 
