@@ -37,21 +37,13 @@ Comenzamos con un esqueleto sencillo. Se trata de un componente al que llamamos 
 ```jsx
 import React from "react";
 
-
-
-
-
-
-
 function SocialCount() {
-
-
   return (
     <div>
       <button> LIKES | 0 </button>
       <button> DISLIKES | 0 </button>
     </div>
-  );
+ );
 }
 
 export default SocialCount;
@@ -227,8 +219,8 @@ function SocialCount() {
 
   return (
     <div>
-      <button>LIKES | {likes}</button>
-      <button>DISLIKES | {dislikes}</button>
+      <button>LIKES | 0 </button>
+      <button>DISLIKES | 0 </button>
     </div>
   );
 }
@@ -244,6 +236,20 @@ Este Hook recibe dos parámetros:
 Y nos devuelve lo necesario para poder manejar el estado de nuestro componente:
 * El estado: `state`
 * El método que nos proporciona para poder enviar acciones a la función reductora: `dispatch`
+
+Ahora que ya podemos acceder al estado, vamos a cambiar los valores "cero" de los botones, por los del estado cambiándolos así:
+```jsx
+...
+
+<button> LIKES | {likes} </button>
+<button> DISLIKES | {dislikes} </button>
+...
+
+
+
+
+
+```
 
 ### Recapitulando
 
