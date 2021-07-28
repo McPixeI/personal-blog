@@ -263,8 +263,11 @@ Puedes pegarle un vistazo al código en el siguiente sandbox:
 
 https://codesandbox.io/s/social-buttons-v55-forked-3e5n0?file=/src/components/SocialCount.js
 
+A continuación, vamos a controlar los eventos para que la función reductora reciba las acciones.
 
+## Manejando los eventos
 
+//TODO: handlelikeclick y handledislikeclick
 
 
 
