@@ -72,4 +72,67 @@ En una aplicación real, estos estados podríamos recibirlos como resultado de, 
 
 ## Creando la función reductora
 
+La función reductora se encargará de recibir el estado actual (`state`) y una acción (`action`). Dicha acción determinará qué nuevo estado nos devolverá la función reductora.
 
+```javascript
+function socialReducer(state, action) {
+  // Usamos la desestructuración de objetos para extraer los valores del estado
+
+  const { likes, dislikes, isLiked, isDisliked } = state;
+  ...
+}
+```
+
+La premisa principal al crear una función reductora, es que debemos crear una condición (es decir, una nueva instancia `case` dentro de la declaración `switch`) para cada una de las acciones definidas. Vamos a ello:
+
+```javascript
+function socialReducer(state, action) {
+  const { likes, dislikes, isLiked, isDisliked } = state;
+
+  switch (action.type) {
+    //Se pulsa el botón like sin estar previamente pulsado
+    case "LIKE":
+      return {
+        ...state,
+        likes: likes + 1,
+        isLiked: !isLiked
+      };
+    //Se pulsa el botón like estando previamente pulsado
+    case "UNLIKE":
+      return {
+        ...state,
+        likes: likes - 1,
+        isLiked: !isLiked
+      };
+    //Se pulsa el botón dislike sin estar previamente pulsado
+    case "DISLIKE":
+      return {
+        ...state,
+        dislikes: dislikes + 1,
+        isDisliked: !isDisliked
+      };
+    //Se pulsa el botón dislike estando previamente pulsado
+    case "UNDISLIKE":
+      return {
+        ...state,
+        dislikes: dislikes - 1,
+        isDisliked: !isDisliked
+      };
+    //Se pulsa cualquiera de los dos, estando el otro previamente pulsado
+    case "TOGGLE":
+      return {
+        ...state,
+        isLiked: !isLiked,
+        isDisliked: !isDisliked,
+        likes: isLiked ? likes - 1 : likes + 1,
+        dislikes: isDisliked ? dislikes - 1 : dislikes + 1
+      };
+    default:
+      return state;
+  }
+}
+```
+
+Mucho que procesar, ¿verdad?
+
+Si prestas atención, verás que no es para tanto. Esto no es más que una traducción de las acciones que habíamos descrito en la introducción de este artículo, pero pasadas a una declaración condicional switch.
