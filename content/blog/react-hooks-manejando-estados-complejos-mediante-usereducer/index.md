@@ -214,9 +214,7 @@ function SocialCount() {
 
 
   const { likes, dislikes, isLiked, isDisliked } = state;
-
-
-
+  
   return (
     <div>
       <button>LIKES | 0 </button>
@@ -238,9 +236,9 @@ Y nos devuelve lo necesario para poder manejar el estado de nuestro componente:
 * El método que nos proporciona para poder enviar acciones a la función reductora: `dispatch`
 
 Ahora que ya podemos acceder al estado, vamos a cambiar los valores "cero" de los botones, por los del estado cambiándolos así:
+
 ```jsx
 ...
-
 <button> LIKES | {likes} </button>
 <button> DISLIKES | {dislikes} </button>
 ...
