@@ -129,7 +129,7 @@ Mucho que procesar, ¿verdad?
 
 Si prestas atención, verás que no es para tanto. Esto no es más que una traducción de las acciones que habíamos descrito en la introducción de este artículo, pero pasadas a una declaración condicional switch. Vamos paso por paso.
 
-En primer lugar, hemos usado la desestructuración de objetos para extraer los valores de `state`:
+En primer lugar, hemos usado la [desestructuración de objetos](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#desestructuraci%C3%B3n_de_objetos) para extraer los valores de `state`:
 
 ```javascript
 const { likes, dislikes, isLiked, isDisliked } = state;
