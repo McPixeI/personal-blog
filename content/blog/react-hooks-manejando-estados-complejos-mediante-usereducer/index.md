@@ -74,15 +74,6 @@ En una aplicación real, estos estados podríamos recibirlos como resultado de, 
 
 La función reductora se encargará de recibir el estado actual (`state`) y una acción (`action`). Dicha acción determinará qué nuevo estado nos devolverá la función reductora.
 
-```javascript
-function socialReducer(state, action) {
-  // Usamos la desestructuración de objetos para extraer los valores del estado
-
-  const { likes, dislikes, isLiked, isDisliked } = state;
-  ...
-}
-```
-
 La premisa principal al crear una función reductora, es que debemos crear una condición (es decir, una nueva instancia `case` dentro de la declaración `switch`) para cada una de las acciones definidas. Vamos a ello:
 
 ```javascript
@@ -135,4 +126,38 @@ function socialReducer(state, action) {
 
 Mucho que procesar, ¿verdad?
 
-Si prestas atención, verás que no es para tanto. Esto no es más que una traducción de las acciones que habíamos descrito en la introducción de este artículo, pero pasadas a una declaración condicional switch.
+Si prestas atención, verás que no es para tanto. Esto no es más que una traducción de las acciones que habíamos descrito en la introducción de este artículo, pero pasadas a una declaración condicional switch. Vamos paso por paso.
+
+En primer lugar, hemos usado la desestructuración de objetos para extraer los valores de `state`:
+
+```javascript
+const { likes, dislikes, isLiked, isDisliked } = state;
+```
+
+A continuación creamos una declaración `switch`, donde cada entrada se corresponde al tipo de acción recibida:
+
+```javascript
+function socialReducer(state, action) {
+  const { likes, dislikes, isLiked, isDisliked } = state;
+
+  switch (action.type) {
+    //Se pulsa el botón like sin estar previamente pulsado
+    case "LIKE":
+      return {
+        ...state,
+        likes: likes + 1,
+        isLiked: !isLiked
+      };
+
+  ...
+
+}
+```
+
+Vamos a utilizar la primera condición para explicarlo al detalle. El resto de condiciones funcionan igual.
+
+* En primer lugar se recoge el valor del estado actual usando el "spread operator": `...state`.
+* A continuación realizamos la modificación al valor afectado, en este caso aumentar el contador de likes `likes: likes + 1`. Es exactamente lo que habíamso definido en la lista de la introducción de este artículo. Puedes ir mirándola para comparar.
+* Por último, necesitamos saber el estado del botón (si está activo o no). Lo que hacemos es, que cada vez que se pulsa, invertimos su estado actual negándolo: `isLiked: !isLiked`
+
+
