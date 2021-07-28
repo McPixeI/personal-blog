@@ -138,11 +138,21 @@ A continuación creamos una declaración `switch`, donde cada entrada se corresp
 
 ```javascript
 function socialReducer(state, action) {
+
   const { likes, dislikes, isLiked, isDisliked } = state;
+  // highlight-start
+
 
   switch (action.type) {
+  // highlight-end
+
+
     //Se pulsa el botón like sin estar previamente pulsado
+    // highlight-start
+
     case "LIKE":
+    // highlight-end
+
       return {
         ...state,
         likes: likes + 1,
@@ -156,8 +166,11 @@ function socialReducer(state, action) {
 
 Vamos a utilizar la primera condición para explicarlo al detalle. El resto de condiciones funcionan igual.
 
-* En primer lugar se recoge el valor del estado actual usando el "spread operator": `...state`.
-* A continuación realizamos la modificación al valor afectado, en este caso aumentar el contador de likes `likes: likes + 1`. Es exactamente lo que habíamso definido en la lista de la introducción de este artículo. Puedes ir mirándola para comparar.
+* En primer lugar, es importante saber que la función reductora *siempre debe devolver el nuevo estado*. Es por ello que dentro de cada `case` siempre tenemos el `return { ... }`
+* Primero recogemos el valor del estado actual usando el "spread operator": `...state`.
+* A continuación realizamos las modificaciones al valor afectado, en este caso aumentar el contador de likes `likes: likes + 1`. Es exactamente lo mismo que habíamos definido en la lista de la introducción de este artículo. Puedes ir mirándola para comparar.
 * Por último, necesitamos saber el estado del botón (si está activo o no). Lo que hacemos es, que cada vez que se pulsa, invertimos su estado actual negándolo: `isLiked: !isLiked`
+
+
 
 
