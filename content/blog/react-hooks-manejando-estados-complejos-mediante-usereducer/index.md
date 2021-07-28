@@ -12,7 +12,7 @@ tags:
 
 En el [artículo anterior](https://samutorres.com/blog/react-hooks-de-usestate-a-usereducer) explicamos las bases del Hook `useReducer`. Si todavía no lo has leído, te invito a hacerlo, puesto que te ayudará a seguir lo que vamos a desarrollar a continuación.
 
-En este artículo vamos a implementar por fin la funcionalidad del componente de "likes/dislikes" para que reproduzca el comportamiento del que tiene Youtube en sus vídeos.
+En este artículo vamos a implementar por fin la funcionalidad del componente de "likes/dislikes" para que reproduzca el comportamiento del que tiene Youtube en sus vídeos. A este componente le vamos a llamar `SocialCount` (original, sí).
 
 Para empezar, vamos a refrescar las acciones y comportamiento esperado de nuestro componente. Le he puesto un nombre a cada acción (en negrita), puesto que serán los identificadores de dichas acciones que usaremos en la función reductora:
 
@@ -34,7 +34,7 @@ Ahora que ya tenemos las acciones de nuestro componente identificadas (un total 
 
 Es una buena práctica tener definidas las acciones como claves dentro de un objeto, en este caso `actions`, para facilitar así su mantenimiento y uso.
 
-Dentro de nuestro componente, definimos las acciones de la siguiente forma:
+En primer lugar efinimos las acciones de la siguiente forma:
 
 ```javascript
 const actions = {
@@ -46,7 +46,7 @@ const actions = {
 };
 ```
 
-## Definiendo el estado inicial del componente
+## Estado inicial del componente
 
 El componente necesita un estado inicial, que será la información inicial que contenga y sobre la cual trabajará. 
 
@@ -167,10 +167,77 @@ function socialReducer(state, action) {
 
 Vamos a utilizar la primera condición para explicarlo al detalle. El resto de condiciones funcionan igual.
 
-* En primer lugar, es importante saber que la función reductora *siempre debe devolver el nuevo estado*. Es por ello que dentro de cada `case` siempre tenemos el `return { ... }`
-* Primero recogemos el valor del estado actual usando el "spread operator": `...state`.
+* En primer lugar, es importante saber que la función reductora **siempre debe devolver el nuevo estado**. Es por ello que dentro de cada `case` siempre tenemos el `return { ... }`
+* Primero recogemos el valor del estado actual usando el "[spread operator](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Operators/Spread_syntax)": `...state`.
 * A continuación realizamos las modificaciones al valor afectado, en este caso aumentar el contador de likes `likes: likes + 1`. Es exactamente lo mismo que habíamos definido en la lista de la introducción de este artículo. Puedes ir mirándola para comparar.
-* Por último, necesitamos saber el estado del botón (si está activo o no). Lo que hacemos es, que cada vez que se pulsa, invertimos su estado actual negándolo: `isLiked: !isLiked`
+* Por último, necesitamos saber el estado del botón (si está activo o no). Lo que hacemos es que, cada vez que se pulsa, invertimos su estado actual negándolo: `isLiked: !isLiked`
+
+Para el resto de acciones funciona de la misma forma. Devolvemos un nuevo estado recuperando el anterior y modificando lo necesario según el tipo de acción recibida.
+
+Tómate tu tiempo para analizar cada caso y verás que no tiene mayor complicación.
+
+Ahora que ya tenemos la función reductora definida, podemos crear el estado de nuestro componente utilizando el Hook `useReducer`.
+
+## Definiendo el estado con useReducer
+
+El Hook `useReducer` **nos permite añadir estado a nuestro componente** y hacer uso de la función reductora que hemos creado anteriormente.
+
+Para hacer uso del mismo, nos dirigimos a la raiz de nuestro componente y lo declaramos de la siguiente forma:
+
+```jsx
+...
+//Nuestro componente funcional
+function SocialCount() {
+  // highlight-start
+
+  const [state, dispatch] = useReducer(socialReducer, initialState);
+  // highlight-end
+
+
+  const { likes, dislikes, isLiked, isDisliked } = state;
+
+
+
+  return (
+    <div>
+      <button>LIKES | {likes}</button>
+      <button>DISLIKES | {dislikes}</button>
+    </div>
+  );
+}
+
+export default SocialCount;
+
+```
+
+Este Hook recibe dos parámetros:
+* El nombre de nuestra función reductora: `socialReducer`
+* El estado inicial de nuestro componente: `initialState`
+
+Y nos devuelve lo necesario para poder manejar el estado de nuestro componente:
+* El estado: `state`
+* El método que nos proporciona para poder enviar acciones a la función reductora: `dispatch`
+
+### Recapitulando
+
+Ahora ya tenemos lo siguiente:
+
+```
+* Hemos definido las acciones posibles
+* Hemos definido el estado inicial
+* Hemos creado la función reductora que recibirá una acción para modificar el estado
+* Le hemos dado la posibilidad de usar el estado al componente mediante la declaración de `useReducer`
+* Tenemos un componente `SocialCount` que "pinta" dos botones (like/dislike) con su propio contador
+
+Puedes pegarle un vistazo al código en el siguiente sandbox:
+
+https://codesandbox.io/s/social-buttons-v55-forked-3e5n0?file=/src/components/SocialCount.js
+
+
+
+
+
+
 
 
 
