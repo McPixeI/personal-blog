@@ -10,7 +10,7 @@ tags:
 ---
 ## Introducción
 
-En el [artículo anterior](https://samutorres.com/blog/react-hooks-de-usestate-a-usereducer) explicamos las bases del Hook `useReducer`. Si todavía no lo has leído, te invito a hacerlo, puesto que las bases de lo que vamos a desarrollar a continuación se encuentran allí.
+En el [artículo anterior](https://samutorres.com/blog/react-hooks-de-usestate-a-usereducer) explicamos las bases del Hook `useReducer`. Si todavía no lo has leído, te invito a hacerlo, puesto que te ayudará a seguir lo que vamos a desarrollar a continuación.
 
 En este artículo vamos a implementar por fin la funcionalidad del componente de "likes/dislikes" para que reproduzca el comportamiento del que tiene Youtube en sus vídeos.
 
@@ -28,7 +28,7 @@ Para empezar, vamos a refrescar las acciones y comportamiento esperado de nuestr
   * **[UNDISLIKE]** El botón de dislike ya ha sido pulsado: `dislikes - 1`
   * **[TOGGLE]** El botón like ya ha sido pulsado: `dislikes + 1` y `likes - 1`
 
-Ahora que ya tenemos las acciones de nuestro componente identificadas (un total de 5 diferntes), vamos a definirlas en nuestro código.
+Ahora que ya tenemos las acciones de nuestro componente identificadas (un total de 5 diferentes), vamos a definirlas en nuestro código.
 
 ## Definiendo las acciones disponibles
 
