@@ -30,11 +30,38 @@ Para empezar, vamos a refrescar las acciones y comportamiento esperado de nuestr
 
 Ahora que ya tenemos las acciones de nuestro componente identificadas (un total de 5 diferentes), vamos a definirlas en nuestro código.
 
+## Componente inicial
+
+Comenzamos con un esqueleto sencillo. Se trata de un componente al que llamamos `SocialCount` y que está definido como una función. De momento solo devuelve sendos botones de like y dislike, con el valor cero.
+
+```jsx
+import React from "react";
+
+
+
+
+
+
+
+function SocialCount() {
+
+
+  return (
+    <div>
+      <button> LIKES | 0 </button>
+      <button> DISLIKES | 0 </button>
+    </div>
+  );
+}
+
+export default SocialCount;
+```
+
 ## Definiendo las acciones disponibles
 
 Es una buena práctica tener definidas las acciones como claves dentro de un objeto, en este caso `actions`, para facilitar así su mantenimiento y uso.
 
-En primer lugar efinimos las acciones de la siguiente forma:
+En primer lugar definimos las acciones de la siguiente forma:
 
 ```javascript
 const actions = {
