@@ -222,7 +222,6 @@ Y nos devuelve lo necesario para poder manejar el estado de nuestro componente:
 
 Ahora ya tenemos lo siguiente:
 
-```
 * Hemos definido las acciones posibles
 * Hemos definido el estado inicial
 * Hemos creado la función reductora que recibirá una acción para modificar el estado
