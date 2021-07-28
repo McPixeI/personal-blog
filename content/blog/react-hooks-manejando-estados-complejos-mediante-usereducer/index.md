@@ -78,12 +78,10 @@ La premisa principal al crear una función reductora, es que debemos crear una c
 
 ```javascript
 function socialReducer(state, action) {
-  
+
 const { likes, dislikes, isLiked, isDisliked } = state;
 
-
-
-  switch (action.type) {
+switch (action.type) {
     //Se pulsa el botón like sin estar previamente pulsado
     case "LIKE":
       return {
