@@ -18,14 +18,15 @@ Para empezar, vamos a refrescar las acciones y comportamiento esperado de nuestr
 
 * El usuario pulsa sobre el botón de like:
 
-  * **LIKE**: Si no hay nada pulsado todavía: `likes + 1`
-  * **UNLIKE**: El botón de like ya estaba pulsado por el usuario: `likes - 1`
-  * **TOGLE**: El botón dislike ya estaba pulsado por el usuario: `likes + 1` y `dislikes - 1`
+  * **[LIKE]** Si no hay nada pulsado todavía: `likes + 1`
+  * **[UNLIKE]** El botón de like ya ha sido pulsado: `likes - 1`
+  * **[TOGGLE]** El botón dislike ya ha sido pulsado: `likes + 1` y `dislikes - 1`
+
 * El usuario pulsa sobre el botón de dislike:
 
-  * **DISLIKE**: Si no hay nada pulsado todavía: `dislikes + 1`
-  * **UNDISLIKE**: El botón de dislike ya estaba pulsado por el usuario: `dislikes - 1`
-  * **TOGGLE**: El botón like ya estaba pulsado por el usuario: `dislikes + 1` y `likes - 1`
+  * **[DISLIKE]** Si no hay nada pulsado todavía: `dislikes + 1`
+  * **[UNDISLIKE]** El botón de dislike ya ha sido pulsado: `dislikes - 1`
+  * **[TOGGLE]** El botón like ya ha sido pulsado: `dislikes + 1` y `likes - 1`
 
 Ahora que ya tenemos las acciones de nuestro componente identificadas (un total de 5 diferntes), vamos a definirlas en nuestro código.
 
