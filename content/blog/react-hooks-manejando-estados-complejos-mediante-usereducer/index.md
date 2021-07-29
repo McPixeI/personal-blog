@@ -299,7 +299,7 @@ Esta función la ejecutaremos cuando se pulse el botón de like, y hará lo sigu
     
   * En el caso de estar que dislike esté pulsado, realizaremos un `dispatch` de la acción de "TOGGLE".
 
-    ```jsx
+  ```jsx
   else {dispatch({ type: actions.toggle });}
   ```
 
