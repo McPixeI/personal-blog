@@ -31,7 +31,7 @@ function SocialCount() {
 export default SocialCount;
 ```
 
-Se trata de un componente al que llamamos `SocialCount` y que está definido como una función. De momento solo devuelve sendos botones de like y dislike, con el valor cero.
+Se trata de un componente al que llamamos `SocialCount` y que está definido como una función. De momento solo devuelve el HTML que contiene los botones de like y dislike, con el valor cero.
 
 Antes de comenzar, vamos a refrescar las acciones y comportamiento esperado de nuestro componente. Le he puesto nombres a las acciones (en negrita), puesto que serán los identificadores de dichas acciones que usaremos en la función reductora:
 
