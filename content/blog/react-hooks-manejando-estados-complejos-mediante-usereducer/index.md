@@ -187,7 +187,7 @@ Vamos a utilizar la primera condición para explicarlo al detalle. El resto de c
 
 * En primer lugar, es importante recordar que la función reductora **siempre debe devolver el nuevo estado**. Es por ello que dentro de cada `case` siempre tenemos un `return { ... }`
 * Primero recogemos el valor del estado actual usando el [spread operator](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Operators/Spread_syntax): `...state`.
-* A continuación realizamos las modificaciones al valor afectado, en este caso aumentar el contador de likes `likes: likes + 1`. Es exactamente lo mismo que habíamos definido en la lista de la introducción de este artículo. Puedes ir mirándola para comparar.
+* A continuación realizamos las modificaciones al valor afectado. En este caso aumentamos el contador de likes `likes: likes + 1`. Es exactamente lo mismo que habíamos definido en la introducción de este artículo. Puedes ir mirándola para comparar.
 * Por último, necesitamos saber el estado del botón (si está activo o no). Lo que hacemos es que, cada vez que se pulsa, invertimos su estado actual negándolo: `isLiked: !isLiked`
 
 Para el resto de acciones funciona de la misma forma. Devolvemos un nuevo estado recuperando el anterior y modificando lo necesario según el tipo de acción recibida.
@@ -234,7 +234,7 @@ Y nos devuelve lo necesario para poder manejar el estado de nuestro componente:
 * El estado: `state`
 * El método que nos proporciona para poder enviar acciones a la función reductora: `dispatch`
 
-Ahora que ya podemos acceder al estado, vamos a cambiar los valores "cero" de los botones, por los del estado cambiándolos así:
+Ahora que ya podemos acceder al estado, vamos a cambiar los valores "cero" de los botones por los del estado cambiándolos así:
 
 ```jsx
 ...
@@ -243,7 +243,7 @@ Ahora que ya podemos acceder al estado, vamos a cambiar los valores "cero" de lo
 ...
 ```
 
-### Recapitulando
+## Recapitulando
 
 Ahora ya tenemos lo siguiente:
 
