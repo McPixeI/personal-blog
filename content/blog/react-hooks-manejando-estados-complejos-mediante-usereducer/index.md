@@ -8,7 +8,7 @@ tags:
   - hooks
   - javascript
 ---
-![likes component](likescount.jpg "likes component")
+![likes component](likescount2.jpg "likes component")
 
 ## Introducción
 
