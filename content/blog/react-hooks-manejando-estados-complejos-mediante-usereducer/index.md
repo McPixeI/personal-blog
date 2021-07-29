@@ -266,8 +266,58 @@ A continuación, vamos a controlar los eventos para que la función reductora re
 
 ## Manejando los eventos
 
-Necesitamos ahora una función que controle qué sucede cuando el usuario pulsa sobre el botón de like, y otra para el botón de dislike. 
+Necesitamos ahora una función que controle qué sucede cuando el usuario pulsa sobre el botón de like, y otra para el botón de dislike. Estas funciones serán las encargadas de enviar las acciones a la función reductora mediante el método `dispatch` que nos ofrece el Hook `useReducer`.
 
+Comencemos por definir la función que controlará el evento de like. Dentro del cuerpo de nuestro componente, definimos lo siguiente:
+
+```jsx
+  const handleLikeClick = () => {
+    if (!isDisliked) {
+      isLiked
+        ? dispatch({ type: actions.unlike })
+        : dispatch({ type: actions.like });
+    } else {
+      dispatch({ type: actions.toggle });
+    }
+  };
+```
+¿Qué hace el código anterior?
+
+Esta función la ejecutaremos cuando se pulse el botón de like, y hará lo siguiente:
+
+* En primer lugar comprobamos si el botón de dislike no está pulsado:
+  
+  `if (!isDisliked)`
+
+  * En el caso de que dislike no esté pulsado, tenemos dos opciones:
+
+    * Si el botón de like ya está pulsado previamente, ejecutamos un `dispatch` con la acción de tipo "UNLIKE".
+    * Si el botón de like no está pulsado previamente, ejecutamos un `dispatch` con la acción de "LIKE".
+
+  `isLiked?dispatch({ type: actions.unlike }): dispatch({ type: actions.like });`
+    
+
+  * En el caso de estar que dislike esté pulsado, realizaremos un `dispatch` de la acción de "TOGGLE".
+
+  ` else {
+      dispatch({ type: actions.toggle });
+    }`
+
+A continuación realizamos lo mismo para la función que controlará el evento de dislike:
+
+```jsx
+ const handleDislikeClick = () => {
+    if (!isLiked) {
+      isDisliked
+        ? dispatch({ type: actions.undislike })
+        : dispatch({ type: actions.dislike });
+    } else {
+      dispatch({ type: actions.toggle });
+    }
+  };
+```
+
+Con esto, ya tenemos definidas las funciones que harán de controladores de eventos o event handlers en nuestro componente. 
 
 
 
