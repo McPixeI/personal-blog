@@ -186,7 +186,7 @@ function socialReducer(state, action) {
 Vamos a utilizar la primera condición para explicarlo al detalle. El resto de condiciones funcionan igual.
 
 * En primer lugar, es importante recordar que la función reductora **siempre debe devolver el nuevo estado**. Es por ello que dentro de cada `case` siempre tenemos un `return { ... }`
-* Primero recogemos el valor del estado actual usando el "[spread operator](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Operators/Spread_syntax)": `...state`.
+* Primero recogemos el valor del estado actual usando el [spread operator](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Operators/Spread_syntax): `...state`.
 * A continuación realizamos las modificaciones al valor afectado, en este caso aumentar el contador de likes `likes: likes + 1`. Es exactamente lo mismo que habíamos definido en la lista de la introducción de este artículo. Puedes ir mirándola para comparar.
 * Por último, necesitamos saber el estado del botón (si está activo o no). Lo que hacemos es que, cada vez que se pulsa, invertimos su estado actual negándolo: `isLiked: !isLiked`
 
