@@ -263,7 +263,7 @@ A continuación, vamos a controlar los eventos para que la función reductora re
 
 Necesitamos ahora una función que controle qué sucede cuando el usuario pulsa sobre el botón de like y otra para el botón de dislike. Estas funciones serán las encargadas de enviar las acciones a la función reductora mediante el método `dispatch` que nos ofrece el Hook `useReducer`.
 
-Comencemos por definir la función que controlará el evento de like. Dentro del cuerpo de nuestro componente, definimos lo siguiente:
+Comencemos por definir la función que controlará el evento de pulsar el botón like. Dentro del cuerpo de nuestro componente, definimos lo siguiente:
 
 ```jsx
   const handleLikeClick = () => {
@@ -279,8 +279,39 @@ Comencemos por definir la función que controlará el evento de like. Dentro del
 
 ¿Qué hace el código anterior? Vamos a traducirlo al lenguaje humano:
 
-* Si pulsas el botón de like cuando ya estaba pulsado, realizas la acción "UNLIKE", es decir, lo desactivas.
+* Si pulsas el botón de like cuando ya estaba activo, realizas la acción "UNLIKE", es decir, lo desactivas.
+* Si pulsas el botón de like cuando todavía no está activo, realizas la acción "LIKE", es decir, lo activas.
+* Si pulsas el botón like cuando el de dislike está activo, se intercambian sus estados mediante la acción "TOGGLE"
 
-* Si pulsas el botón de like cuando todavía no ha sido pulsado, realizas la acción "LIKE", es decir, lo activas.
+> Todas las acciones se envían a la función reductora mediante el método `dispatch({type: 'ACTION_NAME'})`, donde accedemos al nombre de la acción desde el objeto `actions` que definimos al principio de este artículo
 
-* Si pulsas el botón like cuando el de dislike estaba pulsado, se intercambian sus estados mediante la acción "TOGGLE"
+A continuación, haríamos lo mismo para definir la función que controlará el pulsado del botón de dislike:
+
+```jsx
+  const handleDislikeClick = () => {
+    if (!isLiked) {
+      isDisliked
+        ? dispatch({ type: actions.undislike })
+        : dispatch({ type: actions.dislike });
+    } else {
+      dispatch({ type: actions.toggle });
+    }
+  };
+```
+
+Una vez definidas ambas funciones, solo faltaría definirlas como "event handlers" de sus respectivos botones. Para ello recurrimos al atributo de React `onClick`:
+
+```jsx
+...
+<button onClick={handleLikeClick}> LIKES | {likes} </button>
+<button onClick={handleDislikeClick}> DISLIKES | {dislikes} </button>
+...
+```
+
+Y... ¡voilà!
+
+Ahora ya podemos hacer clic sobre nuestros botones de like y dislike, los cuales ejecutarán sus respectivos controladores de eventos. Estos últimos son los encargados de "despachar" las acciones hacia la función reductora, que modificará el estado y lo actualizará en todo nuestro componente.
+
+A continuación tienes el resultado final del componente. Me he permitido añadirle un poco de CSS para que se parezca al de Youtube.
+
+https://codesandbox.io/s/social-buttons-v6-go2jt?file=/src/components/SocialCount.js?file=/src/components/SocialCount.js?view=split&autoresize=1&fontsize=12&hidenavigation=1&module=%2Fsrc%2Fcomponents%2FSocialCount.js&theme=dark
