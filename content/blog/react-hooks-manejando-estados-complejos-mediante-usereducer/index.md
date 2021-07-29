@@ -289,19 +289,15 @@ Esta función la ejecutaremos cuando se pulse el botón de like, y hará lo sigu
   
   `if (!isDisliked)`
 
-  * En el caso de que dislike no esté pulsado, tenemos dos opciones:
+  * Si el botón de like ya está pulsado previamente, ejecutamos un `dispatch` con la acción de tipo "UNLIKE".
+  * Si el botón de like no está pulsado previamente, ejecutamos un `dispatch` con la acción de "LIKE".
 
-    * Si el botón de like ya está pulsado previamente, ejecutamos un `dispatch` con la acción de tipo "UNLIKE".
-    * Si el botón de like no está pulsado previamente, ejecutamos un `dispatch` con la acción de "LIKE".
-
-  `isLiked?dispatch({ type: actions.unlike }): dispatch({ type: actions.like });`
+    `isLiked?dispatch({ type: actions.unlike }): dispatch({ type: actions.like });`
     
 
   * En el caso de estar que dislike esté pulsado, realizaremos un `dispatch` de la acción de "TOGGLE".
 
-  ` else {
-      dispatch({ type: actions.toggle });
-    }`
+    `else {dispatch({ type: actions.toggle });}`
 
 A continuación realizamos lo mismo para la función que controlará el evento de dislike:
 
