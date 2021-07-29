@@ -299,7 +299,7 @@ A continuación, haríamos lo mismo para definir la función que controlará el 
   };
 ```
 
-Una vez definidas ambas funciones, solo faltaría definirlas como "event handlers" de sus respectivos botones. Para ello recurrimos al atributo de React `onClick`:
+Una vez definidas ambas funciones, solo faltaría definirlas como event handlers de sus respectivos botones. Para ello recurrimos al atributo `onClick`:
 
 ```jsx
 ...
