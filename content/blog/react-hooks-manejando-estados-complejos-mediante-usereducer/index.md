@@ -279,8 +279,8 @@ Comencemos por definir la función que controlará el evento de like. Dentro del
 
 ¿Qué hace el código anterior? Vamos a traducirlo al lenguaje humano:
 
-* Si pulsas el botón de like cuando todavía no ha sido pulsado, realizas la acción "LIKE", es decir, lo activas.
-
 * Si pulsas el botón de like cuando ya estaba pulsado, realizas la acción "UNLIKE", es decir, lo desactivas.
+
+* Si pulsas el botón de like cuando todavía no ha sido pulsado, realizas la acción "LIKE", es decir, lo activas.
 
 * Si pulsas el botón like cuando el de dislike estaba pulsado, se intercambian sus estados mediante la acción "TOGGLE"
