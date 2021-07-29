@@ -303,6 +303,14 @@ Esta función la ejecutaremos cuando se pulse el botón de like, y hará lo sigu
   }
   ```
 
+Traducido en lenguaje para humanos, lo que hemos hecho es controlar lo siguiente:
+
+* Si pulsas el botón de like cuando todavía no ha sido pulsado, realizas la acción "LIKE", es decir, lo activas.
+
+* Si pulsas el botón de like cuando ya estaba pulsado, realizas la acción "UNLIKE", es decir, lo desactivas.
+
+* Si pulsas el botón like cuando el de dislike estaba pulsado, se intercambian sus estadosmediante la acción "TOGGLE"
+
 Con esto, ya tenemos definidas las funciones que harán de controladores de eventos o event handlers en nuestro componente.
 
 Ahora solo faltaría añadir estas funciones como controladores de eventos para que se ejecuten al pulsar el botón correspondiente.
