@@ -12,27 +12,9 @@ tags:
 
 En el [artículo anterior](https://samutorres.com/blog/react-hooks-de-usestate-a-usereducer) explicamos las bases del Hook `useReducer`. Si todavía no lo has leído, te invito a hacerlo, puesto que te ayudará a seguir lo que vamos a desarrollar a continuación.
 
-En este artículo vamos a implementar por fin la funcionalidad del componente de "likes/dislikes" para que reproduzca el comportamiento del que tiene Youtube en sus vídeos. A este componente le vamos a llamar `SocialCount` (original, sí).
+En este artículo vamos a implementar por fin la funcionalidad del componente de "likes/dislikes" para que reproduzca el comportamiento del que tiene Youtube en sus vídeos. A pesar de que en el último artículo ya hicimos una primera aproximación, vamos a empezar de nuevo de cero para refrescar conocimientos y comprender el flujo completo.
 
-Para empezar, vamos a refrescar las acciones y comportamiento esperado de nuestro componente. Le he puesto un nombre a cada acción (en negrita), puesto que serán los identificadores de dichas acciones que usaremos en la función reductora:
-
-* El usuario pulsa sobre el botón de like:
-
-  * **[LIKE]** Si no hay nada pulsado todavía: `likes + 1`
-  * **[UNLIKE]** El botón de like ya ha sido pulsado: `likes - 1`
-  * **[TOGGLE]** El botón dislike ya ha sido pulsado: `likes + 1` y `dislikes - 1`
-
-* El usuario pulsa sobre el botón de dislike:
-
-  * **[DISLIKE]** Si no hay nada pulsado todavía: `dislikes + 1`
-  * **[UNDISLIKE]** El botón de dislike ya ha sido pulsado: `dislikes - 1`
-  * **[TOGGLE]** El botón like ya ha sido pulsado: `dislikes + 1` y `likes - 1`
-
-Ahora que ya tenemos las acciones de nuestro componente identificadas (un total de 5 diferentes), vamos a definirlas en nuestro código.
-
-## Componente inicial
-
-Comenzamos con un esqueleto sencillo. Se trata de un componente al que llamamos `SocialCount` y que está definido como una función. De momento solo devuelve sendos botones de like y dislike, con el valor cero.
+Partimos con el siguiente esqueleto:
 
 ```jsx
 import React from "react";
@@ -48,6 +30,24 @@ function SocialCount() {
 
 export default SocialCount;
 ```
+
+Se trata de un componente al que llamamos `SocialCount` y que está definido como una función. De momento solo devuelve sendos botones de like y dislike, con el valor cero.
+
+Antes de comenzar, vamos a refrescar las acciones y comportamiento esperado de nuestro componente. Le he puesto nombres a las acciones (en negrita), puesto que serán los identificadores de dichas acciones que usaremos en la función reductora:
+
+* El usuario pulsa sobre el botón de like:
+
+  * **[LIKE]** Si no hay nada pulsado todavía: `likes + 1`
+  * **[UNLIKE]** El botón de like ya ha sido pulsado: `likes - 1`
+  * **[TOGGLE]** El botón dislike ya ha sido pulsado: `likes + 1` y `dislikes - 1`
+
+* El usuario pulsa sobre el botón de dislike:
+
+  * **[DISLIKE]** Si no hay nada pulsado todavía: `dislikes + 1`
+  * **[UNDISLIKE]** El botón de dislike ya ha sido pulsado: `dislikes - 1`
+  * **[TOGGLE]** El botón like ya ha sido pulsado: `dislikes + 1` y `likes - 1`
+
+Ahora que ya tenemos las acciones de nuestro componente identificadas (un total de 5 diferentes), vamos a definirlas en nuestro código.
 
 ## Definiendo las acciones disponibles
 
@@ -146,7 +146,7 @@ function socialReducer(state, action) {
 
 Mucho que procesar, ¿verdad?
 
-Si prestas atención, verás que no es para tanto. Esto no es más que una traducción de las acciones que habíamos descrito en la introducción de este artículo, pero pasadas a una declaración condicional switch. Vamos paso por paso.
+Si prestas atención, verás que no es para tanto. Esto no es más que una traducción de las acciones que habíamos descrito en la introducción de este artículo pero pasadas a una declaración condicional `switch`. Vamos paso por paso.
 
 En primer lugar, hemos usado la [desestructuración de objetos](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#desestructuraci%C3%B3n_de_objetos) para extraer los valores de `state`:
 
@@ -186,7 +186,7 @@ function socialReducer(state, action) {
 
 Vamos a utilizar la primera condición para explicarlo al detalle. El resto de condiciones funcionan igual.
 
-* En primer lugar, es importante saber que la función reductora **siempre debe devolver el nuevo estado**. Es por ello que dentro de cada `case` siempre tenemos el `return { ... }`
+* En primer lugar, es importante recordar que la función reductora **siempre debe devolver el nuevo estado**. Es por ello que dentro de cada `case` siempre tenemos un `return { ... }`
 * Primero recogemos el valor del estado actual usando el "[spread operator](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Operators/Spread_syntax)": `...state`.
 * A continuación realizamos las modificaciones al valor afectado, en este caso aumentar el contador de likes `likes: likes + 1`. Es exactamente lo mismo que habíamos definido en la lista de la introducción de este artículo. Puedes ir mirándola para comparar.
 * Por último, necesitamos saber el estado del botón (si está activo o no). Lo que hacemos es que, cada vez que se pulsa, invertimos su estado actual negándolo: `isLiked: !isLiked`
@@ -201,11 +201,10 @@ Ahora que ya tenemos la función reductora definida, podemos crear el estado de 
 
 El Hook `useReducer` **nos permite añadir estado a nuestro componente** y hacer uso de la función reductora que hemos creado anteriormente.
 
-Para hacer uso del mismo, nos dirigimos a la raiz de nuestro componente y lo declaramos de la siguiente forma:
+Para hacer uso del mismo, nos dirigimos a la raiz de nuestro componente `socialCount` y lo declaramos de la siguiente forma:
 
 ```jsx
 ...
-//Nuestro componente funcional
 function SocialCount() {
   // highlight-start
 
@@ -267,7 +266,7 @@ A continuación, vamos a controlar los eventos para que la función reductora re
 
 ## Manejando los eventos
 
-//TODO: handlelikeclick y handledislikeclick
+Necesitamos ahora una función que controle qué sucede cuando el usuario pulsa sobre el botón de like, y otra para el botón de dislike. 
 
 
 
