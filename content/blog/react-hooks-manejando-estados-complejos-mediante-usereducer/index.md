@@ -8,6 +8,8 @@ tags:
   - hooks
   - javascript
 ---
+![likes component](likescount.jpg "likes component")
+
 ## Introducción
 
 En el [artículo anterior](https://samutorres.com/blog/react-hooks-de-usestate-a-usereducer) explicamos las bases del Hook `useReducer`. Si todavía no lo has leído, te invito a hacerlo, puesto que te ayudará a seguir lo que vamos a desarrollar a continuación.
