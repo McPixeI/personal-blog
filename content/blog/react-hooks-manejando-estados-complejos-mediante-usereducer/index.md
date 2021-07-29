@@ -277,36 +277,10 @@ Comencemos por definir la función que controlará el evento de like. Dentro del
   };
 ```
 
-¿Qué hace el código anterior?
-
-Esta función la ejecutaremos cuando se pulse el botón de like, y hará lo siguiente:
-
-* En primer lugar comprobamos si el botón de dislike no está pulsado.
-
-  ```jsx
-  if (!isDisliked) {
-    ...
-  }
-  ```
-* Si el botón de like ya está pulsado previamente, ejecutamos un `dispatch` con la acción de tipo "UNLIKE". En caso contrario, ejecutamos un `dispatch` con la acción de tipo "LIKE"
-
-  ```jsx
-  isDisliked
-    ? dispatch({ type: actions.undislike })
-    : dispatch({ type: actions.dislike });
-  ```
-* En caso de que dislike esté pulsado, realizaremos un `dispatch` de la acción "TOGGLE"
-
-  ```jsx
-  else {
-  dispatch({ type: actions.toggle });
-  }
-  ```
-
-Traducido en lenguaje para humanos, lo que hemos hecho es controlar lo siguiente:
+¿Qué hace el código anterior? Vamos a traducirlo al lenguaje humano:
 
 * Si pulsas el botón de like cuando todavía no ha sido pulsado, realizas la acción "LIKE", es decir, lo activas.
 
 * Si pulsas el botón de like cuando ya estaba pulsado, realizas la acción "UNLIKE", es decir, lo desactivas.
 
-* Si pulsas el botón like cuando el de dislike estaba pulsado, se intercambian sus estadosmediante la acción "TOGGLE"
+* Si pulsas el botón like cuando el de dislike estaba pulsado, se intercambian sus estados mediante la acción "TOGGLE"
