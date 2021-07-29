@@ -288,16 +288,20 @@ Esta función la ejecutaremos cuando se pulse el botón de like, y hará lo sigu
 * En primer lugar comprobamos si el botón de dislike no está pulsado:
   
   ```jsx
-  if (!isDisliked)
+  if (!isDisliked) {
+    ...
+  }
   ```
 
-  * Si el botón de like ya está pulsado previamente, ejecutamos un `dispatch` con la acción de tipo "UNLIKE".
-  * Si el botón de like no está pulsado previamente, ejecutamos un `dispatch` con la acción de "LIKE".
+* Si el botón de like ya está pulsado previamente, ejecutamos un `dispatch` con la acción de tipo "UNLIKE".
+* Si el botón de like no está pulsado previamente, ejecutamos un `dispatch` con la acción de "LIKE".
   ```jsx
-  isLiked?dispatch({ type: actions.unlike }): dispatch({ type: actions.like });
+  isLiked 
+    ? dispatch({ type: actions.unlike }) 
+    : dispatch({ type: actions.like });
   ```
     
-  * En el caso de estar que dislike esté pulsado, realizaremos un `dispatch` de la acción de "TOGGLE".
+* En caso que dislike esté pulsado, realizaremos un `dispatch` de la acción de "TOGGLE".
 
   ```jsx
   else {dispatch({ type: actions.toggle });}
@@ -317,7 +321,9 @@ A continuación realizamos lo mismo para la función que controlará el evento d
   };
 ```
 
-Con esto, ya tenemos definidas las funciones que harán de controladores de eventos o event handlers en nuestro componente. 
+Con esto, ya tenemos definidas las funciones que harán de controladores de eventos o event handlers en nuestro componente.
+
+Ahora solo faltaría añadir estas funciones como controladores de eventos para que se ejecuten al pulsar el botón correspondiente.
 
 
 
