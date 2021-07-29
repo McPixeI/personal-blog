@@ -288,8 +288,7 @@ Esta función la ejecutaremos cuando se pulse el botón de like, y hará lo sigu
     ...
   }
   ```
-* Si el botón de like ya está pulsado previamente, ejecutamos un `dispatch` con la acción de tipo "UNLIKE"
-* Si el botón de like no está pulsado previamente, ejecutamos un `dispatch` con la acción de tipo "LIKE"
+* Si el botón de like ya está pulsado previamente, ejecutamos un `dispatch` con la acción de tipo "UNLIKE". En caso contrario, ejecutamos un `dispatch` con la acción de tipo "LIKE"
 
   ```jsx
   isDisliked
