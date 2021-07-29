@@ -260,7 +260,7 @@ Ahora ya tenemos lo siguiente:
 
 Puedes pegarle un vistazo al código en el siguiente sandbox:
 
-https://codesandbox.io/s/social-buttons-v55-forked-3e5n0?file=/src/components/SocialCount.js
+https://codesandbox.io/s/social-buttons-v55-forked-3e5n0?file=/src/components/SocialCount.js?view=split&autoresize=1&fontsize=12&hidenavigation=1&module=%2Fsrc%2Fcomponents%2FSocialCount.js&theme=dark
 
 A continuación, vamos a controlar los eventos para que la función reductora reciba las acciones.
 
