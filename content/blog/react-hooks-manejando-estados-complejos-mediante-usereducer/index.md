@@ -37,15 +37,14 @@ Antes de comenzar, vamos a refrescar las acciones y comportamiento esperado de n
 
 * El usuario pulsa sobre el botón de like:
 
-  * **[LIKE]** Si no hay nada pulsado todavía: `likes + 1`
-  * **[UNLIKE]** El botón de like ya ha sido pulsado: `likes - 1`
-  * **[TOGGLE]** El botón dislike ya ha sido pulsado: `likes + 1` y `dislikes - 1`
-
+  * **\[LIKE]** Si no hay nada pulsado todavía: `likes + 1`
+  * **\[UNLIKE]** El botón de like ya ha sido pulsado: `likes - 1`
+  * **\[TOGGLE]** El botón dislike ya ha sido pulsado: `likes + 1` y `dislikes - 1`
 * El usuario pulsa sobre el botón de dislike:
 
-  * **[DISLIKE]** Si no hay nada pulsado todavía: `dislikes + 1`
-  * **[UNDISLIKE]** El botón de dislike ya ha sido pulsado: `dislikes - 1`
-  * **[TOGGLE]** El botón like ya ha sido pulsado: `dislikes + 1` y `likes - 1`
+  * **\[DISLIKE]** Si no hay nada pulsado todavía: `dislikes + 1`
+  * **\[UNDISLIKE]** El botón de dislike ya ha sido pulsado: `dislikes - 1`
+  * **\[TOGGLE]** El botón like ya ha sido pulsado: `dislikes + 1` y `likes - 1`
 
 Ahora que ya tenemos las acciones de nuestro componente identificadas (un total de 5 diferentes), vamos a definirlas en nuestro código.
 
@@ -223,14 +222,15 @@ function SocialCount() {
 }
 
 export default SocialCount;
-
 ```
 
 Este Hook recibe dos parámetros:
+
 * El nombre de nuestra función reductora: `socialReducer`
 * El estado inicial de nuestro componente: `initialState`
 
 Y nos devuelve lo necesario para poder manejar el estado de nuestro componente:
+
 * El estado: `state`
 * El método que nos proporciona para poder enviar acciones a la función reductora: `dispatch`
 
@@ -241,11 +241,6 @@ Ahora que ya podemos acceder al estado, vamos a cambiar los valores "cero" de lo
 <button> LIKES | {likes} </button>
 <button> DISLIKES | {dislikes} </button>
 ...
-
-
-
-
-
 ```
 
 ### Recapitulando
@@ -281,30 +276,42 @@ Comencemos por definir la función que controlará el evento de like. Dentro del
     }
   };
 ```
+
 ¿Qué hace el código anterior?
 
 Esta función la ejecutaremos cuando se pulse el botón de like, y hará lo siguiente:
 
+* En primer lugar comprobamos si el botón de dislike no está pulsado.
+* Si el botón de like ya está pulsado previamente, ejecutamos un `dispatch` con la acción de tipo "UNLIKE"
+* Si el botón de like no está pulsado previamente, ejecutamos un `dispatch` con la acción de tipo "LIKE"
+* Le hemos dado la posibilidad de usar el estado al componente mediante la declaración de `useReducer`
+* En caso de que dislike esté pulsado, realizaremos un `dispatch` de la acción "TOGGLE"
+
+
+
 * En primer lugar comprobamos si el botón de dislike no está pulsado:
-  
+
   ```jsx
   if (!isDisliked) {
     ...
   }
   ```
-
 * Si el botón de like ya está pulsado previamente, ejecutamos un `dispatch` con la acción de tipo "UNLIKE".
 * Si el botón de like no está pulsado previamente, ejecutamos un `dispatch` con la acción de "LIKE".
+
   ```jsx
-  isLiked 
-    ? dispatch({ type: actions.unlike }) 
+  isLiked
+
+    ? dispatch({ type: actions.unlike })
+
     : dispatch({ type: actions.like });
   ```
-    
 * En caso que dislike esté pulsado, realizaremos un `dispatch` de la acción de "TOGGLE".
 
   ```jsx
-  else {dispatch({ type: actions.toggle });}
+  else {
+  dispatch({ type: actions.toggle });
+  }
   ```
 
 A continuación realizamos lo mismo para la función que controlará el evento de dislike:
@@ -324,9 +331,3 @@ A continuación realizamos lo mismo para la función que controlará el evento d
 Con esto, ya tenemos definidas las funciones que harán de controladores de eventos o event handlers en nuestro componente.
 
 Ahora solo faltaría añadir estas funciones como controladores de eventos para que se ejecuten al pulsar el botón correspondiente.
-
-
-
-
-
-
