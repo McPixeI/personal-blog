@@ -266,7 +266,7 @@ A continuación, vamos a controlar los eventos para que la función reductora re
 
 ## Manejando los eventos
 
-Necesitamos ahora una función que controle qué sucede cuando el usuario pulsa sobre el botón de like, y otra para el botón de dislike. Estas funciones serán las encargadas de enviar las acciones a la función reductora mediante el método `dispatch` que nos ofrece el Hook `useReducer`.
+Necesitamos ahora una función que controle qué sucede cuando el usuario pulsa sobre el botón de like y otra para el botón de dislike. Estas funciones serán las encargadas de enviar las acciones a la función reductora mediante el método `dispatch` que nos ofrece el Hook `useReducer`.
 
 Comencemos por definir la función que controlará el evento de like. Dentro del cuerpo de nuestro componente, definimos lo siguiente:
 
