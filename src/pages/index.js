@@ -11,7 +11,7 @@ import Newsletter from "../components/newsletter"
 
 const BlogIndex = ({ data, location }) => {
   const posts = data.allMarkdownRemark.nodes
-  const tags = (data.allMarkdownRemark.group).map(tag =>{
+  const tags = (data.allTags.group).map(tag =>{
     return tag.fieldValue
   })
 
@@ -61,6 +61,11 @@ export const pageQuery = graphql`
           description
           tags
         }
+      }
+    }
+    allTags: allMarkdownRemark {
+      group(field: frontmatter___tags) {
+        fieldValue
       }
     }
   }
