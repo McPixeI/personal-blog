@@ -1,6 +1,6 @@
 ---
 title: "React Hooks: Manejando estados complejos mediante useReducer"
-date: 2021-08-01T16:02:29.207Z
+date: 2021-08-01T16:27:15.314Z
 description: Creamos un componente de React manejando un estado complejo
   utilizando el Hook useReducer
 tags:
@@ -236,7 +236,7 @@ Y nos devuelve lo necesario para poder manejar el estado de nuestro componente:
 * El estado: `state`
 * El método que nos proporciona para poder enviar acciones a la función reductora: `dispatch`
 
-Ahora que ya podemos acceder al estado, vamos a cambiar los valores "cero" de los botones por los del estado cambiándolos así:
+Ahora que ya podemos acceder al estado, vamos a cambiar los valores "cero" de los botones por los del estado utilizando las variables \`likes\` y \`dislikes\`:
 
 ```jsx
 ...
@@ -244,6 +244,8 @@ Ahora que ya podemos acceder al estado, vamos a cambiar los valores "cero" de lo
 <button> DISLIKES | {dislikes} </button>
 ...
 ```
+
+> Recuerda que podemos acceder directamente a \`likes\` y \`dislikes\` puesto que en el componente hacemos uso de la desestructuración de objetos \` const { likes, dislikes, isLiked, isDisliked } = state;\`
 
 ## Recapitulando
 
@@ -265,7 +267,9 @@ A continuación, vamos a controlar los eventos para que la función reductora re
 
 Necesitamos ahora una función que controle qué sucede cuando el usuario pulsa sobre el botón de like y otra para el botón de dislike. Estas funciones serán las encargadas de enviar las acciones a la función reductora mediante el método `dispatch` que nos ofrece el Hook `useReducer`.
 
-Comencemos por definir la función que controlará el evento de pulsar el botón like. Dentro del cuerpo de nuestro componente, definimos lo siguiente:
+Comencemos por definir la función que controlará el evento de pulsar el botón like. 
+
+Dentro del cuerpo de nuestro componente, definimos lo siguiente:
 
 ```jsx
   const handleLikeClick = () => {
