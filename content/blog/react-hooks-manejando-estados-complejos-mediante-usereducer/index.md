@@ -236,7 +236,7 @@ Y nos devuelve lo necesario para poder manejar el estado de nuestro componente:
 * El estado: `state`
 * El método que nos proporciona para poder enviar acciones a la función reductora: `dispatch`
 
-Ahora que ya podemos acceder al estado, vamos a cambiar los valores "cero" de los botones por los del estado utilizando las variables \`likes\` y \`dislikes\`:
+Ahora que ya podemos acceder al estado, vamos a cambiar los valores "cero" de los botones por los del estado utilizando las variables `likes` y `dislikes`:
 
 ```jsx
 ...
@@ -245,7 +245,7 @@ Ahora que ya podemos acceder al estado, vamos a cambiar los valores "cero" de lo
 ...
 ```
 
-> Recuerda que podemos acceder directamente a \`likes\` y \`dislikes\` puesto que en el componente hacemos uso de la desestructuración de objetos \` const { likes, dislikes, isLiked, isDisliked } = state;\`
+> Recuerda que podemos acceder directamente a `likes` y `dislikes` puesto que en el componente hacemos uso de la desestructuración de objetos `const { likes, dislikes, isLiked, isDisliked } = state;`
 
 ## Recapitulando
 
