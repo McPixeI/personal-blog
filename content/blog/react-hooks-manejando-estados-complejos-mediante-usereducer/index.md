@@ -1,8 +1,8 @@
 ---
 title: "React Hooks: Manejando estados complejos mediante useReducer"
-date: 2021-07-28T21:21:13.402Z
-description: Creamos un componente de React con estado complejo utilizando el
-  Hook useReducer
+date: 2021-08-01T16:02:29.207Z
+description: Creamos un componente de React manejando un estado complejo
+  utilizando el Hook useReducer
 tags:
   - react
   - hooks
